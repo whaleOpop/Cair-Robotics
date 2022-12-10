@@ -1,83 +1,347 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://codes/UI.gd" type="Script" id=1]
+[ext_resource path="res://scripts/UI.gd" type="Script" id=1]
+[ext_resource path="res://ui/UI-theme.tres" type="Theme" id=2]
+[ext_resource path="res://ui/UIatlas.sprites/СaruiScripst.png" type="Texture" id=3]
+[ext_resource path="res://ui/UIatlas.sprites/Background .png" type="Texture" id=4]
+[ext_resource path="res://scenes/Blur.gdshader" type="Shader" id=5]
+[ext_resource path="res://ui/Box.tres" type="Theme" id=6]
+[ext_resource path="res://ui/toolkit.tres" type="Theme" id=7]
+[ext_resource path="res://ui/UIatlas.sprites/plus.png" type="Texture" id=8]
+[ext_resource path="res://ui/UIatlas.sprites/toolbar.png" type="Texture" id=9]
+[ext_resource path="res://ui/UIatlas.sprites/play.png" type="Texture" id=10]
+[ext_resource path="res://ui/UIatlas.sprites/save.png" type="Texture" id=11]
+[ext_resource path="res://ui/UIatlas.sprites/package.png" type="Texture" id=12]
+[ext_resource path="res://ui/circleButton.tres" type="Theme" id=13]
+[ext_resource path="res://ui/UIatlas.sprites/upload.png" type="Texture" id=14]
+[ext_resource path="res://ui/UIatlas.sprites/minus.png" type="Texture" id=15]
+[ext_resource path="res://ui/UIatlas.sprites/up.png" type="Texture" id=16]
+[ext_resource path="res://ui/UIatlas.sprites/down.png" type="Texture" id=17]
+[ext_resource path="res://scenes/Panel.gd" type="Script" id=18]
+[ext_resource path="res://scenes/AddStatment.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/Tabs/Line.tscn" type="PackedScene" id=20]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 5 )
+shader_param/lod = 2.0
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = ExtResource( 5 )
+shader_param/lod = 2.0
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/Line:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 51, -28.9995 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel/Line:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "animcloseH"
+
+[sub_resource type="Animation" id=9]
+resource_name = "animopenH"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/Line:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 51, -28.9995 ), Vector2( 51, -107 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel/Line:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
 
 [node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Panel" type="Panel" parent="."]
+material = SubResource( 2 )
+anchor_left = -0.096875
+anchor_top = -0.218519
+anchor_right = 0.903125
+anchor_bottom = 0.781482
+margin_left = 242.0
+margin_top = 295.0
+margin_right = -860.0
+margin_bottom = -65.0
+theme = ExtResource( 6 )
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="Left" type="Button" parent="CanvasLayer"]
-margin_left = 32.0
+[node name="Line" parent="Panel" instance=ExtResource( 20 )]
+margin_left = 51.0
+margin_top = -28.9995
+margin_right = 137.0
+margin_bottom = 0.000514984
+
+[node name="Panel" type="Panel" parent="Panel"]
+material = SubResource( 16 )
+margin_left = 4.0
+margin_right = 817.0
+margin_bottom = 718.0
+
+[node name="Background" type="TextureRect" parent="Panel"]
+margin_right = 818.0
+margin_bottom = 727.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 4 )
+
+[node name="CarCorture" type="TextureRect" parent="Panel"]
+margin_left = 73.0
 margin_top = 32.0
-margin_right = 73.0
-margin_bottom = 52.0
-text = "Left"
+margin_right = 369.0
+margin_bottom = 671.0
+texture = ExtResource( 3 )
 
-[node name="Stop" type="Button" parent="CanvasLayer"]
-margin_left = 112.0
-margin_top = 32.0
-margin_right = 153.0
-margin_bottom = 52.0
-text = "Stop"
+[node name="BackgroundTool" type="TextureRect" parent="Panel"]
+margin_left = 529.0
+margin_top = 56.0
+margin_right = 955.0
+margin_bottom = 164.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
 
-[node name="Right" type="Button" parent="CanvasLayer"]
-margin_left = 192.0
-margin_top = 32.0
-margin_right = 236.0
-margin_bottom = 52.0
-text = "Right"
+[node name="ToolsList" type="HBoxContainer" parent="Panel"]
+margin_left = 544.0
+margin_top = 113.0
+margin_right = 672.0
+margin_bottom = 137.0
+custom_constants/separation = 29
 
-[node name="L3" type="ColorRect" parent="CanvasLayer"]
-margin_left = 24.0
+[node name="Plus" type="Control" parent="Panel/ToolsList"]
+margin_bottom = 24.0
+
+[node name="PlusRect" type="TextureRect" parent="Panel/ToolsList/Plus"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 8.0
+margin_top = -4.0
+margin_right = 18.0
+margin_bottom = 6.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="PlusButton" type="Button" parent="Panel/ToolsList/Plus"]
+margin_right = 26.0
+margin_bottom = 26.0
+theme = ExtResource( 13 )
+
+[node name="Minus" type="Control" parent="Panel/ToolsList"]
+margin_left = 29.0
+margin_right = 29.0
+margin_bottom = 24.0
+
+[node name="MinusRect" type="TextureRect" parent="Panel/ToolsList/Minus"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 8.0
+margin_right = 17.0
+margin_bottom = -2.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 15 )
+
+[node name="MinusButton" type="Button" parent="Panel/ToolsList/Minus"]
+margin_right = 26.0
+margin_bottom = 26.0
+theme = ExtResource( 13 )
+
+[node name="Up" type="Control" parent="Panel/ToolsList"]
+margin_left = 58.0
+margin_right = 58.0
+margin_bottom = 24.0
+
+[node name="UpRect" type="TextureRect" parent="Panel/ToolsList/Up"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 7.0
+margin_top = -3.0
+margin_right = 18.0
+margin_bottom = 4.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="UpButton" type="Button" parent="Panel/ToolsList/Up"]
+margin_right = 26.0
+margin_bottom = 26.0
+theme = ExtResource( 13 )
+
+[node name="Down" type="Control" parent="Panel/ToolsList"]
+margin_left = 87.0
+margin_right = 87.0
+margin_bottom = 24.0
+
+[node name="DownRect" type="TextureRect" parent="Panel/ToolsList/Down"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 7.0
+margin_top = -2.0
+margin_right = 5.0
+margin_bottom = 5.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="DownButton" type="Button" parent="Panel/ToolsList/Down"]
+margin_right = 26.0
+margin_bottom = 26.0
+theme = ExtResource( 13 )
+
+[node name="ToolsProject" type="HBoxContainer" parent="Panel"]
+margin_left = 537.0
 margin_top = 64.0
-margin_right = 48.0
-margin_bottom = 88.0
-rect_pivot_offset = Vector2( 24, 12 )
-color = Color( 0, 0, 0, 1 )
+margin_right = 937.0
+margin_bottom = 144.0
+rect_scale = Vector2( 0.5, 0.5 )
+theme = ExtResource( 2 )
+custom_constants/separation = 109
 
-[node name="L2" type="ColorRect" parent="CanvasLayer"]
-margin_left = 64.0
-margin_top = 64.0
-margin_right = 88.0
-margin_bottom = 88.0
-rect_pivot_offset = Vector2( 24, 12 )
-color = Color( 0, 0, 0, 1 )
+[node name="Control" type="Control" parent="Panel/ToolsProject"]
+margin_bottom = 80.0
 
-[node name="L1" type="ColorRect" parent="CanvasLayer"]
-margin_left = 104.0
-margin_top = 64.0
-margin_right = 128.0
-margin_bottom = 88.0
-rect_pivot_offset = Vector2( 24, 12 )
-color = Color( 0, 0, 0, 1 )
+[node name="TextureRect" type="TextureRect" parent="Panel/ToolsProject/Control"]
+margin_right = 35.0
+margin_bottom = 36.0
+texture = ExtResource( 10 )
 
-[node name="R1" type="ColorRect" parent="CanvasLayer"]
-margin_left = 144.0
-margin_top = 64.0
-margin_right = 168.0
-margin_bottom = 88.0
-rect_pivot_offset = Vector2( 24, 12 )
-color = Color( 0, 0, 0, 1 )
+[node name="Button" type="Button" parent="Panel/ToolsProject/Control"]
+margin_left = -14.0
+margin_top = -12.0
+margin_right = 82.0
+margin_bottom = 84.0
+theme = ExtResource( 7 )
 
-[node name="R2" type="ColorRect" parent="CanvasLayer"]
-margin_left = 184.0
-margin_top = 64.0
-margin_right = 208.0
-margin_bottom = 88.0
-rect_pivot_offset = Vector2( 24, 12 )
-color = Color( 0, 0, 0, 1 )
+[node name="Control2" type="Control" parent="Panel/ToolsProject"]
+margin_left = 109.0
+margin_right = 109.0
+margin_bottom = 80.0
 
-[node name="R3" type="ColorRect" parent="CanvasLayer"]
-margin_left = 224.0
-margin_top = 64.0
-margin_right = 248.0
-margin_bottom = 88.0
-rect_pivot_offset = Vector2( 24, 12 )
-color = Color( 0, 0, 0, 1 )
+[node name="TextureRect" type="TextureRect" parent="Panel/ToolsProject/Control2"]
+margin_left = -6.0
+margin_right = 74.0
+margin_bottom = 72.0
+texture = ExtResource( 12 )
 
-[connection signal="pressed" from="CanvasLayer/Left" to="." method="_on_Left_pressed"]
-[connection signal="pressed" from="CanvasLayer/Stop" to="." method="_on_Stop_pressed"]
-[connection signal="pressed" from="CanvasLayer/Right" to="." method="_on_Right_pressed"]
+[node name="Button" type="Button" parent="Panel/ToolsProject/Control2"]
+margin_left = -14.0
+margin_top = -12.0
+margin_right = 82.0
+margin_bottom = 84.0
+theme = ExtResource( 7 )
+
+[node name="Control3" type="Control" parent="Panel/ToolsProject"]
+margin_left = 218.0
+margin_right = 218.0
+margin_bottom = 80.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ToolsProject/Control3"]
+margin_left = 4.0
+margin_right = 74.0
+margin_bottom = 72.0
+texture = ExtResource( 11 )
+
+[node name="Button" type="Button" parent="Panel/ToolsProject/Control3"]
+margin_left = -14.0
+margin_top = -12.0
+margin_right = 82.0
+margin_bottom = 84.0
+theme = ExtResource( 7 )
+
+[node name="Control4" type="Control" parent="Panel/ToolsProject"]
+margin_left = 327.0
+margin_right = 327.0
+margin_bottom = 80.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ToolsProject/Control4"]
+margin_right = 70.0
+margin_bottom = 72.0
+texture = ExtResource( 14 )
+
+[node name="Button" type="Button" parent="Panel/ToolsProject/Control4"]
+margin_left = -14.0
+margin_top = -12.0
+margin_right = 82.0
+margin_bottom = 84.0
+theme = ExtResource( 7 )
+
+[node name="ListStatments" type="ScrollContainer" parent="Panel"]
+margin_left = 507.0
+margin_top = 142.001
+margin_right = 787.0
+margin_bottom = 662.001
+rect_scale = Vector2( 0.940545, 1.11225 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxList" type="VBoxContainer" parent="Panel/ListStatments"]
+theme = ExtResource( 2 )
+custom_constants/separation = 5
+
+[node name="AddStatment" parent="Panel" instance=ExtResource( 19 )]
+
+[node name="NameSt" type="Label" parent="Panel"]
+margin_left = 266.0
+margin_top = 10.0
+margin_right = 448.0
+margin_bottom = 35.0
+align = 2
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 8 )
+anims/animcloseH = SubResource( 10 )
+anims/animopenH = SubResource( 9 )
+
+[connection signal="gui_input" from="Panel" to="Panel" method="_on_Panel_gui_input"]
+[connection signal="button_down" from="Panel/Line" to="." method="_on_Line_button_down"]
+[connection signal="getLine" from="Panel/Line" to="." method="_on_Line_getLine"]
+[connection signal="pressed" from="Panel/ToolsList/Plus/PlusButton" to="." method="_on_PlusButton_pressed"]
+[connection signal="updated" from="Panel/AddStatment" to="." method="_on_AddStatment_updated"]

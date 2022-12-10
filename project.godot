@@ -10,18 +10,57 @@ config_version=4
 
 [application]
 
-config/name="Vehicle Tutorial"
-run/main_scene="res://scenes/Spatial.tscn"
+config/name="Cair-Robotics"
+run/main_scene="res://scenes/HDViewPort.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-AutoLoad="*res://codes/AutoLoad.gd"
+AutoLoad="*res://scripts/StateRobot.gd"
+Ui="*res://scripts/UI.gd"
+Statments="*res://scripts/Statments.gd"
 
 [display]
 
-window/size/width=1433
-window/size/height=840
+window/size/width=1920
+window/size/height=1080
+window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/codeandweb.texturepacker/plugin.cfg" )
+
+[filesystem]
+
+import/fbx/use_fbx=false
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 3,
+"compress/normal_map": 0,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": true,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 
@@ -33,4 +72,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+2d/options/use_nvidia_rect_flicker_workaround=true
 environment/default_environment="res://default_env.tres"

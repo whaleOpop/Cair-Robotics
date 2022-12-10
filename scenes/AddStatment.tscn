@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/UI-theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/AddStatment.gd" type="Script" id=2]
+[ext_resource path="res://ui/addSt.tres" type="Theme" id=3]
+
+[node name="AddStatment" type="WindowDialog"]
+anchor_right = 0.215
+anchor_bottom = 0.211
+margin_right = 3.19998
+margin_bottom = 21.12
+theme = ExtResource( 1 )
+popup_exclusive = true
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -129.5
+margin_right = 129.5
+margin_bottom = 28.0
+theme = ExtResource( 1 )
+text = "Add Statments"
+
+[node name="Cancel" type="Button" parent="."]
+anchor_right = 0.606
+anchor_bottom = 0.703
+margin_left = 252.0
+margin_top = 175.0
+margin_right = 118.904
+margin_bottom = 37.953
+rect_pivot_offset = Vector2( 60, 19 )
+theme = ExtResource( 3 )
+text = "Cancel"
+
+[node name="Okey" type="Button" parent="."]
+anchor_right = 0.401
+anchor_bottom = 0.855
+margin_left = 48.0
+margin_top = 175.0
+margin_right = 0.18399
+margin_bottom = 0.104996
+rect_pivot_offset = Vector2( 60, 19 )
+theme = ExtResource( 3 )
+text = "Okey"
+
+[node name="NameBtn" type="LineEdit" parent="."]
+anchor_right = 0.817
+anchor_bottom = 0.568
+margin_left = 88.0
+margin_top = 103.0
+margin_right = 0.127991
+margin_bottom = -0.122009
+theme = ExtResource( 1 )
+max_length = 10
+placeholder_text = "Name"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[connection signal="button_down" from="Cancel" to="." method="_on_Cancel_button_down"]
+[connection signal="button_down" from="Okey" to="." method="_on_Okey_button_down"]
