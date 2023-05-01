@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://lr67b1cnl44v"]
+[gd_scene load_steps=11 format=3 uid="uid://lr67b1cnl44v"]
 
 [ext_resource type="Script" path="res://TitlePart3D/prefabMaps/parts/StaticBody3D.gd" id="1_blhdn"]
+[ext_resource type="Script" path="res://TitlePart3D/prefabMaps/parts/SaveLoad.gd" id="1_gcuer"]
 [ext_resource type="ArrayMesh" uid="uid://g02ujo540yoy" path="res://import/finish.res" id="1_hb8ll"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tp06u"]
@@ -35,6 +36,8 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_33105"]
 
 [node name="Finish" type="Node3D"]
+script = ExtResource("1_gcuer")
+metadata/NameCell = "Finish"
 
 [node name="Mesdsds" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.09, 0, 0, 0, 0.1, 0, 0, 0, 4.09, 0, 0, 0)

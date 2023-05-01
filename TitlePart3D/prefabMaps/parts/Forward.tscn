@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dprhuw48ynv4g"]
+[gd_scene load_steps=9 format=3 uid="uid://djnydbrcy06tb"]
 
+[ext_resource type="Script" path="res://TitlePart3D/prefabMaps/parts/SaveLoad.gd" id="1_sm3nf"]
 [ext_resource type="Script" path="res://TitlePart3D/prefabMaps/parts/StaticBody3D.gd" id="1_w1kgn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw48h"]
@@ -32,6 +33,8 @@ shading_mode = 0
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="Forward" type="Node3D"]
+script = ExtResource("1_sm3nf")
+metadata/NameCell = "Forward"
 
 [node name="F" type="MeshInstance3D" parent="."]
 transform = Transform3D(30.2387, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0.06, 0)

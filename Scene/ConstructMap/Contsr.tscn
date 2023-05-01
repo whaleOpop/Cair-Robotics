@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bfghle0qsaduw"]
+[gd_scene load_steps=104 format=3 uid="uid://bfghle0qsaduw"]
 
 [ext_resource type="Script" path="res://Scene/ConstructMap/Contsr.gd" id="1_a78lt"]
 [ext_resource type="PackedScene" uid="uid://dcvdg6hni2i7j" path="res://TitlePart3D/ConstMap.tscn" id="2_im0gn"]
@@ -29,7 +29,16 @@
 [ext_resource type="Texture2D" uid="uid://yhh7i3op2dft" path="res://TitlePart2D/ConstMap/ItemList/button/pressed/back_pressed.png" id="27_mni1i"]
 [ext_resource type="Texture2D" uid="uid://d1nyvrbaa1eud" path="res://TitlePart2D/ConstMap/ItemList/button/focus/loadmaps_focus.png" id="28_i5vsq"]
 [ext_resource type="Texture2D" uid="uid://oml6774maijj" path="res://TitlePart2D/ConstMap/ItemList/button/hover/loadmaps_hover.png" id="29_h6uq6"]
+[ext_resource type="Texture2D" uid="uid://boj57npvcq4k" path="res://TitlePart2D/ConstMap/popupMenu/BackgroundSt (1).png" id="31_8cobf"]
 [ext_resource type="Texture2D" uid="uid://dgbaxm60sn5n0" path="res://TitlePart2D/ConstMap/ItemList/button/pressed/loadmaps_pressed.png" id="31_o0jkw"]
+[ext_resource type="Texture2D" uid="uid://g0w6k4o4upmo" path="res://TitlePart2D/ConstMap/popupMenu/line editnormal.png" id="32_5udxc"]
+[ext_resource type="Texture2D" uid="uid://dgryrosr1d3r5" path="res://TitlePart2D/ConstMap/popupMenu/btnOk/hoverOKey.png" id="32_505mb"]
+[ext_resource type="Texture2D" uid="uid://ddnc5ocgdaia3" path="res://TitlePart2D/ConstMap/popupMenu/lineedit focus.png" id="32_as40m"]
+[ext_resource type="FontFile" uid="uid://b4emn1rakq1q1" path="res://fonts/Inter-Light.ttf" id="32_ulk3t"]
+[ext_resource type="Texture2D" uid="uid://bxhqts4e7s120" path="res://TitlePart2D/ConstMap/popupMenu/btnOk/pressedOKey.png" id="33_ydgpm"]
+[ext_resource type="Texture2D" uid="uid://bptorhsmdiri1" path="res://TitlePart2D/ConstMap/popupMenu/btnCancel/hoverCancel.png" id="34_udbjn"]
+[ext_resource type="Texture2D" uid="uid://dnvvpfaprht7q" path="res://TitlePart2D/ConstMap/popupMenu/btnCancel/normalCancel.png" id="35_rh7up"]
+[ext_resource type="Texture2D" uid="uid://tgcx68ti3fr0" path="res://TitlePart2D/ConstMap/popupMenu/btnCancel/pressedCancel.png" id="36_aujgk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g6y0"]
 shader = ExtResource("3_k8ja0")
@@ -189,6 +198,70 @@ Button/styles/hover = SubResource("StyleBoxTexture_h2e01")
 Button/styles/normal = SubResource("StyleBoxTexture_yfsxm")
 Button/styles/pressed = SubResource("StyleBoxTexture_0tpw7")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2deyx"]
+shader = ExtResource("3_k8ja0")
+shader_parameter/amount = 3.9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvdu8"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8is7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bov2c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smcyn"]
+texture = ExtResource("32_505mb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5sk8f"]
+texture = ExtResource("32_505mb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpoux"]
+texture = ExtResource("33_ydgpm")
+
+[sub_resource type="Theme" id="Theme_ps1wh"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_y8is7")
+Button/styles/focus = SubResource("StyleBoxEmpty_bov2c")
+Button/styles/hover = SubResource("StyleBoxTexture_smcyn")
+Button/styles/normal = SubResource("StyleBoxTexture_5sk8f")
+Button/styles/pressed = SubResource("StyleBoxTexture_rpoux")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_elf7b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkmwd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlwvb"]
+texture = ExtResource("34_udbjn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1sddt"]
+texture = ExtResource("35_rh7up")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_41g46"]
+texture = ExtResource("36_aujgk")
+
+[sub_resource type="Theme" id="Theme_q54lm"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_elf7b")
+Button/styles/focus = SubResource("StyleBoxEmpty_qkmwd")
+Button/styles/hover = SubResource("StyleBoxTexture_nlwvb")
+Button/styles/normal = SubResource("StyleBoxTexture_1sddt")
+Button/styles/pressed = SubResource("StyleBoxTexture_41g46")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pubyi"]
+texture = ExtResource("32_as40m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jghg6"]
+texture = ExtResource("32_5udxc")
+
+[sub_resource type="Theme" id="Theme_mv51d"]
+TextEdit/constants/line_spacing = 8
+TextEdit/constants/outline_size = 0
+TextEdit/fonts/font = ExtResource("32_ulk3t")
+TextEdit/styles/focus = SubResource("StyleBoxTexture_pubyi")
+TextEdit/styles/normal = SubResource("StyleBoxTexture_jghg6")
+
 [node name="RootLayer" type="CanvasLayer"]
 script = ExtResource("1_a78lt")
 
@@ -207,7 +280,7 @@ canvas_item_default_texture_repeat = 1
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="ConstMap" parent="Root3D/SubViewportContainer/SubViewport" instance=ExtResource("2_im0gn")]
+[node name="ConstMap" parent="Root3D/SubViewportContainer/SubViewport" groups=["save"] instance=ExtResource("2_im0gn")]
 
 [node name="Panel" type="Panel" parent="Root3D"]
 material = SubResource("ShaderMaterial_7g6y0")
@@ -366,7 +439,54 @@ theme = SubResource("Theme_drevl")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_hmfvx")
 
+[node name="Panel" type="Panel" parent="Root3D/Panel"]
+visible = false
+material = SubResource("ShaderMaterial_2deyx")
+layout_mode = 0
+offset_left = -597.0
+offset_top = 239.0
+offset_right = -189.0
+offset_bottom = 480.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gvdu8")
+
+[node name="TextureRect" type="TextureRect" parent="Root3D/Panel/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("31_8cobf")
+
+[node name="OK" type="Button" parent="Root3D/Panel/Panel/TextureRect"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 151.0
+offset_right = 138.0
+offset_bottom = 189.0
+theme = SubResource("Theme_ps1wh")
+
+[node name="Cancel" type="Button" parent="Root3D/Panel/Panel/TextureRect"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 151.0
+offset_right = 389.0
+offset_bottom = 189.0
+theme = SubResource("Theme_q54lm")
+
+[node name="TextEdit" type="TextEdit" parent="Root3D/Panel/Panel/TextureRect"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 82.0
+offset_right = 330.0
+offset_bottom = 120.31
+theme = SubResource("Theme_mv51d")
+placeholder_text = "Map name
+"
+
 [connection signal="item_selected" from="Root3D/Panel/TextureRect/ItemList" to="." method="_on_item_list_item_selected"]
 [connection signal="color_changed" from="Root3D/Panel/TextureRect/TextureRect2/RGB" to="." method="_on_rgb_color_changed"]
 [connection signal="toggled" from="Root3D/Panel/TextureRect/TextureRect/WB" to="." method="_on_wb_toggled"]
 [connection signal="button_down" from="Root3D/Panel/TextureRect/HBoxContainer/add" to="." method="_on_add_button_down"]
+[connection signal="button_down" from="Root3D/Panel/TextureRect/HBoxContainer/save" to="." method="_on_save_button_down"]
+[connection signal="pressed" from="Root3D/Panel/TextureRect/HBoxContainer/load" to="." method="_on_load_pressed"]
+[connection signal="hidden" from="Root3D/Panel/Panel" to="." method="_on_panel_hidden"]
+[connection signal="pressed" from="Root3D/Panel/Panel/TextureRect/OK" to="." method="_on_ok_pressed"]
+[connection signal="pressed" from="Root3D/Panel/Panel/TextureRect/Cancel" to="." method="_on_cancel_pressed"]

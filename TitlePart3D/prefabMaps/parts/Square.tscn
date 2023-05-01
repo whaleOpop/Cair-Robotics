@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkhvnw4qlvbou"]
+[gd_scene load_steps=6 format=3 uid="uid://bkhvnw4qlvbou"]
 
 [ext_resource type="Script" path="res://TitlePart3D/prefabMaps/parts/StaticBody3D.gd" id="1_8jjqt"]
+[ext_resource type="Script" path="res://TitlePart3D/prefabMaps/parts/SaveLoad.gd" id="1_wmjk6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4kwjh"]
 
@@ -11,6 +12,8 @@ shading_mode = 0
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="Square" type="Node3D"]
+script = ExtResource("1_wmjk6")
+metadata/NameCell = "Square"
 
 [node name="whiteplane" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.031, 0, 0, 0, 0.1, 0, 0, 0, 4.031, 0, 0, 0)
