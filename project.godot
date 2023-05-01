@@ -6,71 +6,98 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
+config_version=5
 
 [application]
 
-config/name="Cair-Robotics"
-run/main_scene="res://scenes/HDViewPort.tscn"
-config/icon="res://icon.png"
-
-[autoload]
-
-AutoLoad="*res://scripts/StateRobot.gd"
-Ui="*res://scripts/UI.gd"
-Statments="*res://scripts/Statments.gd"
+config/name="CAIR/ROBOTICS"
+run/main_scene="res://Scene/Menu/Main.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+boot_splash/bg_color=Color(0.00392157, 0.14902, 0.235294, 1)
+boot_splash/image="res://icon.png"
+config/icon="res://icon.svg"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
-window/stretch/aspect="keep"
+window/size/viewport_width=1920
+window/size/viewport_height=1000
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 
-[editor_plugins]
+[editor]
 
-enabled=PoolStringArray( "res://addons/codeandweb.texturepacker/plugin.cfg" )
+movie_writer/movie_file="C:/Users/Public/Videos/godot.avi"
+movie_writer/disable_vsync=true
 
-[filesystem]
+[gui]
 
-import/fbx/use_fbx=false
+theme/custom_font="res://fonts/Inter-Light.ttf"
+theme/default_font_multichannel_signed_distance_field=true
+theme/default_font_generate_mipmaps=true
 
 [importer_defaults]
 
 texture={
-"compress/bptc_ldr": 0,
-"compress/hdr_mode": 0,
+"compress/channel_pack": 0,
+"compress/hdr_compression": 2,
+"compress/high_quality": true,
 "compress/lossy_quality": 0.7,
-"compress/mode": 3,
+"compress/mode": 2,
 "compress/normal_map": 0,
-"detect_3d": true,
-"flags/anisotropic": false,
-"flags/filter": true,
-"flags/mipmaps": false,
-"flags/repeat": 0,
-"flags/srgb": 2,
-"process/HDR_as_SRGB": false,
-"process/fix_alpha_border": true,
-"process/invert_color": false,
+"detect_3d/compress_to": 1,
+"mipmaps/generate": true,
+"mipmaps/limit": 0,
+"process/fix_alpha_border": false,
+"process/hdr_as_srgb": false,
+"process/hdr_clamp_exposure": false,
 "process/normal_map_invert_y": false,
 "process/premult_alpha": false,
-"size_limit": 0,
-"stream": false,
-"svg/scale": 1.0
+"process/size_limit": 0,
+"roughness/mode": 0,
+"roughness/src_normal": ""
 }
 
-[input_devices]
+[input]
 
-pointing/emulate_touch_from_mouse=true
-
-[layer_names]
-
-3d_physics/layer_2="raycast"
-
-[physics]
-
-common/enable_pause_aware_picking=true
+left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
+]
+}
+right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"echo":false,"script":null)
+]
+}
+down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
+]
+}
+up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"echo":false,"script":null)
+]
+}
+zoomUp={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":8,"position":Vector2(275, 16),"global_position":Vector2(279, 59),"factor":1.0,"button_index":4,"pressed":true,"double_click":false,"script":null)
+]
+}
+zoomDown={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":16,"position":Vector2(293, 17),"global_position":Vector2(297, 60),"factor":1.0,"button_index":5,"pressed":true,"double_click":false,"script":null)
+]
+}
+mouse_down={
+"deadzone": 0.5,
+"events": []
+}
 
 [rendering]
 
-2d/options/use_nvidia_rect_flicker_workaround=true
-environment/default_environment="res://default_env.tres"
+textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/msaa_3d=1
+anti_aliasing/quality/screen_space_aa=1
+anti_aliasing/quality/use_taa=true

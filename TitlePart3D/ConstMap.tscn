@@ -1,0 +1,173 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcvdg6hni2i7j"]
+
+[ext_resource type="ArrayMesh" uid="uid://tv46ly8svkm" path="res://import/kekw.res" id="1_k4ydb"]
+[ext_resource type="Environment" uid="uid://bvy1jx3l4sjxp" path="res://Environment.tres" id="2_xf4cw"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y70y3"]
+data = PackedVector3Array(-1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, 1, -1, 0, 1, -1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, -1, 1, 0, -1, 1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, 1, 1, 0, 1, -1, 0, 1, -1, 0, 1, 1, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_j2hg2"]
+script/source = "extends Camera3D
+
+
+
+var speed = 10
+#var height = 20*100
+var velocity = Vector3(0,20*20,0)
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+@export var ControlMove = preload(\"res://TitlePart3D/3dUi/ControlMove.tscn\")
+
+@onready var cast = $\"../RayCast3D\"
+@onready var camera = $\".\"
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+var _newdelta = 0.0
+var mouseDelat = Vector3()
+func _process(delta):
+	_newdelta=delta
+	
+
+		
+	velocity=get_input(velocity)
+	self.position=velocity*delta
+
+	pass
+var posmouse = Vector3()
+var state = String()
+
+var obj
+var lastobj = null
+
+var objPress
+var lastObjPress
+func _input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+
+		var mouse_pos = get_viewport().get_mouse_position()
+		var space_state = get_world_3d().direct_space_state
+		var params= PhysicsRayQueryParameters3D.new()
+		params.from = camera.project_ray_origin(mouse_pos)
+		params.to = params.from + camera.project_ray_normal(mouse_pos) * camera.get_far()
+		var result = space_state.intersect_ray(params)
+		if not result.is_empty():
+			if result and result.collider.has_method(\"_on_interact\"):
+				
+				state = result.collider._on_interact()
+			
+				if state ==\"cell\":
+					
+					result.collider.cell_pressed.connect(ui_view)
+					result.collider.obj_link.connect(get_obj)
+					if lastobj != null:
+						if lastobj==obj:
+							print(\"Это я\")
+						else:
+								
+							print(\"не похож\")
+							result.collider.cell_pressed.connect(lastobj_press)
+							#lastobj.get_child(ControlMove.instantiate()).queue_free()
+							if lastobj.get_node(\"ControlMove\")!=null:
+								lastobj.get_node(\"ControlMove\").queue_free()
+						
+							#lastobj.get_child(lastobj.get_child_count()-1).queue_free()
+								
+					
+					lastobj=obj
+				
+				if state == \"delete\":
+					obj.queue_free()
+					pass
+				if state == \"down\":
+					obj.position.z +=4
+					pass
+				if state == \"left\":
+					obj.position.x -=4
+					pass
+				if state == \"right\":
+					obj.position.x +=4
+					pass
+				if state == \"up\":
+					obj.position.z -=4
+					pass
+				if state == \"rotate\":
+					obj.rotation_degrees.y+=90
+					pass
+
+			
+				
+				
+				
+	pass
+
+func ui_view(isPressed):
+	print(isPressed)
+	var ui = ControlMove.instantiate()
+	if !isPressed:
+		ui.position.y = 1
+		ui.rotation=-obj.rotation
+		obj.add_child(ui)
+		
+	else:
+		if obj.get_node(\"ControlMove\")!=null:
+			obj.get_node(\"ControlMove\").queue_free()
+		pass
+	pass
+func get_obj(link_obj):
+	obj=link_obj
+	pass
+	
+func obj_press(isPressed):
+	objPress=isPressed
+	pass
+	
+func lastobj_press(isPressed):
+	lastObjPress=isPressed
+	pass
+	
+func get_input(_velocity):
+	
+	
+	if Input.is_action_pressed(\"right\"):
+		_velocity.x += 1*speed
+		
+	if Input.is_action_pressed(\"left\"):
+		_velocity.x -= 1*speed
+		
+	if Input.is_action_pressed(\"down\"):
+		_velocity.z += 1*speed
+		
+	if Input.is_action_pressed(\"up\"):
+		_velocity.z -= 1*speed
+
+	if Input.is_action_just_released(\"zoomUp\"):
+		_velocity.y-=1*speed		
+	
+	if Input.is_action_just_released(\"zoomDown\"):
+		_velocity.y+=1*speed	
+	
+	return _velocity
+
+"
+
+[node name="ConstMap" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00419, 0, 2.17075)
+
+[node name="Kekw" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 2, 0, 2)
+mesh = ExtResource("1_k4ydb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Kekw"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kekw/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_y70y3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+environment = ExtResource("2_xf4cw")
+current = true
+size = 50.0
+script = SubResource("GDScript_j2hg2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.641098, 0.726994, 0.245912, 0.552072, 0.214277, 0.805793, 0.533113, 0.652354, -0.538726, 19.5464, 17.743, 1.9763)

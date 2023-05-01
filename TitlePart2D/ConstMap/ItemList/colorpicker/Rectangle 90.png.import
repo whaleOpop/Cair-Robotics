@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d31vfh5o7bfst"
-path.bptc="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.bptc.ctex"
-path.astc="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.astc.ctex"
+uid="uid://cxghqrwdwf56n"
+path.bptc="res://.godot/imported/Rectangle 90.png-1fee2d8bba0e91aef90db5ce36b1f4ce.bptc.ctex"
+path.astc="res://.godot/imported/Rectangle 90.png-1fee2d8bba0e91aef90db5ce36b1f4ce.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.bptc.ctex", "res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.astc.ctex"]
+source_file="res://TitlePart2D/ConstMap/ItemList/colorpicker/Rectangle 90.png"
+dest_files=["res://.godot/imported/Rectangle 90.png-1fee2d8bba0e91aef90db5ce36b1f4ce.bptc.ctex", "res://.godot/imported/Rectangle 90.png-1fee2d8bba0e91aef90db5ce36b1f4ce.astc.ctex"]
 
 [params]
 

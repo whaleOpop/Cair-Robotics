@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://r7qnwo6h65xq"]
+
+[ext_resource type="Script" path="res://TitlePart3D/prefabMaps/parts/StaticBody3D.gd" id="1_qkb1d"]
+[ext_resource type="ArrayMesh" uid="uid://chr7keeariscg" path="res://import/checkpoin.res" id="2_ompmi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw48h"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_117k7"]
+resource_name = "line_Curve007"
+_surfaces = [{
+"aabb": AABB(-0.0671703, 0, -0.00840861, 0.134341, 1e-05, 0.0168172),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 160, 170, 62, 0, 0, 128, 63, 0, 160, 42, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(3, 0, 0, 0, 1, 0, 3, 0, 1, 0, 2, 0),
+"material": SubResource("StandardMaterial3D_cw48h"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(144, 144, 137, 189, 0, 0, 0, 0, 72, 196, 9, 188, 0, 0, 255, 127, 255, 255, 126, 191, 144, 144, 137, 61, 0, 0, 0, 0, 72, 196, 9, 188, 0, 0, 255, 127, 255, 255, 126, 191, 144, 144, 137, 61, 0, 0, 0, 0, 80, 196, 9, 60, 0, 0, 255, 127, 255, 255, 126, 191, 144, 144, 137, 189, 0, 0, 0, 0, 80, 196, 9, 60, 0, 0, 255, 127, 255, 255, 126, 191)
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rqle"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1s8qa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nh6og"]
+shading_mode = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x5axx"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fu6e8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2hxo2"]
+
+[node name="Checkpoin" type="Node3D"]
+
+[node name="F" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.32178e-06, 0, 30, 0, 30, 0, -30.2387, 0, -1.31134e-06, -0.017, 0.06, 0)
+mesh = SubResource("ArrayMesh_117k7")
+surface_material_override/0 = SubResource("StandardMaterial3D_6rqle")
+
+[node name="Mesdsds" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.09, 0, 0, 0, 0.1, 0, 0, 0, 4.09, 0, 0, 0)
+mesh = SubResource("BoxMesh_1s8qa")
+surface_material_override/0 = SubResource("StandardMaterial3D_nh6og")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesdsds"]
+script = ExtResource("1_qkb1d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesdsds/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x5axx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.03837, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.439764, 0)
+mesh = SubResource("BoxMesh_fu6e8")
+
+[node name="flag" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.549682, 0)
+
+[node name="checkpoint" type="MeshInstance3D" parent="flag"]
+transform = Transform3D(6.34434, 0, 0, 0, -4.37114e-08, -6.34434, 0, 1, -2.7732e-07, -1.73817, 0.967552, -0.0273235)
+mesh = ExtResource("2_ompmi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="flag"]
+transform = Transform3D(0.128056, 0, 0, 0, 1.56083, 0, 0, 0, 0.128056, 1.778, 0.495317, 0)
+mesh = SubResource("CylinderMesh_2hxo2")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="flag"]
+transform = Transform3D(0.128056, 0, 0, 0, 1.56083, 0, 0, 0, 0.128056, -1.778, 0.495, 0)
+mesh = SubResource("CylinderMesh_2hxo2")
+skeleton = NodePath("../..")
+
+[node name="checkpoint2" type="MeshInstance3D" parent="flag"]
+transform = Transform3D(-6.34434, -8.74228e-08, 2.42441e-14, 0, -4.37114e-08, -6.34434, 5.5464e-07, -1, 2.7732e-07, 1.71664, 0.967552, -0.0273235)
+mesh = ExtResource("2_ompmi")

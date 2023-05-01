@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dprhuw48ynv4g"]
+
+[ext_resource type="Script" path="res://TitlePart3D/prefabMaps/parts/StaticBody3D.gd" id="1_w1kgn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw48h"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d8k4d"]
+resource_name = "line_Curve007"
+_surfaces = [{
+"aabb": AABB(-0.0671703, 0, -0.00840861, 0.134341, 1e-05, 0.0168172),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 160, 170, 62, 0, 0, 128, 63, 0, 160, 42, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(3, 0, 0, 0, 1, 0, 3, 0, 1, 0, 2, 0),
+"material": SubResource("StandardMaterial3D_cw48h"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(144, 144, 137, 189, 0, 0, 0, 0, 72, 196, 9, 188, 0, 0, 255, 127, 255, 255, 126, 191, 144, 144, 137, 61, 0, 0, 0, 0, 72, 196, 9, 188, 0, 0, 255, 127, 255, 255, 126, 191, 144, 144, 137, 61, 0, 0, 0, 0, 80, 196, 9, 60, 0, 0, 255, 127, 255, 255, 126, 191, 144, 144, 137, 189, 0, 0, 0, 0, 80, 196, 9, 60, 0, 0, 255, 127, 255, 255, 126, 191)
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_temui"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xg2ss"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vl4cb"]
+shading_mode = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0x0go"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Forward" type="Node3D"]
+
+[node name="F" type="MeshInstance3D" parent="."]
+transform = Transform3D(30.2387, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0.06, 0)
+mesh = SubResource("ArrayMesh_d8k4d")
+surface_material_override/0 = SubResource("StandardMaterial3D_temui")
+
+[node name="whiteplane" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.031, 0, 0, 0, 0.1, 0, 0, 0, 4.031, 0, 0, 0)
+mesh = SubResource("BoxMesh_xg2ss")
+surface_material_override/0 = SubResource("StandardMaterial3D_vl4cb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="whiteplane"]
+script = ExtResource("1_w1kgn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="whiteplane/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_0x0go")

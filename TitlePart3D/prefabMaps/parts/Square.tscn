@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkhvnw4qlvbou"]
+
+[ext_resource type="Script" path="res://TitlePart3D/prefabMaps/parts/StaticBody3D.gd" id="1_8jjqt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4kwjh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwv3d"]
+shading_mode = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yj27h"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Square" type="Node3D"]
+
+[node name="whiteplane" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.031, 0, 0, 0, 0.1, 0, 0, 0, 4.031, 0, 0, 0)
+mesh = SubResource("BoxMesh_4kwjh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hwv3d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="whiteplane"]
+script = ExtResource("1_8jjqt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="whiteplane/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yj27h")

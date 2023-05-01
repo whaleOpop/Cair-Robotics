@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://lgltotatexjq"]
+
+[ext_resource type="Script" path="res://Scene/ConstructMap/ColorPickerButton.gd" id="1_vujox"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ahsm5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_un6rx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dknb6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkd2f"]
+
+[sub_resource type="Theme" id="Theme_ns33b"]
+BoxContainer/constants/separation = 4
+ColorPresetButton/styles/preset_fg = SubResource("StyleBoxEmpty_ahsm5")
+Panel/styles/panel = SubResource("StyleBoxEmpty_un6rx")
+PopupPanel/styles/panel = SubResource("StyleBoxEmpty_dknb6")
+TooltipPanel/styles/panel = SubResource("StyleBoxEmpty_jkd2f")
+VBoxContainer/constants/separation = 4
+
+[node name="ColorPickerButton" type="ColorPickerButton"]
+custom_minimum_size = Vector2(36, 35)
+offset_left = 31.0
+offset_top = 8.0
+offset_right = 67.0
+offset_bottom = 43.0
+theme = SubResource("Theme_ns33b")
+color = Color(0.498039, 0.498039, 0.498039, 1)
+script = ExtResource("1_vujox")

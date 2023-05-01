@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d31vfh5o7bfst"
-path.bptc="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.bptc.ctex"
-path.astc="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.astc.ctex"
+uid="uid://yhh7i3op2dft"
+path.bptc="res://.godot/imported/back_pressed.png-c320bbea83046f8758b6f97a53c8ba51.bptc.ctex"
+path.astc="res://.godot/imported/back_pressed.png-c320bbea83046f8758b6f97a53c8ba51.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.bptc.ctex", "res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.astc.ctex"]
+source_file="res://TitlePart2D/ConstMap/ItemList/button/pressed/back_pressed.png"
+dest_files=["res://.godot/imported/back_pressed.png-c320bbea83046f8758b6f97a53c8ba51.bptc.ctex", "res://.godot/imported/back_pressed.png-c320bbea83046f8758b6f97a53c8ba51.astc.ctex"]
 
 [params]
 

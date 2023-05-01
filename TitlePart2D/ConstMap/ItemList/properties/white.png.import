@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d31vfh5o7bfst"
-path.bptc="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.bptc.ctex"
-path.astc="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.astc.ctex"
+uid="uid://cheawvpqglxjk"
+path.bptc="res://.godot/imported/white.png-f620f0ba768c46487973c4aff2845408.bptc.ctex"
+path.astc="res://.godot/imported/white.png-f620f0ba768c46487973c4aff2845408.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.bptc.ctex", "res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.astc.ctex"]
+source_file="res://TitlePart2D/ConstMap/ItemList/properties/white.png"
+dest_files=["res://.godot/imported/white.png-f620f0ba768c46487973c4aff2845408.bptc.ctex", "res://.godot/imported/white.png-f620f0ba768c46487973c4aff2845408.astc.ctex"]
 
 [params]
 

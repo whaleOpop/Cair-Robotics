@@ -1,0 +1,136 @@
+[gd_scene load_steps=11 format=3 uid="uid://etkwdjw5wk5w"]
+
+[ext_resource type="ArrayMesh" uid="uid://reebnk5mnsa4" path="res://import/corpus.res" id="2_stsb4"]
+[ext_resource type="ArrayMesh" uid="uid://bgoptsrdllnrk" path="res://import/bumper.res" id="3_blw7c"]
+[ext_resource type="ArrayMesh" uid="uid://dm71icggihnck" path="res://import/doors.res" id="4_eq50k"]
+[ext_resource type="ArrayMesh" uid="uid://baw6wxnh0w2b5" path="res://import/windows doors.res" id="5_rfkjo"]
+[ext_resource type="ArrayMesh" uid="uid://cp5oy6tlvsx63" path="res://import/window.res" id="6_c8tvs"]
+[ext_resource type="ArrayMesh" uid="uid://db1idtc0wkcdh" path="res://import/wheelLeft.res" id="7_gq77f"]
+[ext_resource type="Script" path="res://scenes/Car/vehicle_controller.gd" id="8"]
+[ext_resource type="ArrayMesh" uid="uid://bvhyeit3gi543" path="res://import/whhelright.res" id="8_4e3fh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqlse"]
+transparency = 1
+depth_draw_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 0.596078, 0.14902, 1)
+
+[sub_resource type="BoxShape3D" id="6"]
+size = Vector3(2, 0.383606, 2)
+
+[node name="Spatial" type="Node3D"]
+
+[node name="VehicleBody" type="VehicleBody3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.000600457, -0.00374234, -0.00260115)
+script = ExtResource("8")
+
+[node name="CarCorpus" type="MeshInstance3D" parent="VehicleBody"]
+mesh = ExtResource("2_stsb4")
+skeleton = NodePath("../..")
+
+[node name="Bubper" type="MeshInstance3D" parent="VehicleBody/CarCorpus"]
+mesh = ExtResource("3_blw7c")
+skeleton = NodePath("../../..")
+
+[node name="Doors" type="MeshInstance3D" parent="VehicleBody/CarCorpus"]
+mesh = ExtResource("4_eq50k")
+skeleton = NodePath("../../..")
+
+[node name="DoorsGlass" type="MeshInstance3D" parent="VehicleBody/CarCorpus"]
+mesh = ExtResource("5_rfkjo")
+skeleton = NodePath("../../..")
+
+[node name="mirrow" type="MeshInstance3D" parent="VehicleBody/CarCorpus"]
+mesh = ExtResource("6_c8tvs")
+skeleton = NodePath("../../..")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="VehicleBody/CarCorpus"]
+transform = Transform3D(1.24573, -1.84768e-09, 1.05227e-09, 4.99352e-08, 0.0444399, -0.0515599, 6.74927e-09, 0.0122366, 0.187251, 2.02388e-07, 0.641691, -1.33576)
+visible = false
+material = SubResource("StandardMaterial3D_gqlse")
+
+[node name="LWheelBac" type="VehicleWheel3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 0.2, -0.955)
+use_as_steering = true
+wheel_radius = 0.3
+suspension_travel = 0.5
+suspension_stiffness = 25.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="WheelL" type="MeshInstance3D" parent="VehicleBody/LWheelBac"]
+mesh = ExtResource("7_gq77f")
+skeleton = NodePath("../..")
+
+[node name="LWheelFor" type="VehicleWheel3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 0.2, 0.769)
+use_as_steering = true
+wheel_radius = 0.3
+suspension_travel = 0.5
+suspension_stiffness = 25.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="WheelL" type="MeshInstance3D" parent="VehicleBody/LWheelFor"]
+mesh = ExtResource("7_gq77f")
+skeleton = NodePath("../../..")
+
+[node name="RWheelBac" type="VehicleWheel3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0.2, -0.955)
+use_as_steering = true
+wheel_radius = 0.3
+suspension_travel = 0.5
+suspension_stiffness = 25.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="WheelR" type="MeshInstance3D" parent="VehicleBody/RWheelBac"]
+mesh = ExtResource("8_4e3fh")
+skeleton = NodePath("../..")
+
+[node name="RWheelFor" type="VehicleWheel3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0.2, 0.769)
+use_as_steering = true
+wheel_radius = 0.3
+suspension_travel = 0.5
+suspension_stiffness = 25.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="WheelR" type="MeshInstance3D" parent="VehicleBody/RWheelFor"]
+mesh = ExtResource("8_4e3fh")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44269, 0)
+shape = SubResource("6")
+
+[node name="LRay3" type="RayCast3D" parent="VehicleBody"]
+transform = Transform3D(0.473958, 0, -4.59881e-08, 0, 0.566903, 0, -4.59881e-08, 0, 1, -0.592447, 0.0663704, 1.17453)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="LRay2" type="RayCast3D" parent="VehicleBody"]
+transform = Transform3D(0.473958, 0, -4.59881e-08, 0, 0.566903, 0, -4.59881e-08, 0, 1, -0.355468, 0.0663704, 1.17453)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="LRay1" type="RayCast3D" parent="VehicleBody"]
+transform = Transform3D(0.473958, 0, -4.59881e-08, 0, 0.566903, 0, -4.59881e-08, 0, 1, -0.118489, 0.0663704, 1.17453)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="RRay1" type="RayCast3D" parent="VehicleBody"]
+transform = Transform3D(0.473958, 0, -4.59881e-08, 0, 0.566903, 0, -4.59881e-08, 0, 1, 0.118489, 0.0663704, 1.17453)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="RRay2" type="RayCast3D" parent="VehicleBody"]
+transform = Transform3D(0.473958, 0, -4.59881e-08, 0, 0.566903, 0, -4.59881e-08, 0, 1, 0.355468, 0.0663704, 1.17453)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="RRay3" type="RayCast3D" parent="VehicleBody"]
+transform = Transform3D(0.473958, 0, -4.59881e-08, 0, 0.566903, 0, -4.59881e-08, 0, 1, 0.592447, 0.0663704, 1.17453)
+collision_mask = 2
+collide_with_areas = true
