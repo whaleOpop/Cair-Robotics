@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhihurjawyulb"]
+
+[ext_resource type="Texture2D" uid="uid://dujrdc46pk40f" path="res://TitlePart2D/EditRobot/led/background.png" id="1_5ubk8"]
+[ext_resource type="Script" path="res://TitlePart2D/EditRobot/led/led.gd" id="1_al13u"]
+[ext_resource type="FontFile" uid="uid://d4cpq5imkb4w2" path="res://fonts/Inter-Regular.ttf" id="2_ryq2o"]
+[ext_resource type="Texture2D" uid="uid://bq5wwd4nxf11y" path="res://TitlePart2D/EditRobot/led/textbackground.png" id="3_8vw2r"]
+[ext_resource type="Texture2D" uid="uid://dei1v2mmxacmh" path="res://TitlePart2D/EditRobot/duration/Vector.png" id="3_ldr2c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7xder"]
+texture = ExtResource("3_8vw2r")
+
+[sub_resource type="Theme" id="Theme_tuu0y"]
+OptionButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+OptionButton/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+OptionButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_outline_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/constants/arrow_margin = 4
+OptionButton/constants/h_separation = 2
+OptionButton/constants/modulate_arrow = 0
+OptionButton/constants/outline_size = 0
+OptionButton/font_sizes/font_size = 12
+OptionButton/fonts/font = ExtResource("2_ryq2o")
+OptionButton/icons/arrow = ExtResource("3_ldr2c")
+OptionButton/styles/disabled = SubResource("StyleBoxTexture_7xder")
+OptionButton/styles/disabled_mirrored = SubResource("StyleBoxTexture_7xder")
+OptionButton/styles/focus = SubResource("StyleBoxTexture_7xder")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_7xder")
+OptionButton/styles/hover_mirrored = SubResource("StyleBoxTexture_7xder")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_7xder")
+OptionButton/styles/normal_mirrored = SubResource("StyleBoxTexture_7xder")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_7xder")
+OptionButton/styles/pressed_mirrored = SubResource("StyleBoxTexture_7xder")
+
+[node name="led" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1000.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_al13u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_5ubk8")
+
+[node name="OptionButton" type="OptionButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 6.0
+offset_right = 202.0
+offset_bottom = 34.0
+theme = SubResource("Theme_tuu0y")
+alignment = 1
+item_count = 3
+selected = 0
+popup/item_0/text = "OFF"
+popup/item_0/id = 0
+popup/item_1/text = "ON"
+popup/item_1/id = 1
+popup/item_2/text = "FLASH"
+popup/item_2/id = 2
+
+[connection signal="item_selected" from="TextureRect/OptionButton" to="." method="_on_option_button_item_selected"]

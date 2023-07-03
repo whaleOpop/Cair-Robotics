@@ -13,14 +13,20 @@ config_version=5
 config/name="CAIR/ROBOTICS"
 run/main_scene="res://Scene/Menu/Main.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+run/max_fps=60
 boot_splash/bg_color=Color(0.00392157, 0.14902, 0.235294, 1)
 boot_splash/image="res://icon.png"
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://ObjScripts/Globals.gd"
+
 [display]
 
 window/size/viewport_width=1920
-window/size/viewport_height=1000
+window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 
@@ -89,10 +95,22 @@ zoomDown={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":16,"position":Vector2(293, 17),"global_position":Vector2(297, 60),"factor":1.0,"button_index":5,"pressed":true,"double_click":false,"script":null)
 ]
 }
-mouse_down={
+leftMouse={
 "deadzone": 0.5,
-"events": []
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(271, 21),"global_position":Vector2(275, 64),"factor":1.0,"button_index":2,"pressed":true,"double_click":false,"script":null)
+]
 }
+
+[layer_names]
+
+3d_physics/layer_2="black"
+3d_physics/layer_3="white"
+3d_physics/layer_4="color"
+
+[physics]
+
+3d/run_on_separate_thread=true
+3d/physics_engine="GodotPhysics3D"
 
 [rendering]
 

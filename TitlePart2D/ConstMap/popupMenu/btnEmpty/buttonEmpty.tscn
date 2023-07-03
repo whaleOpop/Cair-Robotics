@@ -1,0 +1,47 @@
+[gd_scene load_steps=13 format=3 uid="uid://dh4bdkyf5ghuw"]
+
+[ext_resource type="Script" path="res://TitlePart2D/ConstMap/popupMenu/btnEmpty/buttonEmpty.gd" id="1_4gae7"]
+[ext_resource type="FontFile" uid="uid://b5muwcgj5to3l" path="res://fonts/Inter-ExtraLight.ttf" id="1_mgux6"]
+[ext_resource type="Texture2D" uid="uid://bdt3y6tdwwr57" path="res://TitlePart2D/ConstMap/popupMenu/btnEmpty/button hoverbtndyn.png" id="2_431j4"]
+[ext_resource type="Texture2D" uid="uid://b0h8b41nsefv7" path="res://TitlePart2D/ConstMap/popupMenu/btnEmpty/button pressedbtndynsFocus.png" id="2_nfnwm"]
+[ext_resource type="Texture2D" uid="uid://dco2ikflkagc" path="res://TitlePart2D/ConstMap/popupMenu/btnEmpty/button normalbtndyn.png" id="3_4hwyl"]
+[ext_resource type="Texture2D" uid="uid://dee202xdgqoid" path="res://TitlePart2D/ConstMap/popupMenu/btnEmpty/button pressedbtndyn.png" id="4_y5q3k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0r6ow"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mt2co"]
+texture = ExtResource("2_nfnwm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kqyno"]
+texture = ExtResource("2_431j4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_esqrn"]
+texture = ExtResource("3_4hwyl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yh5fe"]
+texture = ExtResource("4_y5q3k")
+
+[sub_resource type="Theme" id="Theme_vmdgp"]
+Button/fonts/font = ExtResource("1_mgux6")
+Button/styles/disabled = SubResource("StyleBoxEmpty_0r6ow")
+Button/styles/focus = SubResource("StyleBoxTexture_mt2co")
+Button/styles/hover = SubResource("StyleBoxTexture_kqyno")
+Button/styles/normal = SubResource("StyleBoxTexture_esqrn")
+Button/styles/pressed = SubResource("StyleBoxTexture_yh5fe")
+
+[node name="buttonEmpty" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4gae7")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 237.0
+offset_bottom = 38.0
+theme = SubResource("Theme_vmdgp")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

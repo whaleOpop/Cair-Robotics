@@ -1,0 +1,60 @@
+[gd_scene load_steps=14 format=3 uid="uid://tp5b8qqx614d"]
+
+[ext_resource type="Texture2D" uid="uid://ce2eewolgq7ro" path="res://TitlePart2D/EditRobot/stButton/listfocusSt.png" id="1_1bj47"]
+[ext_resource type="Script" path="res://TitlePart2D/EditRobot/stButton/StatmentButton.gd" id="1_a2hc6"]
+[ext_resource type="Texture2D" uid="uid://bjnj613wv1exx" path="res://TitlePart2D/EditRobot/stButton/listhoverSt.png" id="2_prpo3"]
+[ext_resource type="Texture2D" uid="uid://ds6cahipea47c" path="res://TitlePart2D/EditRobot/stButton/listnormalSt.png" id="3_676y5"]
+[ext_resource type="Texture2D" uid="uid://cmri4je2yvvy4" path="res://TitlePart2D/EditRobot/stButton/listPressSt.png" id="4_ysbyx"]
+[ext_resource type="FontFile" uid="uid://chyoswdth4ior" path="res://fonts/Inter-Thin.ttf" id="5_3b8re"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xw206"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxku0"]
+texture = ExtResource("1_1bj47")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u8s7e"]
+texture = ExtResource("2_prpo3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_68fpw"]
+texture = ExtResource("3_676y5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8nmxv"]
+texture = ExtResource("4_ysbyx")
+
+[sub_resource type="Theme" id="Theme_f26hl"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_xw206")
+Button/styles/focus = SubResource("StyleBoxTexture_yxku0")
+Button/styles/hover = SubResource("StyleBoxTexture_u8s7e")
+Button/styles/normal = SubResource("StyleBoxTexture_68fpw")
+Button/styles/pressed = SubResource("StyleBoxTexture_8nmxv")
+
+[sub_resource type="Theme" id="Theme_3qxxr"]
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("5_3b8re")
+
+[node name="StatmentButton" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1000.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a2hc6")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 47.0
+theme = SubResource("Theme_f26hl")
+theme_override_constants/outline_size = 0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 56.0
+offset_bottom = 28.0
+theme = SubResource("Theme_3qxxr")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

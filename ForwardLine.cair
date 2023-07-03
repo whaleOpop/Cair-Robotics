@@ -1,0 +1,3 @@
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Finish","position":"(0, 0, 4)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Forward","position":"(0, 0, -4)","rotation_degrees":"(0, 90, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Forward","position":"(0, 0, 0)","rotation_degrees":"(0, 90, 0)"}

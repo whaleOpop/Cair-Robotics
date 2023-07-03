@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://rbinlye0m0dd"]
+
+[ext_resource type="PackedScene" uid="uid://lr67b1cnl44v" path="res://TitlePart3D/prefabMaps/parts/Finish.tscn" id="1_qvq3p"]
+[ext_resource type="PackedScene" uid="uid://djnydbrcy06tb" path="res://TitlePart3D/prefabMaps/parts/Forward.tscn" id="2_ho70f"]
+[ext_resource type="PackedScene" uid="uid://etkwdjw5wk5w" path="res://ScriptsCar/Car.tscn" id="3_v26d7"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Finish" parent="." instance=ExtResource("1_qvq3p")]
+
+[node name="Forward" parent="." instance=ExtResource("2_ho70f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -4)
+
+[node name="Spatial" parent="." instance=ExtResource("3_v26d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.883227, -3.19791)

@@ -1,0 +1,1340 @@
+[gd_scene load_steps=113 format=3 uid="uid://d4kp45ihwxstf"]
+
+[ext_resource type="Script" path="res://Scene/Map/Map.gd" id="1_0hvd8"]
+[ext_resource type="Environment" uid="uid://bvy1jx3l4sjxp" path="res://Environment.tres" id="1_47h5t"]
+[ext_resource type="PackedScene" uid="uid://c3v1t4e0e4qs1" path="res://TitlePart3D/MapLoader/MapLoader.tscn" id="1_s5dra"]
+[ext_resource type="Shader" path="res://Shader/blur.gdshader" id="3_35o6i"]
+[ext_resource type="Texture2D" uid="uid://ce0uapasrul6g" path="res://TitlePart2D/EditRobot/upper/Group 109.png" id="4_eeuw8"]
+[ext_resource type="Script" path="res://Scene/Map/Panel.gd" id="4_x1yt8"]
+[ext_resource type="Texture2D" uid="uid://gmnkmupdb7pn" path="res://TitlePart2D/EditRobot/background/Background (1).png" id="5_71une"]
+[ext_resource type="PackedScene" uid="uid://cvnwf4i7oa545" path="res://TitlePart2D/EditRobot/time/time.tscn" id="5_71070"]
+[ext_resource type="PackedScene" uid="uid://dhihurjawyulb" path="res://TitlePart2D/EditRobot/led/led.tscn" id="5_d3xoj"]
+[ext_resource type="PackedScene" uid="uid://qeqx5pcetu6n" path="res://TitlePart2D/EditRobot/linesensor/LineSensor.tscn" id="5_e3moy"]
+[ext_resource type="Texture2D" uid="uid://mm2dost66w0g" path="res://TitlePart2D/EditRobot/upper/back_hover.png" id="5_wwwal"]
+[ext_resource type="Texture2D" uid="uid://prmo4l4a67n3" path="res://TitlePart2D/EditRobot/speed/speed_btn.png" id="6_0ifst"]
+[ext_resource type="Texture2D" uid="uid://be6uxpufupfpg" path="res://TitlePart2D/EditRobot/rotation/btn_rotation.png" id="6_10cin"]
+[ext_resource type="Texture2D" uid="uid://bxc0i3wctl30j" path="res://TitlePart2D/EditRobot/background/Сarcarui.png" id="6_cuamn"]
+[ext_resource type="PackedScene" uid="uid://dqeks8b0okag1" path="res://TitlePart2D/EditRobot/duration/duration.tscn" id="6_k7t7c"]
+[ext_resource type="Texture2D" uid="uid://tvujrr7uk6x6" path="res://TitlePart2D/EditRobot/ColorSensor/coloruiScripst.svg" id="6_pefhb"]
+[ext_resource type="PackedScene" uid="uid://b6trfh0eudnha" path="res://TitlePart2D/EditRobot/speed/speed.tscn" id="7_5vcqg"]
+[ext_resource type="Texture2D" uid="uid://cy832isb4055o" path="res://TitlePart2D/EditRobot/ToolBar/toolbarbackTool.png" id="7_i4t4f"]
+[ext_resource type="PackedScene" uid="uid://bej71phw1av5u" path="res://TitlePart2D/EditRobot/rotation/rotation.tscn" id="7_kahm1"]
+[ext_resource type="PackedScene" uid="uid://dqyha8d6y0tpy" path="res://TitlePart2D/EditRobot/ColorSensor/ColorSensor.tscn" id="7_wmsdv"]
+[ext_resource type="Texture2D" uid="uid://dy1t103scg7t" path="res://TitlePart2D/EditRobot/ultrasonic/button/ultrasonic.png" id="8_6j02d"]
+[ext_resource type="Texture2D" uid="uid://koxcbrb0cdkn" path="res://TitlePart2D/EditRobot/upper/Шапка (2).png" id="8_k8ar5"]
+[ext_resource type="Theme" uid="uid://c0mooevvpxwpi" path="res://TitlePart2D/EditRobot/ToolBar/button/tooltres.tres" id="8_svs0e"]
+[ext_resource type="PackedScene" uid="uid://c0b8vjfg0pwt1" path="res://TitlePart2D/EditRobot/ultrasonic/ultrasonic.tscn" id="9_d0jcs"]
+[ext_resource type="Texture2D" uid="uid://tci1t2esp8pu" path="res://TitlePart2D/EditRobot/ToolBar/icon/play.png" id="9_y7axb"]
+[ext_resource type="Texture2D" uid="uid://dsrrhr65kt8i0" path="res://TitlePart2D/EditRobot/ToolBar/icon/package.png" id="10_kkede"]
+[ext_resource type="Texture2D" uid="uid://b11awt7my4h43" path="res://TitlePart2D/EditRobot/ToolBar/icon/save.png" id="11_atcd2"]
+[ext_resource type="Texture2D" uid="uid://b2rqebjjm00uw" path="res://TitlePart2D/EditRobot/ToolBar/icon/upload.png" id="12_hdehy"]
+[ext_resource type="Texture2D" uid="uid://iapciqro15t4" path="res://TitlePart2D/EditRobot/StBar/cicleButton hover.png" id="13_oiooy"]
+[ext_resource type="Texture2D" uid="uid://dkoas3v3im3ij" path="res://TitlePart2D/EditRobot/StBar/cicleButton normal.png" id="14_wsjsw"]
+[ext_resource type="Texture2D" uid="uid://couvpf0siwac7" path="res://TitlePart2D/EditRobot/StBar/cicleButton press.png" id="15_m825g"]
+[ext_resource type="Texture2D" uid="uid://2psfj8yf2314" path="res://TitlePart2D/EditRobot/StBar/icon/plus.png" id="16_g4gce"]
+[ext_resource type="Texture2D" uid="uid://c2l20rrp1xpt2" path="res://TitlePart2D/EditRobot/StBar/icon/minus.png" id="17_t7v8s"]
+[ext_resource type="Texture2D" uid="uid://djmjhdyuar5ng" path="res://TitlePart2D/EditRobot/StBar/icon/up.png" id="18_rsdwy"]
+[ext_resource type="Texture2D" uid="uid://bx0qht5ykxn8x" path="res://TitlePart2D/EditRobot/StBar/icon/down.png" id="19_vmajn"]
+[ext_resource type="FontFile" uid="uid://b4emn1rakq1q1" path="res://fonts/Inter-Light.ttf" id="21_rlyqe"]
+[ext_resource type="Texture2D" uid="uid://b063hd20qkslf" path="res://TitlePart2D/EditRobot/linesensor/button/line.png" id="22_cninw"]
+[ext_resource type="Texture2D" uid="uid://cxqomtlc4cvmn" path="res://ObjScripts/background.png" id="36_y5pxm"]
+[ext_resource type="Texture2D" uid="uid://dgryrosr1d3r5" path="res://TitlePart2D/ConstMap/popupMenu/btnOk/hoverOKey.png" id="37_upqsl"]
+[ext_resource type="Texture2D" uid="uid://fypb7a11hj4r" path="res://TitlePart2D/ConstMap/popupMenu/btnOk/normalOKey.png" id="38_v1gnc"]
+[ext_resource type="Texture2D" uid="uid://bxhqts4e7s120" path="res://TitlePart2D/ConstMap/popupMenu/btnOk/pressedOKey.png" id="39_r64g7"]
+[ext_resource type="Texture2D" uid="uid://bptorhsmdiri1" path="res://TitlePart2D/ConstMap/popupMenu/btnCancel/hoverCancel.png" id="40_jhxlt"]
+[ext_resource type="Texture2D" uid="uid://dnvvpfaprht7q" path="res://TitlePart2D/ConstMap/popupMenu/btnCancel/normalCancel.png" id="41_nuo11"]
+[ext_resource type="Texture2D" uid="uid://tgcx68ti3fr0" path="res://TitlePart2D/ConstMap/popupMenu/btnCancel/pressedCancel.png" id="42_cehux"]
+[ext_resource type="Texture2D" uid="uid://ddnc5ocgdaia3" path="res://TitlePart2D/ConstMap/popupMenu/lineedit focus.png" id="43_wp8qt"]
+[ext_resource type="FontFile" uid="uid://b266fmqwrlsqt" path="res://fonts/Inter-ExtraBold.ttf" id="44_124c5"]
+[ext_resource type="Texture2D" uid="uid://g0w6k4o4upmo" path="res://TitlePart2D/ConstMap/popupMenu/line editnormal.png" id="44_l336e"]
+[ext_resource type="Texture2D" uid="uid://7xof2pvk4x13" path="res://Rectangle 88 (1).png" id="48_x3en1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y66ij"]
+texture = ExtResource("5_wwwal")
+
+[sub_resource type="Theme" id="Theme_1nqic"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("21_rlyqe")
+Button/styles/disabled = SubResource("StyleBoxTexture_y66ij")
+Button/styles/focus = SubResource("StyleBoxTexture_y66ij")
+Button/styles/hover = SubResource("StyleBoxTexture_y66ij")
+Button/styles/normal = SubResource("StyleBoxTexture_y66ij")
+Button/styles/pressed = SubResource("StyleBoxTexture_y66ij")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgx42"]
+texture = ExtResource("4_eeuw8")
+
+[sub_resource type="Theme" id="Theme_ft2rg"]
+Button/styles/disabled = SubResource("StyleBoxTexture_pgx42")
+Button/styles/focus = SubResource("StyleBoxTexture_pgx42")
+Button/styles/hover = SubResource("StyleBoxTexture_pgx42")
+Button/styles/normal = SubResource("StyleBoxTexture_pgx42")
+Button/styles/pressed = SubResource("StyleBoxTexture_pgx42")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vlgal"]
+shader = ExtResource("3_35o6i")
+shader_parameter/amount = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omfgw"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ei0s"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 44
+corner_radius_top_right = 44
+corner_radius_bottom_right = 44
+corner_radius_bottom_left = 44
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vy5un"]
+texture = ExtResource("6_0ifst")
+
+[sub_resource type="Theme" id="Theme_6ddet"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("21_rlyqe")
+Button/styles/disabled = SubResource("StyleBoxTexture_vy5un")
+Button/styles/focus = SubResource("StyleBoxTexture_vy5un")
+Button/styles/hover = SubResource("StyleBoxTexture_vy5un")
+Button/styles/normal = SubResource("StyleBoxTexture_vy5un")
+Button/styles/pressed = SubResource("StyleBoxTexture_vy5un")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4kns"]
+bg_color = Color(0, 0, 0, 0.184314)
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ik1rl"]
+bg_color = Color(0, 0, 0, 0.184314)
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ehbl"]
+texture = ExtResource("6_10cin")
+
+[sub_resource type="Theme" id="Theme_48j1m"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("21_rlyqe")
+Button/styles/disabled = SubResource("StyleBoxTexture_6ehbl")
+Button/styles/focus = SubResource("StyleBoxTexture_6ehbl")
+Button/styles/hover = SubResource("StyleBoxTexture_6ehbl")
+Button/styles/normal = SubResource("StyleBoxTexture_6ehbl")
+Button/styles/pressed = SubResource("StyleBoxTexture_6ehbl")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vipg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w4gta"]
+texture = ExtResource("6_pefhb")
+
+[sub_resource type="Theme" id="Theme_f8urm"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("21_rlyqe")
+Button/styles/disabled = SubResource("StyleBoxEmpty_1vipg")
+Button/styles/focus = SubResource("StyleBoxTexture_w4gta")
+Button/styles/hover = SubResource("StyleBoxTexture_w4gta")
+Button/styles/normal = SubResource("StyleBoxTexture_w4gta")
+Button/styles/pressed = SubResource("StyleBoxTexture_w4gta")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18fgg"]
+texture = ExtResource("22_cninw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svqvc"]
+texture = ExtResource("22_cninw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4p2ip"]
+texture = ExtResource("22_cninw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ppdx"]
+texture = ExtResource("22_cninw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b5b5h"]
+texture = ExtResource("22_cninw")
+
+[sub_resource type="Theme" id="Theme_rvdhj"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("21_rlyqe")
+Button/styles/disabled = SubResource("StyleBoxTexture_18fgg")
+Button/styles/focus = SubResource("StyleBoxTexture_svqvc")
+Button/styles/hover = SubResource("StyleBoxTexture_4p2ip")
+Button/styles/normal = SubResource("StyleBoxTexture_2ppdx")
+Button/styles/pressed = SubResource("StyleBoxTexture_b5b5h")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htrhg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw7fp"]
+texture = ExtResource("8_6j02d")
+
+[sub_resource type="Theme" id="Theme_c4c20"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_htrhg")
+Button/styles/focus = SubResource("StyleBoxTexture_gw7fp")
+Button/styles/hover = SubResource("StyleBoxTexture_gw7fp")
+Button/styles/normal = SubResource("StyleBoxTexture_gw7fp")
+Button/styles/pressed = SubResource("StyleBoxTexture_gw7fp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_us5du"]
+shader = ExtResource("3_35o6i")
+shader_parameter/amount = 3.9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dihes"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 44
+corner_radius_top_right = 44
+corner_radius_bottom_right = 44
+corner_radius_bottom_left = 44
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tyre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xdwge"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ukndi"]
+texture = ExtResource("13_oiooy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gbqia"]
+texture = ExtResource("14_wsjsw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7be01"]
+texture = ExtResource("15_m825g")
+
+[sub_resource type="Theme" id="Theme_ewm0q"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_3tyre")
+Button/styles/focus = SubResource("StyleBoxEmpty_xdwge")
+Button/styles/hover = SubResource("StyleBoxTexture_ukndi")
+Button/styles/normal = SubResource("StyleBoxTexture_gbqia")
+Button/styles/pressed = SubResource("StyleBoxTexture_7be01")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g22of"]
+shader = ExtResource("3_35o6i")
+shader_parameter/amount = 2.768
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vu2x"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oevtu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ul01h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_525m3"]
+texture = ExtResource("37_upqsl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqseb"]
+texture = ExtResource("38_v1gnc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pcw6b"]
+texture = ExtResource("39_r64g7")
+
+[sub_resource type="Theme" id="Theme_8ty5a"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("21_rlyqe")
+Button/styles/disabled = SubResource("StyleBoxEmpty_oevtu")
+Button/styles/focus = SubResource("StyleBoxEmpty_ul01h")
+Button/styles/hover = SubResource("StyleBoxTexture_525m3")
+Button/styles/normal = SubResource("StyleBoxTexture_pqseb")
+Button/styles/pressed = SubResource("StyleBoxTexture_pcw6b")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5gx8w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgc8w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5qp1"]
+texture = ExtResource("40_jhxlt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfwoe"]
+texture = ExtResource("41_nuo11")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r2hrb"]
+texture = ExtResource("42_cehux")
+
+[sub_resource type="Theme" id="Theme_jnb7w"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("21_rlyqe")
+Button/styles/disabled = SubResource("StyleBoxEmpty_5gx8w")
+Button/styles/focus = SubResource("StyleBoxEmpty_kgc8w")
+Button/styles/hover = SubResource("StyleBoxTexture_y5qp1")
+Button/styles/normal = SubResource("StyleBoxTexture_dfwoe")
+Button/styles/pressed = SubResource("StyleBoxTexture_r2hrb")
+
+[sub_resource type="Image" id="Image_wv32h"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 186, 255, 255, 255, 57, 255, 255, 255, 142, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 189, 255, 255, 255, 58, 255, 255, 255, 0, 255, 255, 255, 6, 255, 255, 255, 133, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 190, 255, 255, 255, 68, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 4, 255, 255, 255, 124, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 78, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 2, 255, 255, 255, 113, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 90, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 1, 255, 255, 255, 102, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_epp6k"]
+image = SubResource("Image_wv32h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_448gf"]
+texture = ExtResource("43_wp8qt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4m8lk"]
+texture = ExtResource("44_l336e")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0v16"]
+
+[sub_resource type="Theme" id="Theme_d6xgk"]
+LineEdit/colors/caret_color = Color(0.95, 0.95, 0.95, 1)
+LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/font_outline_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_uneditable_color = Color(0.875, 0.875, 0.875, 0.5)
+LineEdit/colors/selection_color = Color(0.5, 0.5, 0.5, 1)
+LineEdit/constants/caret_width = 1
+LineEdit/constants/minimum_character_width = 4
+LineEdit/constants/outline_size = 0
+LineEdit/font_sizes/font_size = 16
+LineEdit/fonts/font = ExtResource("21_rlyqe")
+LineEdit/icons/clear = SubResource("ImageTexture_epp6k")
+LineEdit/styles/focus = SubResource("StyleBoxTexture_448gf")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_4m8lk")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_f0v16")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83508"]
+bg_color = Color(0.6, 0.6, 0.6, 0.52549)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Animation" id="Animation_3cnbj"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Panel2/Line:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(77, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Panel2/Line:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-28, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/Panel2/UltraSonnic:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-33, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3D/Panel2/UltraSonnic:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(45, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3D/Panel2/ColorSensor:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-33, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3D/Panel2/ColorSensor:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(172, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Node3D/Panel2/duration:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-85, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Node3D/Panel2/duration:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(281, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Node3D/Panel2/led:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-43, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Node3D/Panel2/led:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(333, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Node3D/Panel2/time:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-44, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Node3D/Panel2/time:position:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(398, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Node3D/Panel2/Rotation:position:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-33, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Node3D/Panel2/Rotation:position:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(483, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Node3D/Panel2/Speed:position:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(805, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Node3D/Panel2/Speed:position:y")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(214, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_pmwlw"]
+resource_name = "color_btn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Panel2/ColorSensor:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-33, -0.25, 0, 0.25, 0, -210, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Panel2/ColorSensor:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(172, -0.25, 0, 0.25, 0, 172, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_4sj48"]
+resource_name = "dur_btn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Panel2/duration:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-83, -0.25, 0, 0.25, 0, -209, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Panel2/duration:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(281, -0.25, 0, 0.25, 0, 281, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_kgh3y"]
+resource_name = "let_btn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Panel2/led:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-43, -0.25, 0, 0.25, 0, -208, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Panel2/led:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(333, -0.25, 0, 0.25, 0, 333, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_j6imc"]
+resource_name = "line_btn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Panel2/Line:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(77, -0.25, 0, 0.25, 0, 77, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Panel2/Line:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-28, -0.25, 0, 0.25, 0, -94, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_7xn2c"]
+resource_name = "rotation_btn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Panel2/Rotation:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-33, -0.25, 0, 0.25, 0, -241, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Panel2/Rotation:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(483, -0.25, 0, 0.25, 0, 483, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_r1a42"]
+resource_name = "speed_btn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Panel2/Speed:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(805, -0.25, 0, 0.25, 0, 1051, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Panel2/Speed:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(214, -0.25, 0, 0.25, 0, 214, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_d13we"]
+resource_name = "time_btn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Panel2/time:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-44, -0.25, 0, 0.25, 0, -208, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Panel2/time:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(398, -0.25, 0, 0.25, 0, 398, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_36nhk"]
+resource_name = "ultra_btn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Panel2/UltraSonnic:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-33, -0.25, 0, 0.25, 0, -198, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Panel2/UltraSonnic:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(45, -0.25, 0, 0.25, 0, 45, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sloar"]
+_data = {
+"RESET": SubResource("Animation_3cnbj"),
+"color_btn": SubResource("Animation_pmwlw"),
+"dur_btn": SubResource("Animation_4sj48"),
+"let_btn": SubResource("Animation_kgh3y"),
+"line_btn": SubResource("Animation_j6imc"),
+"rotation_btn": SubResource("Animation_7xn2c"),
+"speed_btn": SubResource("Animation_r1a42"),
+"time_btn": SubResource("Animation_d13we"),
+"ultra_btn": SubResource("Animation_36nhk")
+}
+
+[node name="Map" type="CanvasLayer"]
+script = ExtResource("1_0hvd8")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Node3D"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="SubViewport" type="SubViewport" parent="Node3D/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="MapLoader" parent="Node3D/SubViewportContainer/SubViewport" instance=ExtResource("1_s5dra")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
+environment = ExtResource("1_47h5t")
+
+[node name="btnBack" type="Button" parent="Node3D"]
+offset_left = 1816.0
+offset_top = 894.0
+offset_right = 1890.0
+offset_bottom = 968.0
+size_flags_vertical = 8
+theme = SubResource("Theme_1nqic")
+
+[node name="btnRestart" type="Button" parent="Node3D"]
+visible = false
+offset_left = 816.0
+offset_top = 144.0
+offset_right = 1114.0
+offset_bottom = 191.0
+theme = SubResource("Theme_ft2rg")
+
+[node name="Panel3" type="Panel" parent="Node3D"]
+material = SubResource("ShaderMaterial_vlgal")
+offset_left = 40.0
+offset_right = 1960.0
+offset_bottom = 133.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_omfgw")
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel3"]
+layout_mode = 0
+offset_left = -42.0
+offset_top = -7.0
+offset_right = 1878.0
+offset_bottom = 138.0
+texture = ExtResource("8_k8ar5")
+
+[node name="Result" type="Label" parent="Node3D/Panel3/TextureRect"]
+layout_mode = 0
+offset_left = 1375.0
+offset_top = 65.0
+offset_right = 1478.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeRace" type="Label" parent="Node3D/Panel3/TextureRect"]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 81.0
+offset_right = 1114.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 30
+text = "00 : 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Node3D"]
+material = SubResource("ShaderMaterial_vlgal")
+offset_left = 98.0
+offset_top = 314.0
+offset_right = 908.0
+offset_bottom = 1033.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ei0s")
+
+[node name="Speed" type="Button" parent="Node3D/Panel2"]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 214.0
+offset_right = 834.0
+offset_bottom = 300.0
+theme = SubResource("Theme_6ddet")
+toggle_mode = true
+
+[node name="PanelBlac" type="Panel" parent="Node3D/Panel2/Speed"]
+layout_mode = 0
+offset_left = -248.0
+offset_top = -16.0
+offset_right = 2.0
+offset_bottom = 324.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m4kns")
+
+[node name="PanelBlur" type="Panel" parent="Node3D/Panel2/Speed"]
+layout_mode = 0
+offset_left = -248.0
+offset_top = -16.0
+offset_right = 2.0
+offset_bottom = 324.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ik1rl")
+
+[node name="speed" parent="Node3D/Panel2/Speed" instance=ExtResource("7_5vcqg")]
+layout_mode = 1
+offset_left = -250.0
+offset_top = -15.0
+offset_right = -250.0
+offset_bottom = -15.0
+
+[node name="Rotation" type="Button" parent="Node3D/Panel2"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = 483.0
+offset_right = -4.0
+offset_bottom = 580.0
+theme = SubResource("Theme_48j1m")
+toggle_mode = true
+
+[node name="rotation" parent="Node3D/Panel2/Rotation" instance=ExtResource("7_kahm1")]
+layout_mode = 1
+offset_left = 29.0
+offset_top = -12.0
+offset_right = 29.0
+offset_bottom = -12.0
+
+[node name="time" parent="Node3D/Panel2" instance=ExtResource("5_71070")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -44.0
+offset_top = 398.0
+offset_right = -43.0
+offset_bottom = 399.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="led" parent="Node3D/Panel2" instance=ExtResource("5_d3xoj")]
+layout_mode = 1
+offset_left = -43.0
+offset_top = 333.0
+offset_right = 12917.0
+offset_bottom = 11837.0
+
+[node name="duration" parent="Node3D/Panel2" instance=ExtResource("6_k7t7c")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -85.0
+offset_top = 281.0
+offset_right = -84.0
+offset_bottom = 282.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="ColorSensor" type="Button" parent="Node3D/Panel2"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = 172.0
+offset_right = -4.0
+offset_bottom = 258.0
+theme = SubResource("Theme_f8urm")
+toggle_mode = true
+
+[node name="colorsensor" parent="Node3D/Panel2/ColorSensor" instance=ExtResource("7_wmsdv")]
+layout_mode = 1
+offset_left = 29.0
+offset_top = -8.0
+offset_right = 29.0
+offset_bottom = -8.0
+
+[node name="Line" type="Button" parent="Node3D/Panel2"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = -28.0
+offset_right = 163.0
+offset_bottom = 1.00018
+theme = SubResource("Theme_rvdhj")
+toggle_mode = true
+
+[node name="LineSensor" parent="Node3D/Panel2/Line" instance=ExtResource("5_e3moy")]
+layout_mode = 1
+offset_left = -8.0
+offset_top = 29.0
+offset_right = -8.0
+offset_bottom = 29.0
+
+[node name="UltraSonnic" type="Button" parent="Node3D/Panel2"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = 45.0
+offset_right = -4.0
+offset_bottom = 149.0
+theme = SubResource("Theme_c4c20")
+toggle_mode = true
+
+[node name="ultrasonic" parent="Node3D/Panel2/UltraSonnic" instance=ExtResource("9_d0jcs")]
+offset_left = 29.0
+offset_top = -1.0
+offset_right = 29.0
+offset_bottom = -1.0
+
+[node name="Panel" type="Panel" parent="Node3D/Panel2"]
+material = SubResource("ShaderMaterial_us5du")
+layout_mode = 0
+offset_left = -4.0
+offset_top = 1.0
+offset_right = 806.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dihes")
+script = ExtResource("4_x1yt8")
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.00988
+anchor_bottom = 1.01113
+offset_left = -4.0
+offset_right = -4.00275
+offset_bottom = -0.00244141
+texture = ExtResource("5_71une")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 51.0
+offset_right = 387.0
+offset_bottom = 690.0
+texture = ExtResource("6_cuamn")
+
+[node name="TextureRect3" type="TextureRect" parent="Node3D/Panel2/Panel"]
+layout_mode = 0
+anchor_left = 0.658025
+anchor_top = 0.077886
+anchor_right = 0.920988
+anchor_bottom = 0.176634
+offset_right = -6.10352e-05
+offset_bottom = 0.000183105
+texture = ExtResource("7_i4t4f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Node3D/Panel2/Panel/TextureRect3"]
+layout_mode = 2
+theme_override_constants/separation = 53
+
+[node name="Control" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control"]
+layout_mode = 2
+offset_right = 54.0
+offset_bottom = 54.0
+theme = ExtResource("8_svs0e")
+icon = ExtResource("9_y7axb")
+icon_alignment = 1
+
+[node name="Control2" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+layout_mode = 2
+
+[node name="Package" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control2"]
+layout_mode = 2
+offset_right = 54.0
+offset_bottom = 54.0
+theme = ExtResource("8_svs0e")
+icon = ExtResource("10_kkede")
+icon_alignment = 1
+
+[node name="Control3" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+layout_mode = 2
+
+[node name="Save" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control3"]
+layout_mode = 2
+offset_right = 54.0
+offset_bottom = 54.0
+theme = ExtResource("8_svs0e")
+icon = ExtResource("11_atcd2")
+icon_alignment = 1
+
+[node name="Control4" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+layout_mode = 2
+
+[node name="Upload" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control4"]
+layout_mode = 2
+offset_right = 54.0
+offset_bottom = 54.0
+theme = ExtResource("8_svs0e")
+icon = ExtResource("12_hdehy")
+icon_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Node3D/Panel2/Panel"]
+layout_mode = 0
+offset_left = 547.0
+offset_top = 115.0
+offset_right = 628.0
+offset_bottom = 155.0
+theme_override_constants/separation = 27
+
+[node name="Control" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="plus" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+theme = SubResource("Theme_ewm0q")
+icon = ExtResource("16_g4gce")
+icon_alignment = 1
+
+[node name="Control2" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="minus" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control2"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+theme = SubResource("Theme_ewm0q")
+icon = ExtResource("17_t7v8s")
+icon_alignment = 1
+
+[node name="Control3" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="up" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control3"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+theme = SubResource("Theme_ewm0q")
+icon = ExtResource("18_rsdwy")
+icon_alignment = 1
+
+[node name="Control4" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="down" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control4"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+theme = SubResource("Theme_ewm0q")
+icon = ExtResource("19_vmajn")
+icon_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Node3D/Panel2/Panel"]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 148.0
+offset_right = 772.0
+offset_bottom = 676.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node3D/Panel2/Panel/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 47
+
+[node name="CurStatment" type="Label" parent="Node3D/Panel2/Panel"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 11.0
+offset_right = 450.0
+offset_bottom = 47.0
+text = "Add first statment"
+horizontal_alignment = 2
+
+[node name="Panel" type="Panel" parent="Node3D"]
+visible = false
+material = SubResource("ShaderMaterial_g22of")
+offset_top = -4.0
+offset_right = 1915.0
+offset_bottom = 1075.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vu2x")
+
+[node name="Panel" type="Panel" parent="Node3D/Panel"]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 999.0
+scale = Vector2(1, 1.08)
+theme_override_styles/panel = SubResource("StyleBoxFlat_m4kns")
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.5
+offset_top = -150.5
+offset_right = 177.5
+offset_bottom = 150.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("36_y5pxm")
+
+[node name="ok" type="Button" parent="Node3D/Panel/TextureRect"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 235.0
+offset_right = 161.0
+offset_bottom = 273.0
+theme = SubResource("Theme_8ty5a")
+
+[node name="cancel" type="Button" parent="Node3D/Panel/TextureRect"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 235.0
+offset_right = 309.0
+offset_bottom = 273.0
+theme = SubResource("Theme_jnb7w")
+
+[node name="LineEdit" type="LineEdit" parent="Node3D/Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -14.0
+offset_right = 126.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_d6xgk")
+alignment = 1
+max_length = 10
+
+[node name="Label" type="Label" parent="Node3D/Panel/TextureRect"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 189.0
+offset_right = 301.0
+offset_bottom = 225.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("44_124c5")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+max_lines_visible = 10
+
+[node name="Panel4" type="Panel" parent="Node3D"]
+visible = false
+offset_left = 986.0
+offset_top = 475.0
+offset_right = 1234.0
+offset_bottom = 733.0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_83508")
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel4"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 8.0
+offset_right = 253.0
+offset_bottom = 266.0
+texture = ExtResource("48_x3en1")
+
+[node name="Finish" type="Label" parent="Node3D/Panel4"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 26.0
+offset_right = 177.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 20
+text = "Succesfull"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="Node3D/Panel4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -43.0
+offset_right = 19.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Node3D/Panel4"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 132.0
+offset_right = 140.0
+offset_bottom = 152.0
+
+[node name="okSuck" type="Button" parent="Node3D/Panel4"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 198.0
+offset_right = 191.0
+offset_bottom = 236.0
+theme = SubResource("Theme_8ty5a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sloar")
+}
+
+[node name="Seconds" type="Timer" parent="."]
+process_callback = 0
+
+[connection signal="pressed" from="Node3D/btnBack" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="Node3D/btnRestart" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="Node3D/Panel2/Speed" to="." method="_on_speed_toggled"]
+[connection signal="toggled" from="Node3D/Panel2/Rotation" to="." method="_on_rotation_toggled"]
+[connection signal="gui_input" from="Node3D/Panel2/time" to="." method="_on_time_gui_input"]
+[connection signal="gui_input" from="Node3D/Panel2/led" to="." method="_on_led_gui_input"]
+[connection signal="gui_input" from="Node3D/Panel2/duration" to="." method="_on_duration_gui_input"]
+[connection signal="toggled" from="Node3D/Panel2/ColorSensor" to="." method="_on_color_sensor_toggled"]
+[connection signal="pressed" from="Node3D/Panel2/Line" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="Node3D/Panel2/Line" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Node3D/Panel2/UltraSonnic" to="." method="_on_ultra_sonnic_toggled"]
+[connection signal="gui_input" from="Node3D/Panel2/Panel" to="Node3D/Panel2/Panel" method="_on_gui_input"]
+[connection signal="pressed" from="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control/plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control2/minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control3/up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control4/down" to="." method="_on_down_pressed"]
+[connection signal="child_entered_tree" from="Node3D/Panel2/Panel/ScrollContainer/VBoxContainer" to="." method="_on_v_box_container_child_entered_tree"]
+[connection signal="child_exiting_tree" from="Node3D/Panel2/Panel/ScrollContainer/VBoxContainer" to="." method="_on_v_box_container_child_exiting_tree"]
+[connection signal="pressed" from="Node3D/Panel/TextureRect/ok" to="." method="_on_ok_pressed"]
+[connection signal="pressed" from="Node3D/Panel/TextureRect/cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Node3D/Panel4/okSuck" to="." method="_on_ok_suck_pressed"]
+[connection signal="timeout" from="Seconds" to="." method="_on_seconds_timeout"]

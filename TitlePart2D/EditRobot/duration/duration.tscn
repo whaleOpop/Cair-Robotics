@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqeks8b0okag1"]
+
+[ext_resource type="Texture2D" uid="uid://5ft1kmha7c7v" path="res://TitlePart2D/EditRobot/duration/background.png" id="1_6iike"]
+[ext_resource type="Script" path="res://TitlePart2D/EditRobot/duration/duration.gd" id="1_t8ykt"]
+[ext_resource type="Script" path="res://TitlePart2D/EditRobot/duration/OptionButton.gd" id="2_jba18"]
+[ext_resource type="Texture2D" uid="uid://drggo67mngou8" path="res://TitlePart2D/EditRobot/duration/linetextfiel.png" id="2_rd2fi"]
+[ext_resource type="FontFile" uid="uid://b4emn1rakq1q1" path="res://fonts/Inter-Light.ttf" id="3_ph2mv"]
+[ext_resource type="Texture2D" uid="uid://dei1v2mmxacmh" path="res://TitlePart2D/EditRobot/duration/Vector.png" id="4_iteat"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2c80d"]
+texture = ExtResource("2_rd2fi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgj6e"]
+texture = ExtResource("2_rd2fi")
+
+[sub_resource type="Theme" id="Theme_wfidv"]
+LineEdit/constants/outline_size = 1
+LineEdit/font_sizes/font_size = 16
+LineEdit/styles/focus = SubResource("StyleBoxTexture_2c80d")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_2c80d")
+LineEdit/styles/read_only = SubResource("StyleBoxTexture_2c80d")
+OptionButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+OptionButton/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+OptionButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_outline_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/constants/arrow_margin = 4
+OptionButton/constants/h_separation = 2
+OptionButton/constants/modulate_arrow = 0
+OptionButton/constants/outline_size = 0
+OptionButton/font_sizes/font_size = 16
+OptionButton/fonts/font = ExtResource("3_ph2mv")
+OptionButton/icons/arrow = ExtResource("4_iteat")
+OptionButton/styles/disabled = SubResource("StyleBoxTexture_lgj6e")
+OptionButton/styles/disabled_mirrored = SubResource("StyleBoxTexture_lgj6e")
+OptionButton/styles/focus = SubResource("StyleBoxTexture_lgj6e")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_lgj6e")
+OptionButton/styles/hover_mirrored = SubResource("StyleBoxTexture_lgj6e")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_lgj6e")
+OptionButton/styles/normal_mirrored = SubResource("StyleBoxTexture_lgj6e")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_lgj6e")
+OptionButton/styles/pressed_mirrored = SubResource("StyleBoxTexture_lgj6e")
+
+[node name="duration" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1000.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t8ykt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_6iike")
+
+[node name="OptionButton" type="OptionButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 7.0
+offset_right = 206.0
+offset_bottom = 35.0
+theme = SubResource("Theme_wfidv")
+alignment = 1
+script = ExtResource("2_jba18")
+
+[connection signal="item_selected" from="TextureRect/OptionButton" to="." method="_on_option_button_item_selected"]

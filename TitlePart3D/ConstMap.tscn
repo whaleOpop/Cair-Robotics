@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcvdg6hni2i7j"]
 
 [ext_resource type="ArrayMesh" uid="uid://tv46ly8svkm" path="res://import/kekw.res" id="1_k4ydb"]
-[ext_resource type="Environment" uid="uid://bvy1jx3l4sjxp" path="res://Environment.tres" id="2_xf4cw"]
+[ext_resource type="Environment" uid="uid://bvy1jx3l4sjxp" path="res://Environment.tres" id="2_t1skb"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y70y3"]
 data = PackedVector3Array(-1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, 1, -1, 0, 1, -1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, -1, 1, 0, -1, 1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, 1, 1, 0, 1, -1, 0, 1, -1, 0, 1, 1, 0, 1)
@@ -13,26 +13,36 @@ script/source = "extends Camera3D
 
 var speed = 10
 #var height = 20*100
-var velocity = Vector3(0,20*20,0)
+var velocity = Vector3.ZERO
+var space_state
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+
 @export var ControlMove = preload(\"res://TitlePart3D/3dUi/ControlMove.tscn\")
 
-@onready var cast = $\"../RayCast3D\"
 @onready var camera = $\".\"
+
+
+
+func _ready():
+	space_state=get_world_3d().direct_space_state
+	$\".\".position.y=0
+	pass # Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var _newdelta = 0.0
 var mouseDelat = Vector3()
+var target_position = Vector3(0,20,0)
+var acceleration = 10
+var damping = 0.1
+
 func _process(delta):
 	_newdelta=delta
+	target_position = get_input(target_position,delta)
+	velocity = velocity.lerp(target_position - position, damping)
 	
-
-		
-	velocity=get_input(velocity)
-	self.position=velocity*delta
-
+	position += velocity * delta
+	
 	pass
+
 var posmouse = Vector3()
 var state = String()
 
@@ -42,39 +52,33 @@ var lastobj = null
 var objPress
 var lastObjPress
 func _input(event):
+	
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 
 		var mouse_pos = get_viewport().get_mouse_position()
-		var space_state = get_world_3d().direct_space_state
+		
 		var params= PhysicsRayQueryParameters3D.new()
 		params.from = camera.project_ray_origin(mouse_pos)
 		params.to = params.from + camera.project_ray_normal(mouse_pos) * camera.get_far()
+		
 		var result = space_state.intersect_ray(params)
+		
 		if not result.is_empty():
 			if result and result.collider.has_method(\"_on_interact\"):
-				
+					
 				state = result.collider._on_interact()
 			
-				if state ==\"cell\":
+				if state == \"cell\":
 					
 					result.collider.cell_pressed.connect(ui_view)
 					result.collider.obj_link.connect(get_obj)
 					if lastobj != null:
-						if lastobj==obj:
-							print(\"Это я\")
-						else:
-								
-							print(\"не похож\")
+						if lastobj!=obj:
 							result.collider.cell_pressed.connect(lastobj_press)
 							#lastobj.get_child(ControlMove.instantiate()).queue_free()
 							if lastobj.get_node(\"ControlMove\")!=null:
 								lastobj.get_node(\"ControlMove\").queue_free()
-						
-							#lastobj.get_child(lastobj.get_child_count()-1).queue_free()
-								
-					
 					lastobj=obj
-				
 				if state == \"delete\":
 					obj.queue_free()
 					pass
@@ -94,11 +98,11 @@ func _input(event):
 					obj.rotation_degrees.y+=90
 					pass
 
-			
 				
-				
-				
-	pass
+					
+					
+					
+		pass
 
 func ui_view(isPressed):
 	print(isPressed)
@@ -113,6 +117,7 @@ func ui_view(isPressed):
 			obj.get_node(\"ControlMove\").queue_free()
 		pass
 	pass
+	
 func get_obj(link_obj):
 	obj=link_obj
 	pass
@@ -124,29 +129,23 @@ func obj_press(isPressed):
 func lastobj_press(isPressed):
 	lastObjPress=isPressed
 	pass
-	
-func get_input(_velocity):
-	
-	
-	if Input.is_action_pressed(\"right\"):
-		_velocity.x += 1*speed
-		
-	if Input.is_action_pressed(\"left\"):
-		_velocity.x -= 1*speed
-		
-	if Input.is_action_pressed(\"down\"):
-		_velocity.z += 1*speed
-		
-	if Input.is_action_pressed(\"up\"):
-		_velocity.z -= 1*speed
 
+func get_input(_position,delta):
+	if Input.is_action_pressed(\"right\"):
+		_position.x += acceleration*delta
+	elif Input.is_action_pressed(\"left\"):
+		_position.x -= acceleration*delta
+	if Input.is_action_pressed(\"down\"):
+		_position.z += acceleration*delta
+	elif Input.is_action_pressed(\"up\"):
+		_position.z -= acceleration*delta
 	if Input.is_action_just_released(\"zoomUp\"):
-		_velocity.y-=1*speed		
-	
-	if Input.is_action_just_released(\"zoomDown\"):
-		_velocity.y+=1*speed	
-	
-	return _velocity
+		_position.y -= acceleration*delta    
+	elif Input.is_action_just_released(\"zoomDown\"):
+		_position.y += acceleration*delta
+	return _position
+
+
 
 "
 
@@ -163,8 +162,8 @@ mesh = ExtResource("1_k4ydb")
 shape = SubResource("ConcavePolygonShape3D_y70y3")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-environment = ExtResource("2_xf4cw")
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+environment = ExtResource("2_t1skb")
 current = true
 size = 50.0
 script = SubResource("GDScript_j2hg2")

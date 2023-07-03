@@ -14,6 +14,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [node name="Square" type="Node3D"]
 script = ExtResource("1_wmjk6")
 metadata/NameCell = "Square"
+metadata/isSelected = true
 
 [node name="whiteplane" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.031, 0, 0, 0, 0.1, 0, 0, 0, 4.031, 0, 0, 0)
@@ -21,6 +22,8 @@ mesh = SubResource("BoxMesh_4kwjh")
 surface_material_override/0 = SubResource("StandardMaterial3D_hwv3d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="whiteplane"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_8jjqt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="whiteplane/StaticBody3D"]

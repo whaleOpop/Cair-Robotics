@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://bej71phw1av5u"]
+
+[ext_resource type="Texture2D" uid="uid://ciaiyjw45gpem" path="res://TitlePart2D/EditRobot/rotation/backgroundrotation.png" id="1_hh2f4"]
+[ext_resource type="Script" path="res://TitlePart2D/EditRobot/rotation/rotation.gd" id="1_ixxfq"]
+[ext_resource type="FontFile" uid="uid://d4cpq5imkb4w2" path="res://fonts/Inter-Regular.ttf" id="2_lqf67"]
+[ext_resource type="Texture2D" uid="uid://bceie8wyux50h" path="res://TitlePart2D/EditRobot/rotation/Arrow.png" id="2_pl6t5"]
+[ext_resource type="Texture2D" uid="uid://ho3ldjelblyb" path="res://TitlePart2D/EditRobot/rotation/backlineedit.png" id="3_wjfry"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sd5gb"]
+texture = ExtResource("3_wjfry")
+
+[sub_resource type="Theme" id="Theme_hnx2a"]
+LineEdit/fonts/font = ExtResource("2_lqf67")
+LineEdit/styles/focus = SubResource("StyleBoxTexture_sd5gb")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_sd5gb")
+LineEdit/styles/read_only = SubResource("StyleBoxTexture_sd5gb")
+SpinBox/icons/updown = ExtResource("2_pl6t5")
+
+[node name="rotation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ixxfq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_hh2f4")
+
+[node name="zMin" type="SpinBox" parent="TextureRect"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 87.0
+offset_right = 109.0
+offset_bottom = 107.0
+theme = SubResource("Theme_hnx2a")
+max_value = 1000.0
+alignment = 1
+
+[node name="yMin" type="SpinBox" parent="TextureRect"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 51.0
+offset_right = 109.0
+offset_bottom = 71.0
+theme = SubResource("Theme_hnx2a")
+max_value = 1000.0
+alignment = 1
+
+[node name="xMin" type="SpinBox" parent="TextureRect"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 13.0
+offset_right = 109.0
+offset_bottom = 33.0
+theme = SubResource("Theme_hnx2a")
+max_value = 1000.0
+alignment = 1
+
+[node name="zMax" type="SpinBox" parent="TextureRect"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 87.0
+offset_right = 201.0
+offset_bottom = 107.0
+theme = SubResource("Theme_hnx2a")
+max_value = 1000.0
+alignment = 1
+
+[node name="yMax" type="SpinBox" parent="TextureRect"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 51.0
+offset_right = 201.0
+offset_bottom = 71.0
+theme = SubResource("Theme_hnx2a")
+max_value = 1000.0
+alignment = 1
+
+[node name="xMax" type="SpinBox" parent="TextureRect"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 13.0
+offset_right = 201.0
+offset_bottom = 33.0
+theme = SubResource("Theme_hnx2a")
+max_value = 1000.0
+alignment = 1
+
+[connection signal="value_changed" from="TextureRect/zMin" to="." method="_on_z_min_value_changed"]
+[connection signal="value_changed" from="TextureRect/yMin" to="." method="_on_y_min_value_changed"]
+[connection signal="value_changed" from="TextureRect/xMin" to="." method="_on_x_min_value_changed"]
+[connection signal="value_changed" from="TextureRect/zMax" to="." method="_on_z_max_value_changed"]
+[connection signal="value_changed" from="TextureRect/yMax" to="." method="_on_y_max_value_changed"]
+[connection signal="value_changed" from="TextureRect/xMax" to="." method="_on_x_max_value_changed"]

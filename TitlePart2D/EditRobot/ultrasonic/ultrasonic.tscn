@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0b8vjfg0pwt1"]
+
+[ext_resource type="Script" path="res://TitlePart2D/EditRobot/ultrasonic/ultrasonic.gd" id="1_vlfwm"]
+[ext_resource type="Texture2D" uid="uid://dngoykb3xopcf" path="res://TitlePart2D/EditRobot/ultrasonic/button/backUltra.png" id="1_yw8v0"]
+[ext_resource type="FontFile" uid="uid://d4cpq5imkb4w2" path="res://fonts/Inter-Regular.ttf" id="2_66lk2"]
+[ext_resource type="Texture2D" uid="uid://bah7lgbps30xk" path="res://TitlePart2D/EditRobot/ultrasonic/button/textFieldUltra.png" id="3_6gd4c"]
+[ext_resource type="Texture2D" uid="uid://vo56fckolctu" path="res://TitlePart2D/EditRobot/ultrasonic/button/upDown.png" id="4_peqin"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jb8u4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_th3e5"]
+texture = ExtResource("3_6gd4c")
+
+[sub_resource type="Theme" id="Theme_4t62c"]
+LineEdit/fonts/font = ExtResource("2_66lk2")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_jb8u4")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_th3e5")
+SpinBox/icons/updown = ExtResource("4_peqin")
+
+[sub_resource type="Theme" id="Theme_eog55"]
+LineEdit/constants/caret_width = 1
+LineEdit/constants/minimum_character_width = 4
+LineEdit/constants/outline_size = 1
+LineEdit/font_sizes/font_size = 16
+LineEdit/fonts/font = null
+
+[sub_resource type="Theme" id="Theme_yeuoq"]
+LineEdit/constants/caret_width = 1
+LineEdit/constants/minimum_character_width = 4
+LineEdit/constants/outline_size = 1
+LineEdit/font_sizes/font_size = 16
+LineEdit/fonts/font = null
+
+[node name="ultrasonic" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vlfwm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 107.0
+texture = ExtResource("1_yw8v0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 46.0
+offset_right = 92.0
+offset_bottom = 86.0
+scale = Vector2(0.8, 0.8)
+theme = SubResource("Theme_4t62c")
+theme_override_constants/separation = 110
+
+[node name="Control" type="Control" parent="TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="Min" type="SpinBox" parent="TextureRect/HBoxContainer/Control"]
+layout_mode = 2
+offset_right = 80.375
+offset_bottom = 28.0
+theme = SubResource("Theme_eog55")
+max_value = 255.0
+alignment = 1
+
+[node name="Control2" type="Control" parent="TextureRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="Max" type="SpinBox" parent="TextureRect/HBoxContainer/Control2"]
+layout_mode = 2
+offset_right = 80.375
+offset_bottom = 28.0
+theme = SubResource("Theme_yeuoq")
+max_value = 255.0
+alignment = 1
+
+[connection signal="value_changed" from="TextureRect/HBoxContainer/Control/Min" to="." method="_on_min_value_changed"]
+[connection signal="value_changed" from="TextureRect/HBoxContainer/Control2/Max" to="." method="_on_max_value_changed"]

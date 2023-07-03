@@ -1,0 +1,137 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqyha8d6y0tpy"]
+
+[ext_resource type="Texture2D" uid="uid://c0nv0k8vwaei0" path="res://TitlePart2D/EditRobot/ColorSensor/Color.png" id="1_1uhqv"]
+[ext_resource type="Script" path="res://TitlePart2D/EditRobot/ColorSensor/ColorSensor.gd" id="1_50ng4"]
+[ext_resource type="FontFile" uid="uid://d4cpq5imkb4w2" path="res://fonts/Inter-Regular.ttf" id="2_hapyj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_map5w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p58d3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ipk60"]
+
+[node name="ColorSensor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_50ng4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_1uhqv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 25.0
+offset_right = 181.0
+offset_bottom = 65.0
+scale = Vector2(0.719998, 0.719998)
+
+[node name="RedMin" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 16.0
+offset_right = 76.375
+offset_bottom = 44.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_hapyj")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxEmpty_map5w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p58d3")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ipk60")
+text = "0"
+alignment = 1
+
+[node name="GreenMin" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 16.0
+offset_right = 118.375
+offset_bottom = 44.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_hapyj")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxEmpty_map5w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p58d3")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ipk60")
+text = "0"
+alignment = 1
+
+[node name="BlueMin" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 16.0
+offset_right = 161.375
+offset_bottom = 44.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_hapyj")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxEmpty_map5w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p58d3")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ipk60")
+text = "0"
+alignment = 1
+
+[node name="RedMax" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 45.0
+offset_right = 76.375
+offset_bottom = 73.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_hapyj")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxEmpty_map5w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p58d3")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ipk60")
+text = "255"
+alignment = 1
+
+[node name="GreenMax" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 45.0
+offset_right = 118.375
+offset_bottom = 73.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_hapyj")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxEmpty_map5w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p58d3")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ipk60")
+text = "255"
+alignment = 1
+
+[node name="BlueMax" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 45.0
+offset_right = 161.375
+offset_bottom = 73.0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_hapyj")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxEmpty_map5w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p58d3")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ipk60")
+text = "255"
+alignment = 1
+
+[connection signal="text_changed" from="RedMin" to="." method="_on_red_min_text_changed"]
+[connection signal="text_changed" from="GreenMin" to="." method="_on_green_min_text_changed"]
+[connection signal="text_changed" from="BlueMin" to="." method="_on_blue_min_text_changed"]
+[connection signal="text_changed" from="RedMax" to="." method="_on_red_max_text_changed"]
+[connection signal="text_changed" from="GreenMax" to="." method="_on_green_max_text_changed"]
+[connection signal="text_changed" from="BlueMax" to="." method="_on_blue_max_text_changed"]

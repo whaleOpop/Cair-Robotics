@@ -14,14 +14,17 @@ data = PackedVector3Array(-0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 
 [node name="color" type="Node3D"]
 script = ExtResource("1_bra7g")
 metadata/NameCell = "Color"
+metadata/isSelected = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.403583, 0.06, 0.456)
 mesh = SubResource("BoxMesh_n1pve")
 surface_material_override/0 = SubResource("StandardMaterial3D_p2yf0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="Color" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_y7cv6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Color"]
 shape = SubResource("ConcavePolygonShape3D_g2u67")

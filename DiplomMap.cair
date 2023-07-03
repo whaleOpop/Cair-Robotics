@@ -1,0 +1,18 @@
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Forward","position":"(0, 0, -12)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Forward","position":"(0, 0, -8)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Rotate","position":"(0, 0, -16)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Finish","position":"(0, 0, -4)","rotation_degrees":"(0, 180, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Forward","position":"(0, 0, 0)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Forward","position":"(4, 0, -16)","rotation_degrees":"(0, 90, 0)"}
+{"albedoColor":"(0, 0.5451, 0.5451, 1)","albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Checkpoint","position":"(8, 0, -12)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColor":"(0, 0.5451, 0.5451, 1)","albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Checkpoint","position":"(4, 0, 4)","rotation_degrees":"(0, 90, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Rotate","position":"(8, 0, -16)","rotation_degrees":"(0, 270, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Rotate","position":"(8, 0, 4)","rotation_degrees":"(0, 180, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Forward","position":"(8, 0, -8)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Forward","position":"(8, 0, -4)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Forward","position":"(8, 0, 0)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColorLine":"(0, 0, 0, 1)","albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Rotate","position":"(0, 0, 4)","rotation_degrees":"(0, 90, 0)"}
+{"albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Square","position":"(4, 0, -12)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Square","position":"(4, 0, -8)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Square","position":"(4, 0, -4)","rotation_degrees":"(0, 0, 0)"}
+{"albedoColorMesh":"(1, 1, 1, 1)","nodeName":"Square","position":"(4, 0, 0)","rotation_degrees":"(0, 0, 0)"}
