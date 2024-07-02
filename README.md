@@ -29,6 +29,8 @@ Cair-Robotics – это не просто приложение для обуч�
 
 # FOR DEVELOPERS
 
+Open project in obsidian
+
 [[Fonts]]
 [[import]]
 [[ObjScripts]]
@@ -37,3 +39,9 @@ Cair-Robotics – это не просто приложение для обуч�
 [[Shader]]
 [[TilePart2d]]
 [[TilePart3d]]
+
+
+[Figma](https://www.figma.com/design/yNMuqnwTXCxTAiU25xsKBf/CairRobotics?node-id=0-1&t=sUN4hfN58xgI0lnD-1)
+
+[Github](https://github.com/whaleOpop/Cair-Robotics)
+

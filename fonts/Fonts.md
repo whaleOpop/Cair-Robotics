@@ -1,0 +1,1 @@
+Основной шрифт приложения это семейство Inter где какой стиль шрифта использовать смотрите в [Figma](https://www.figma.com/design/yNMuqnwTXCxTAiU25xsKBf/CairRobotics?node-id=0-1&t=sUN4hfN58xgI0lnD-1)'e
