@@ -107,3 +107,5 @@ func _compareArrayLine(line, linestate):
 func _on_timer_timeout():
 	_changeState=false
 	pass # Replace with function body.
+
+#Karenova is here
