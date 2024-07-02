@@ -32,7 +32,7 @@ Cair-Robotics – это не просто приложение для обуч�
 Open project in obsidian
 
 [[Fonts]]
-[[import]]
+[[import/import.md]]
 [[ObjScripts]]
 [[Scene]]
 [[ScriptCar]]
