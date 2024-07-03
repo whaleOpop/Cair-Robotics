@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxqomtlc4cvmn"
-path.bptc="res://.godot/imported/background.png-af8c5e91cbffa3f3b6d11a09edb7186d.bptc.ctex"
-path.astc="res://.godot/imported/background.png-af8c5e91cbffa3f3b6d11a09edb7186d.astc.ctex"
+uid="uid://c76os3seaw2i1"
+path.bptc="res://.godot/imported/savemap.png-f31d5afe58319abf9f0be62b0cc3f0f8.bptc.ctex"
+path.astc="res://.godot/imported/savemap.png-f31d5afe58319abf9f0be62b0cc3f0f8.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://ObjScripts/background.png"
-dest_files=["res://.godot/imported/background.png-af8c5e91cbffa3f3b6d11a09edb7186d.bptc.ctex", "res://.godot/imported/background.png-af8c5e91cbffa3f3b6d11a09edb7186d.astc.ctex"]
+source_file="res://TitlePart2D/ConstMap/popupMenu/savemap.png"
+dest_files=["res://.godot/imported/savemap.png-f31d5afe58319abf9f0be62b0cc3f0f8.bptc.ctex", "res://.godot/imported/savemap.png-f31d5afe58319abf9f0be62b0cc3f0f8.astc.ctex"]
 
 [params]
 
