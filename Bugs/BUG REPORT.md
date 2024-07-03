@@ -18,7 +18,7 @@
 **Серьезность:** 
 *S1 - Critical (Приложение падает выскакивает ошибка)*  
 **Ошибка в консоли:** *Attempt to call function 'intersect_ray' in base 'null instance' on a null instance.*
-
+**Статус:** *Исправлен*
 # Баг#2
 **Описание:** *В конструкторе карт вылетает ошибка о том что signal подключен к ноде ControlMove
 **Проект:** *CairRobotics*
@@ -31,7 +31,7 @@
   <Исходный код C++>core/object/object.cpp:1358 @ connect()
   <Трассировка стека>Camera3D.gd:70 @ handle_interaction()
                  Camera3D.gd:53 @ _perform_raycast()*
-
+**Статус:** *Исправлен*
 
 # Баг#3
 **Описание:** *Проблема сверсткой на экранах меньше 1980 x1080*
@@ -72,7 +72,7 @@ E 0:00:01:0877   load_image: Error opening file 'res://icon.svg'.
 **Номер версии:** *v2.0.0*
 **Серьезность:** *S1 - Critical*
 **Ошибка в консоли:** *Invalid operands 'String' and 'Nil' in operator '+'*
-
+**Статус:** *Исправлен*
 # Баг#7
 **Описание**: *Почти не виден текст в иконке создания шага в процессе создания сценариев*
 **Проект**: *CairRobotics*
