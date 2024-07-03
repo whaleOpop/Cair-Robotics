@@ -12,10 +12,10 @@ var acceleration: float = 10.0
 var damping: float = 0.1
 var posmouse: Vector3 = Vector3()
 var state: String = ""
-var obj: Node
+var obj: Node = null
 var lastobj: Node = null
-var objPress: bool
-var lastObjPress: bool
+var objPress: bool = false
+var lastObjPress: bool = false
 
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 
@@ -59,7 +59,10 @@ func handle_interaction(state: String, collider: Node) -> void:
 	match state:
 		"delete":
 			if obj:
+				disconnect_signals(obj)
 				obj.queue_free()
+				obj = null
+				return
 		"down":
 			if obj:
 				obj.position.z += 4
@@ -77,37 +80,47 @@ func handle_interaction(state: String, collider: Node) -> void:
 				obj.rotation_degrees.y += 90
 		"cell":
 			connect_signals(collider)
-			if lastobj and lastobj != obj:
+			if is_instance_valid(lastobj) and lastobj != obj:
 				disconnect_signals(lastobj)
-				if lastobj.get_node_or_null("ControlMove"):
-					lastobj.get_node("ControlMove").queue_free()
+				var control_move_node = lastobj.get_node_or_null("ControlMove")
+				if control_move_node:
+					control_move_node.queue_free()
 			lastobj = obj
 
 func connect_signals(node: Node) -> void:
-	if not node.is_connected("cell_pressed", ui_view):
-		node.connect("cell_pressed",ui_view)
-	if not node.is_connected("obj_link", get_obj):
-		node.connect("obj_link", get_obj)
+	if node and not node.is_queued_for_deletion():
+		if not node.is_connected("cell_pressed", _on_cell_pressed):
+			node.connect("cell_pressed", _on_cell_pressed)
+		if not node.is_connected("obj_link",_on_obj_link):
+			node.connect("obj_link",_on_obj_link)
 
 func disconnect_signals(node: Node) -> void:
-	if node.is_connected("cell_pressed",ui_view):
-		node.disconnect("cell_pressed",ui_view)
-	if node.is_connected("cell_pressed", lastobj_press):
-		node.disconnect("cell_pressed", lastobj_press)
+	if node and not node.is_queued_for_deletion():
+		if node.has_signal("cell_pressed") and node.is_connected("cell_pressed", _on_cell_pressed):
+			node.disconnect("cell_pressed", _on_cell_pressed)
+		if node.has_signal("obj_link") and node.is_connected("obj_link",_on_obj_link):
+			node.disconnect("obj_link",_on_obj_link)
+
+func _on_cell_pressed(isPressed: bool) -> void:
+	ui_view(isPressed)
+
+func _on_obj_link(link_obj: Node) -> void:
+	get_obj(link_obj)
 
 func ui_view(isPressed: bool) -> void:
-	var ui = ControlMove.instantiate()
-	if not isPressed:
-		ui.position.y = 1
-		ui.rotation = -obj.rotation
-		obj.add_child(ui)
-	else:
-		var control_move_node = obj.get_node_or_null("ControlMove")
-		if control_move_node:
-			control_move_node.queue_free()
+	if obj and not obj.is_queued_for_deletion():
+		var ui = ControlMove.instantiate()
+		if not isPressed:
+			ui.position.y = 1
+			ui.rotation = -obj.rotation
+			obj.add_child(ui)
+		else:
+			var control_move_node = obj.get_node_or_null("ControlMove")
+			if control_move_node:
+				control_move_node.queue_free()
 
 func get_obj(link_obj: Node) -> void:
-	if link_obj:
+	if link_obj and not link_obj.is_queued_for_deletion():
 		obj = link_obj
 
 func obj_press(isPressed: bool) -> void:
