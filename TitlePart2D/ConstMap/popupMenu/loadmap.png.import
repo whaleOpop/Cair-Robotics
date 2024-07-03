@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qdxwqtmacb0m"
-path.bptc="res://.godot/imported/Group 111d.png-5a0ddcb30a2f584d67b957df88b4e94b.bptc.ctex"
-path.astc="res://.godot/imported/Group 111d.png-5a0ddcb30a2f584d67b957df88b4e94b.astc.ctex"
+uid="uid://ca3lc4rojscw2"
+path.bptc="res://.godot/imported/loadmap.png-5144cc5fd29e699ef9c6b5f8531721bf.bptc.ctex"
+path.astc="res://.godot/imported/loadmap.png-5144cc5fd29e699ef9c6b5f8531721bf.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://TitlePart2D/ConstMap/popupMenu/Group 111d.png"
-dest_files=["res://.godot/imported/Group 111d.png-5a0ddcb30a2f584d67b957df88b4e94b.bptc.ctex", "res://.godot/imported/Group 111d.png-5a0ddcb30a2f584d67b957df88b4e94b.astc.ctex"]
+source_file="res://TitlePart2D/ConstMap/popupMenu/loadmap.png"
+dest_files=["res://.godot/imported/loadmap.png-5144cc5fd29e699ef9c6b5f8531721bf.bptc.ctex", "res://.godot/imported/loadmap.png-5144cc5fd29e699ef9c6b5f8531721bf.astc.ctex"]
 
 [params]
 
