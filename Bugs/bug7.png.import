@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxqomtlc4cvmn"
-path.bptc="res://.godot/imported/background.png-af8c5e91cbffa3f3b6d11a09edb7186d.bptc.ctex"
-path.astc="res://.godot/imported/background.png-af8c5e91cbffa3f3b6d11a09edb7186d.astc.ctex"
+uid="uid://dv33sx287jg5g"
+path.bptc="res://.godot/imported/bug7.png-6a1f496bd21842e55548ba87389b67ae.bptc.ctex"
+path.astc="res://.godot/imported/bug7.png-6a1f496bd21842e55548ba87389b67ae.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://ObjScripts/background.png"
-dest_files=["res://.godot/imported/background.png-af8c5e91cbffa3f3b6d11a09edb7186d.bptc.ctex", "res://.godot/imported/background.png-af8c5e91cbffa3f3b6d11a09edb7186d.astc.ctex"]
+source_file="res://Bugs/bug7.png"
+dest_files=["res://.godot/imported/bug7.png-6a1f496bd21842e55548ba87389b67ae.bptc.ctex", "res://.godot/imported/bug7.png-6a1f496bd21842e55548ba87389b67ae.astc.ctex"]
 
 [params]
 

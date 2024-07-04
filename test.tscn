@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://lr67b1cnl44v" path="res://TitlePart3D/prefabMaps/parts/Finish.tscn" id="1_qvq3p"]
 [ext_resource type="PackedScene" uid="uid://djnydbrcy06tb" path="res://TitlePart3D/prefabMaps/parts/Forward.tscn" id="2_ho70f"]
-[ext_resource type="PackedScene" uid="uid://etkwdjw5wk5w" path="res://ScriptsCar/Car.tscn" id="3_v26d7"]
+[ext_resource type="PackedScene" uid="uid://ctcp34j241wek" path="res://ScriptsCar/Car.tscn" id="3_v26d7"]
 
 [node name="Node3D" type="Node3D"]
 

@@ -223,6 +223,8 @@ func _save(filename) -> void:
 	
 func _load(filename) -> void:
 	# Check if the SaveFile exists
+	if !filename:
+		return
 	if !FileAccess.file_exists("user://"+filename):
 		print("Error, no Save File to load.")
 		return

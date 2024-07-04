@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdib5rogpdmt1"
-path.bptc="res://.godot/imported/Group 111.png-c5b5237979110e34606ce8bd8c643c39.bptc.ctex"
-path.astc="res://.godot/imported/Group 111.png-c5b5237979110e34606ce8bd8c643c39.astc.ctex"
+uid="uid://c76os3seaw2i1"
+path.bptc="res://.godot/imported/savemap.png-f31d5afe58319abf9f0be62b0cc3f0f8.bptc.ctex"
+path.astc="res://.godot/imported/savemap.png-f31d5afe58319abf9f0be62b0cc3f0f8.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://TitlePart2D/ConstMap/popupMenu/Group 111.png"
-dest_files=["res://.godot/imported/Group 111.png-c5b5237979110e34606ce8bd8c643c39.bptc.ctex", "res://.godot/imported/Group 111.png-c5b5237979110e34606ce8bd8c643c39.astc.ctex"]
+source_file="res://TitlePart2D/ConstMap/popupMenu/savemap.png"
+dest_files=["res://.godot/imported/savemap.png-f31d5afe58319abf9f0be62b0cc3f0f8.bptc.ctex", "res://.godot/imported/savemap.png-f31d5afe58319abf9f0be62b0cc3f0f8.astc.ctex"]
 
 [params]
 
