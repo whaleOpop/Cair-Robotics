@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b4yfp3dp0j3lc"]
 
-[sub_resource type="Image" id="Image_8pulq"]
+[sub_resource type="Image" id="Image_go4rj"]
 data = {
 "data": PackedByteArray(42, 105, 87, 238, 129, 64, 230, 86, 51, 214, 36, 60, 30, 84, 81, 214, 36, 60, 163, 15, 74, 117, 9, 88, 24, 48, 66, 110, 240, 229, 60, 108, 166, 12, 7, 46, 255, 255, 224, 94, 184, 217, 40, 57, 143, 19, 23, 87),
 "format": "RGB8",
@@ -11,7 +11,7 @@ data = {
 
 [sub_resource type="ImageTexture" id="ImageTexture_wx1g3"]
 resource_name = "0"
-image = SubResource("Image_8pulq")
+image = SubResource("Image_go4rj")
 
 [resource]
 resource_name = "mt_palette_main"
