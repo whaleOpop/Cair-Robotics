@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://brmyrti6puhtc"]
+
+[ext_resource type="Script" path="res://Scene/ConstructMap/3d/mapParts/SaveLoad.gd" id="1_bra7g"]
+[ext_resource type="Script" path="res://Scene/ConstructMap/3d/mapParts/StaticBody3D.gd" id="1_y7cv6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n1pve"]
+size = Vector3(1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2yf0"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_g2u67"]
+data = PackedVector3Array(-0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5)
+
+[node name="color" type="Node3D"]
+script = ExtResource("1_bra7g")
+metadata/NameCell = "Color"
+metadata/isSelected = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.403583, 0.06, 0.456)
+mesh = SubResource("BoxMesh_n1pve")
+surface_material_override/0 = SubResource("StandardMaterial3D_p2yf0")
+
+[node name="Color" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_y7cv6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Color"]
+shape = SubResource("ConcavePolygonShape3D_g2u67")

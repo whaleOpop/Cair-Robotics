@@ -12,8 +12,8 @@ extends CanvasLayer
 
 
 
-@export var btnState =preload("res://TitlePart2D/EditRobot/stButton/StatmentButton.tscn")
-@export var AreaRemove = preload("res://TitlePart3D/prefabMaps/parts/area_3d_remove.tscn")
+@export var btnState =preload("res://Scene/Map/2d/stButton/StatmentButton.tscn")
+@export var AreaRemove = preload("res://Scene/ConstructMap/3d/mapParts/Area3dRemove/area_3d_remove.tscn")
 
 @onready var amimUI = $AnimationPlayer
 @onready var MapLoader = $Node3D/SubViewportContainer/SubViewport/MapLoader
@@ -242,7 +242,7 @@ func _on_minus_pressed():
 	Globals.CurrentStatment=null
 	pass # Replace with function body.
 
-@onready var Car = preload("res://ScriptsCar/Car.tscn")
+@onready var Car = preload("res://Scene/Car/Car.tscn")
 
 func _on_play_pressed():
 

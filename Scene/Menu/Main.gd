@@ -21,9 +21,9 @@
 
 extends CanvasLayer
 
-var ConstructMap = preload("res://Scene/ConstructMap/ConstructorMap.tscn")
+var ConstructMap = preload("res://Scene/ConstructMap/ConstructMapViewport.tscn")
 
-@export var Buttons = preload("res://TitlePart2D/Menu/mapList/button.tscn")
+@export var Buttons = preload("res://Scene/Menu/2d/mapList/button.tscn")
 
 func _ready():
 	
