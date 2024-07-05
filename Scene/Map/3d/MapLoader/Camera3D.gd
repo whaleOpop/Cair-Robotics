@@ -8,7 +8,8 @@ extends Camera3D
 @export var min_speed : float = 0.2
 
 @onready var _velocity = default_velocity
-
+@export var boundary_min: Vector3 = Vector3(-20, 7, -20)
+@export var boundary_max: Vector3 = Vector3(20, 30, 20)
 func _input(event):
 	if not current:
 		return
@@ -31,7 +32,11 @@ func _input(event):
 func _process(delta):
 	if not current:
 		return
-		
+	
+	position.x = clamp(position.x, boundary_min.x, boundary_max.x)
+	position.y = clamp(position.y, boundary_min.y, boundary_max.y)
+	position.z = clamp(position.z, boundary_min.z, boundary_max.z)
+	
 	var direction = Vector3(
 		float(Input.is_physical_key_pressed(KEY_D)) - float(Input.is_physical_key_pressed(KEY_A)),
 		float(Input.is_physical_key_pressed(KEY_E)) - float(Input.is_physical_key_pressed(KEY_Q)), 

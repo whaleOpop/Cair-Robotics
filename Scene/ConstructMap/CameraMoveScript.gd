@@ -3,6 +3,8 @@ extends Node3D
 # Parameters
 @export var speed: float = 10.0
 @export var ControlMove: PackedScene = preload("res://Scene/ConstructMap/3d/3dUiParts/ControlMove.tscn")
+@export var boundary_min: Vector3 = Vector3(-20, 7, -20)
+@export var boundary_max: Vector3 = Vector3(20, 30, 20)
 
 # Variables
 var velocity: Vector3 = Vector3.ZERO
@@ -23,10 +25,16 @@ func _ready():
 	camera.position.y = 0
 
 func _process(delta: float) -> void:
+	print(position)
 	_newdelta = delta
 	target_position = get_input(target_position, delta)
 	velocity = velocity.lerp(target_position - position, damping)
 	position += velocity * delta
+	
+	# Clamp position to boundaries
+	position.x = clamp(position.x, boundary_min.x, boundary_max.x)
+	position.y = clamp(position.y, boundary_min.y, boundary_max.y)
+	position.z = clamp(position.z, boundary_min.z, boundary_max.z)
 
 func raycast(from: Vector3, to: Vector3, exclude: Array = []) -> Dictionary:
 	var space_state = get_world_3d().direct_space_state
