@@ -94,6 +94,7 @@ data = PackedVector3Array(0, 0.1, -0.0705, 1.1289, 0.1, -0.0705, 1.1289, 0.1, 0,
 size = Vector3(3.61326, 3.64829, 1)
 
 [node name="Finish" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
 script = ExtResource("1_gcuer")
 metadata/NameCell = "Finish"
 metadata/isSelected = true

@@ -34,7 +34,7 @@ func getDurationValue(statment):
 	
 
 func _load_and_find(id):
-	var filename="durFile.txt"
+	var filename="res://Scene/Map/2d/duration/valueDuration/durFile.txt"
 	if !FileAccess.file_exists(filename):
 		print("Error, no Save File to load.")
 		return

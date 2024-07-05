@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://bfghle0qsaduw"]
+[gd_scene load_steps=130 format=3 uid="uid://bfghle0qsaduw"]
 
 [ext_resource type="Script" path="res://Scene/ConstructMap/ConstructMapScript.gd" id="1_upuab"]
 [ext_resource type="Environment" uid="uid://bvy1jx3l4sjxp" path="res://Environment.tres" id="2_q2icd"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://bptorhsmdiri1" path="res://Scene/PopupMenu/popupMenu/btnCancel/hoverCancel.png" id="35_lkgg5"]
 [ext_resource type="Texture2D" uid="uid://dnvvpfaprht7q" path="res://Scene/PopupMenu/popupMenu/btnCancel/normalCancel.png" id="36_g1fai"]
 [ext_resource type="Texture2D" uid="uid://tgcx68ti3fr0" path="res://Scene/PopupMenu/popupMenu/btnCancel/pressedCancel.png" id="37_xm7ub"]
+[ext_resource type="FontFile" uid="uid://b266fmqwrlsqt" path="res://fonts/Inter-ExtraBold.ttf" id="38_35ps3"]
 [ext_resource type="Texture2D" uid="uid://c76os3seaw2i1" path="res://Scene/ConstructMap/2d/ItemList/savemap.png" id="38_hnv4d"]
 [ext_resource type="FontFile" uid="uid://b4emn1rakq1q1" path="res://fonts/Inter-Light.ttf" id="39_j58nq"]
 [ext_resource type="Texture2D" uid="uid://ddnc5ocgdaia3" path="res://Scene/PopupMenu/popupMenu/lineedit focus.png" id="40_jhurv"]
@@ -575,7 +576,7 @@ layout_mode = 0
 offset_left = 96.0
 offset_top = 109.0
 offset_right = 333.0
-offset_bottom = 318.0
+offset_bottom = 268.0
 
 [node name="VScrollBar" type="VBoxContainer" parent="Root3D/PanelBlur/PanelBlur3/TextureRect/ScrollContainer"]
 layout_mode = 2
@@ -598,8 +599,23 @@ offset_right = 392.0
 offset_bottom = 389.0
 theme = SubResource("Theme_r0lon")
 
+[node name="Label" type="Label" parent="Root3D/PanelBlur/PanelBlur3/TextureRect"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 273.0
+offset_right = 337.0
+offset_bottom = 309.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("38_35ps3")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+max_lines_visible = 10
+
 [node name="PanelBlur4" type="Panel" parent="Root3D/PanelBlur"]
-visible = false
 material = SubResource("ShaderMaterial_2deyx")
 layout_mode = 0
 offset_left = -597.0
@@ -613,6 +629,21 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("38_hnv4d")
+
+[node name="Label" type="Label" parent="Root3D/PanelBlur/PanelBlur4/TextureRect"]
+offset_left = 60.0
+offset_top = 170.0
+offset_right = 308.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("38_35ps3")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+max_lines_visible = 10
 
 [node name="OK" type="Button" parent="Root3D/PanelBlur/PanelBlur4/TextureRect"]
 layout_mode = 0

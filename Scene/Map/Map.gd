@@ -194,22 +194,26 @@ var button_group = ButtonGroup.new()
 
 func _on_ok_pressed():
 	var stName = $Node3D/Panel/TextureRect/LineEdit
-	if Globals.isStateUseName(stName.text):
-		var stat = btnState.instantiate()
-		stat.setName(stName.text)
-		$Node3D/Panel2/Panel/ScrollContainer/VBoxContainer.add_child(stat)
-		stat.get_child(0).connect("pressed",getCurrentState)
-		stat.get_child(0).set("button_group",button_group)
-		
-		for i in button_group.get_buttons():
-			i.connect("pressed",getCurrentState)
-		$Node3D/Panel.hide()
-		$Node3D/Panel2/Panel/CurStatment.text=stName.text
-		Globals.CurrentStatment=Globals.getStateByName(stName.text)
-		$Node3D/Panel/TextureRect/LineEdit.text=""
-		$Node3D/Panel/TextureRect/Label.text=""
+	if stName.text!="":
+		if Globals.isStateUseName(stName.text):
+			var stat = btnState.instantiate()
+			stat.setName(stName.text)
+			$Node3D/Panel2/Panel/ScrollContainer/VBoxContainer.add_child(stat)
+			stat.get_child(0).connect("pressed",getCurrentState)
+			stat.get_child(0).set("button_group",button_group)
+			
+			for i in button_group.get_buttons():
+				i.connect("pressed",getCurrentState)
+			$Node3D/Panel.hide()
+			$Node3D/Panel2/Panel/CurStatment.text=stName.text
+			Globals.CurrentStatment=Globals.getStateByName(stName.text)
+			$Node3D/Panel/TextureRect/LineEdit.text=""
+			$Node3D/Panel/TextureRect/Label.text=""
+		else:
+			$Node3D/Panel/TextureRect/Label.text="Шаг с этим названием уже существует"
 	else:
-		$Node3D/Panel/TextureRect/Label.text="The action cannot be performed because a step with the same name already exists"
+		$Node3D/Panel/TextureRect/Label.text="Введите название шага"
+		
 	pass # Replace with function body.
 
 
