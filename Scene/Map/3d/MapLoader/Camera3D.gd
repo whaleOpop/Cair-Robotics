@@ -1,45 +1,44 @@
-"""
-Краткое описание:
-Этот скрипт позволяет пользователю управлять камерой в 3D-сцене. Камера перемещается в зависимости
- от ввода пользователя, который обрабатывается функцией get_input.
-
-В данном случае, при нажатии на клавиши "right" и "left" камера движется по оси X вправо и влево 
-соответственно с заданным speed. При нажатии на клавиши "down" и "up" камера движется по оси Z вперед 
-и назад.
-
-Также, при нажатии на клавишу "zoomUp" камера приближается к объекту, а при нажатии на клавишу 
-"zoomDown" камера отдаляется от объекта. Это происходит путем изменения координаты Y камеры с заданным speed.
-
-Функция _process вызывается ежекадрово и используется для перемещения камеры на основе значения
-velocity, которое получено из функции get_input."""
 extends Camera3D
 
-var target_position = Vector3(0,20,0)
-var velocity = Vector3.ZERO
-var acceleration = 10
-var damping = 0.1
+@export_range(0, 10, 0.01) var sensitivity : float = 3
+@export_range(0, 1000, 0.1) var default_velocity : float = 5
+@export_range(0, 10, 0.01) var speed_scale : float = 5
+@export_range(1, 100, 0.1) var boost_speed_multiplier : float = 3.0
+@export var max_speed : float = 1000
+@export var min_speed : float = 0.2
+
+@onready var _velocity = default_velocity
+
+func _input(event):
+	if not current:
+		return
+		
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseMotion:
+			rotation.y -= event.relative.x / 1000 * sensitivity
+			rotation.x -= event.relative.y / 1000 * sensitivity
+			rotation.x = clamp(rotation.x, PI/-2, PI/2)
+	
+	if event is InputEventMouseButton:
+		match event.button_index:
+			MOUSE_BUTTON_RIGHT:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if event.pressed else Input.MOUSE_MODE_VISIBLE)
+			MOUSE_BUTTON_WHEEL_UP: # increase fly velocity
+				_velocity = clamp(_velocity * speed_scale, min_speed, max_speed)
+			MOUSE_BUTTON_WHEEL_DOWN: # decrease fly velocity
+				_velocity = clamp(_velocity / speed_scale, min_speed, max_speed)
 
 func _process(delta):
-	target_position = get_input(target_position,delta)
-	velocity = velocity.lerp(target_position - position, damping)
+	if not current:
+		return
+		
+	var direction = Vector3(
+		float(Input.is_physical_key_pressed(KEY_D)) - float(Input.is_physical_key_pressed(KEY_A)),
+		float(Input.is_physical_key_pressed(KEY_E)) - float(Input.is_physical_key_pressed(KEY_Q)), 
+		float(Input.is_physical_key_pressed(KEY_S)) - float(Input.is_physical_key_pressed(KEY_W))
+	).normalized()
 	
-	position += velocity * delta
-	
-	pass
-func _ready():
-	$".".position.y=0
-	pass
-func get_input(_position,delta):
-	if Input.is_action_pressed("right"):
-		_position.x += acceleration*delta
-	elif Input.is_action_pressed("left"):
-		_position.x -= acceleration*delta
-	if Input.is_action_pressed("down"):
-		_position.z += acceleration*delta
-	elif Input.is_action_pressed("up"):
-		_position.z -= acceleration*delta
-	if Input.is_action_just_released("zoomUp"):
-		_position.y -= acceleration*delta    
-	elif Input.is_action_just_released("zoomDown"):
-		_position.y += acceleration*delta
-	return _position
+	if Input.is_physical_key_pressed(KEY_SHIFT): # boost
+		translate(direction * _velocity * delta * boost_speed_multiplier)
+	else:
+		translate(direction * _velocity * delta)
