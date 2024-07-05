@@ -25,7 +25,7 @@ func _ready():
 	camera.position.y = 0
 
 func _process(delta: float) -> void:
-	print(position)
+	
 	_newdelta = delta
 	target_position = get_input(target_position, delta)
 	velocity = velocity.lerp(target_position - position, damping)
