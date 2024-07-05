@@ -949,8 +949,8 @@ grow_vertical = 1
 layout_mode = 1
 offset_left = -43.0
 offset_top = 333.0
-offset_right = 21827.0
-offset_bottom = 19746.0
+offset_right = 23447.0
+offset_bottom = 21184.0
 
 [node name="duration" parent="Node3D/Panel2" instance=ExtResource("15_nlaqj")]
 layout_mode = 1
