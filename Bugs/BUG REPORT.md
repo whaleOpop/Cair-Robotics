@@ -30,7 +30,7 @@
   <Ошибка C++>   Method/function failed. Returning: ERR_INVALID_PARAMETER
   <Исходный код C++>core/object/object.cpp:1358 @ connect()
   <Трассировка стека>Camera3D.gd:70 @ handle_interaction()
-                 Camera3D.gd:53 @ _perform_raycast()*
+				 Camera3D.gd:53 @ _perform_raycast()*
 **Статус:** *Исправлен*
 
 # Баг#3
