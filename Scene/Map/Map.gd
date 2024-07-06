@@ -264,9 +264,7 @@ func _on_play_pressed():
 		$Node3D/btnRestart.show()
 	else:
 		
-
 		$Seconds.stop()
-		
 		$Seconds.autostart=true
 		$Node3D/Panel2.show()
 		$Node3D/btnRestart.hide()
