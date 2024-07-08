@@ -2,55 +2,55 @@
 
 [ext_resource type="Script" path="res://Scene/Map/Map.gd" id="1_0hvd8"]
 [ext_resource type="Environment" uid="uid://bvy1jx3l4sjxp" path="res://Environment.tres" id="1_47h5t"]
-[ext_resource type="PackedScene" uid="uid://c3v1t4e0e4qs1" path="res://TitlePart3D/MapLoader/MapLoader.tscn" id="1_s5dra"]
+[ext_resource type="PackedScene" uid="uid://c3v1t4e0e4qs1" path="res://Scene/Map/3d/MapLoader/MapLoader.tscn" id="2_nli8l"]
 [ext_resource type="Shader" path="res://Shader/blur.gdshader" id="3_35o6i"]
-[ext_resource type="Texture2D" uid="uid://ce0uapasrul6g" path="res://TitlePart2D/EditRobot/upper/Group 109.png" id="4_eeuw8"]
 [ext_resource type="Script" path="res://Scene/Map/Panel.gd" id="4_x1yt8"]
-[ext_resource type="Texture2D" uid="uid://gmnkmupdb7pn" path="res://TitlePart2D/EditRobot/background/Background (1).png" id="5_71une"]
-[ext_resource type="PackedScene" uid="uid://cvnwf4i7oa545" path="res://TitlePart2D/EditRobot/time/time.tscn" id="5_71070"]
-[ext_resource type="PackedScene" uid="uid://dhihurjawyulb" path="res://TitlePart2D/EditRobot/led/led.tscn" id="5_d3xoj"]
-[ext_resource type="PackedScene" uid="uid://qeqx5pcetu6n" path="res://TitlePart2D/EditRobot/linesensor/LineSensor.tscn" id="5_e3moy"]
-[ext_resource type="Texture2D" uid="uid://mm2dost66w0g" path="res://TitlePart2D/EditRobot/upper/back_hover.png" id="5_wwwal"]
-[ext_resource type="Texture2D" uid="uid://prmo4l4a67n3" path="res://TitlePart2D/EditRobot/speed/speed_btn.png" id="6_0ifst"]
-[ext_resource type="Texture2D" uid="uid://be6uxpufupfpg" path="res://TitlePart2D/EditRobot/rotation/btn_rotation.png" id="6_10cin"]
-[ext_resource type="Texture2D" uid="uid://bxc0i3wctl30j" path="res://TitlePart2D/EditRobot/background/Сarcarui.png" id="6_cuamn"]
-[ext_resource type="PackedScene" uid="uid://dqeks8b0okag1" path="res://TitlePart2D/EditRobot/duration/duration.tscn" id="6_k7t7c"]
-[ext_resource type="Texture2D" uid="uid://tvujrr7uk6x6" path="res://TitlePart2D/EditRobot/ColorSensor/coloruiScripst.svg" id="6_pefhb"]
-[ext_resource type="PackedScene" uid="uid://b6trfh0eudnha" path="res://TitlePart2D/EditRobot/speed/speed.tscn" id="7_5vcqg"]
-[ext_resource type="Texture2D" uid="uid://cy832isb4055o" path="res://TitlePart2D/EditRobot/ToolBar/toolbarbackTool.png" id="7_i4t4f"]
-[ext_resource type="PackedScene" uid="uid://bej71phw1av5u" path="res://TitlePart2D/EditRobot/rotation/rotation.tscn" id="7_kahm1"]
-[ext_resource type="PackedScene" uid="uid://dqyha8d6y0tpy" path="res://TitlePart2D/EditRobot/ColorSensor/ColorSensor.tscn" id="7_wmsdv"]
-[ext_resource type="Texture2D" uid="uid://dy1t103scg7t" path="res://TitlePart2D/EditRobot/ultrasonic/button/ultrasonic.png" id="8_6j02d"]
-[ext_resource type="Texture2D" uid="uid://koxcbrb0cdkn" path="res://TitlePart2D/EditRobot/upper/Шапка (2).png" id="8_k8ar5"]
-[ext_resource type="Theme" uid="uid://c0mooevvpxwpi" path="res://TitlePart2D/EditRobot/ToolBar/button/tooltres.tres" id="8_svs0e"]
-[ext_resource type="PackedScene" uid="uid://c0b8vjfg0pwt1" path="res://TitlePart2D/EditRobot/ultrasonic/ultrasonic.tscn" id="9_d0jcs"]
-[ext_resource type="Texture2D" uid="uid://tci1t2esp8pu" path="res://TitlePart2D/EditRobot/ToolBar/icon/play.png" id="9_y7axb"]
-[ext_resource type="Texture2D" uid="uid://dsrrhr65kt8i0" path="res://TitlePart2D/EditRobot/ToolBar/icon/package.png" id="10_kkede"]
-[ext_resource type="Texture2D" uid="uid://b11awt7my4h43" path="res://TitlePart2D/EditRobot/ToolBar/icon/save.png" id="11_atcd2"]
-[ext_resource type="Texture2D" uid="uid://b2rqebjjm00uw" path="res://TitlePart2D/EditRobot/ToolBar/icon/upload.png" id="12_hdehy"]
-[ext_resource type="Texture2D" uid="uid://iapciqro15t4" path="res://TitlePart2D/EditRobot/StBar/cicleButton hover.png" id="13_oiooy"]
-[ext_resource type="Texture2D" uid="uid://dkoas3v3im3ij" path="res://TitlePart2D/EditRobot/StBar/cicleButton normal.png" id="14_wsjsw"]
-[ext_resource type="Texture2D" uid="uid://couvpf0siwac7" path="res://TitlePart2D/EditRobot/StBar/cicleButton press.png" id="15_m825g"]
-[ext_resource type="Texture2D" uid="uid://2psfj8yf2314" path="res://TitlePart2D/EditRobot/StBar/icon/plus.png" id="16_g4gce"]
-[ext_resource type="Texture2D" uid="uid://c2l20rrp1xpt2" path="res://TitlePart2D/EditRobot/StBar/icon/minus.png" id="17_t7v8s"]
-[ext_resource type="Texture2D" uid="uid://djmjhdyuar5ng" path="res://TitlePart2D/EditRobot/StBar/icon/up.png" id="18_rsdwy"]
-[ext_resource type="Texture2D" uid="uid://bx0qht5ykxn8x" path="res://TitlePart2D/EditRobot/StBar/icon/down.png" id="19_vmajn"]
+[ext_resource type="Texture2D" uid="uid://mm2dost66w0g" path="res://Scene/Map/2d/upper/back_hover.png" id="5_7qr1j"]
+[ext_resource type="Texture2D" uid="uid://ce0uapasrul6g" path="res://Scene/Map/2d/upper/Group 109.png" id="6_p411q"]
+[ext_resource type="Texture2D" uid="uid://koxcbrb0cdkn" path="res://Scene/Map/2d/upper/Шапка (2).png" id="8_j3jrh"]
+[ext_resource type="Texture2D" uid="uid://prmo4l4a67n3" path="res://Scene/Map/2d/speed/speed_btn.png" id="9_v3ge3"]
+[ext_resource type="PackedScene" uid="uid://b6trfh0eudnha" path="res://Scene/Map/2d/speed/speed.tscn" id="10_eo6q0"]
+[ext_resource type="Texture2D" uid="uid://be6uxpufupfpg" path="res://Scene/Map/2d/rotation/btn_rotation.png" id="11_qc4q8"]
+[ext_resource type="PackedScene" uid="uid://bej71phw1av5u" path="res://Scene/Map/2d/rotation/rotation.tscn" id="12_hd475"]
+[ext_resource type="PackedScene" uid="uid://cvnwf4i7oa545" path="res://Scene/Map/2d/time/time.tscn" id="13_42n2p"]
+[ext_resource type="PackedScene" uid="uid://dhihurjawyulb" path="res://Scene/Map/2d/led/led.tscn" id="14_r28mi"]
+[ext_resource type="PackedScene" uid="uid://dqeks8b0okag1" path="res://Scene/Map/2d/duration/duration.tscn" id="15_nlaqj"]
+[ext_resource type="Texture2D" uid="uid://tvujrr7uk6x6" path="res://Scene/Map/2d/ColorSensor/coloruiScripst.svg" id="16_n3f75"]
+[ext_resource type="PackedScene" uid="uid://dqyha8d6y0tpy" path="res://Scene/Map/2d/ColorSensor/ColorSensor.tscn" id="17_65i2w"]
+[ext_resource type="Texture2D" uid="uid://b063hd20qkslf" path="res://Scene/Map/2d/linesensor/button/line.png" id="18_2o83m"]
+[ext_resource type="PackedScene" uid="uid://qeqx5pcetu6n" path="res://Scene/Map/2d/linesensor/LineSensor.tscn" id="19_eqcvs"]
+[ext_resource type="Texture2D" uid="uid://dy1t103scg7t" path="res://Scene/Map/2d/ultrasonic/button/ultrasonic.png" id="20_7hnba"]
+[ext_resource type="PackedScene" uid="uid://c0b8vjfg0pwt1" path="res://Scene/Map/2d/ultrasonic/ultrasonic.tscn" id="21_5sogy"]
 [ext_resource type="FontFile" uid="uid://b4emn1rakq1q1" path="res://fonts/Inter-Light.ttf" id="21_rlyqe"]
-[ext_resource type="Texture2D" uid="uid://b063hd20qkslf" path="res://TitlePart2D/EditRobot/linesensor/button/line.png" id="22_cninw"]
-[ext_resource type="Texture2D" uid="uid://dgryrosr1d3r5" path="res://TitlePart2D/ConstMap/popupMenu/btnOk/hoverOKey.png" id="37_upqsl"]
-[ext_resource type="Texture2D" uid="uid://cpkynv6tj17kt" path="res://ObjScripts/Add Statement.png" id="38_gcip8"]
-[ext_resource type="Texture2D" uid="uid://fypb7a11hj4r" path="res://TitlePart2D/ConstMap/popupMenu/btnOk/normalOKey.png" id="38_v1gnc"]
-[ext_resource type="Texture2D" uid="uid://bxhqts4e7s120" path="res://TitlePart2D/ConstMap/popupMenu/btnOk/pressedOKey.png" id="39_r64g7"]
-[ext_resource type="Texture2D" uid="uid://bptorhsmdiri1" path="res://TitlePart2D/ConstMap/popupMenu/btnCancel/hoverCancel.png" id="40_jhxlt"]
-[ext_resource type="Texture2D" uid="uid://dnvvpfaprht7q" path="res://TitlePart2D/ConstMap/popupMenu/btnCancel/normalCancel.png" id="41_nuo11"]
-[ext_resource type="Texture2D" uid="uid://tgcx68ti3fr0" path="res://TitlePart2D/ConstMap/popupMenu/btnCancel/pressedCancel.png" id="42_cehux"]
-[ext_resource type="Texture2D" uid="uid://ddnc5ocgdaia3" path="res://TitlePart2D/ConstMap/popupMenu/lineedit focus.png" id="43_wp8qt"]
+[ext_resource type="Texture2D" uid="uid://gmnkmupdb7pn" path="res://Scene/Map/2d/background/Background (1).png" id="23_aob7m"]
+[ext_resource type="Texture2D" uid="uid://bxc0i3wctl30j" path="res://Scene/Map/2d/background/Сarcarui.png" id="24_yi6xb"]
+[ext_resource type="Texture2D" uid="uid://cy832isb4055o" path="res://Scene/Map/2d/ToolBar/toolbarbackTool.png" id="25_53vra"]
+[ext_resource type="Theme" uid="uid://c0mooevvpxwpi" path="res://Scene/Map/2d/ToolBar/button/tooltres.tres" id="26_h2lrx"]
+[ext_resource type="Texture2D" uid="uid://tci1t2esp8pu" path="res://Scene/Map/2d/ToolBar/icon/play.png" id="27_ko4dx"]
+[ext_resource type="Texture2D" uid="uid://dsrrhr65kt8i0" path="res://Scene/Map/2d/ToolBar/icon/package.png" id="28_t2nic"]
+[ext_resource type="Texture2D" uid="uid://b11awt7my4h43" path="res://Scene/Map/2d/ToolBar/icon/save.png" id="29_q5bmw"]
+[ext_resource type="Texture2D" uid="uid://b2rqebjjm00uw" path="res://Scene/Map/2d/ToolBar/icon/upload.png" id="30_ryfik"]
+[ext_resource type="Texture2D" uid="uid://iapciqro15t4" path="res://Scene/Map/2d/StBar/cicleButton hover.png" id="31_hh2u5"]
+[ext_resource type="Texture2D" uid="uid://dkoas3v3im3ij" path="res://Scene/Map/2d/StBar/cicleButton normal.png" id="32_ax1sd"]
+[ext_resource type="Texture2D" uid="uid://couvpf0siwac7" path="res://Scene/Map/2d/StBar/cicleButton press.png" id="33_4ug4e"]
+[ext_resource type="Texture2D" uid="uid://2psfj8yf2314" path="res://Scene/Map/2d/StBar/icon/plus.png" id="34_doqwy"]
+[ext_resource type="Texture2D" uid="uid://c2l20rrp1xpt2" path="res://Scene/Map/2d/StBar/icon/minus.png" id="35_jus23"]
+[ext_resource type="Texture2D" uid="uid://djmjhdyuar5ng" path="res://Scene/Map/2d/StBar/icon/up.png" id="36_u70op"]
+[ext_resource type="Texture2D" uid="uid://bx0qht5ykxn8x" path="res://Scene/Map/2d/StBar/icon/down.png" id="37_mjwcx"]
+[ext_resource type="Texture2D" uid="uid://cpkynv6tj17kt" path="res://Scene/Map/2d/Add Statement.png" id="38_g7m2w"]
+[ext_resource type="Texture2D" uid="uid://dgryrosr1d3r5" path="res://Scene/PopupMenu/popupMenu/btnOk/hoverOKey.png" id="39_ix8em"]
+[ext_resource type="Texture2D" uid="uid://fypb7a11hj4r" path="res://Scene/PopupMenu/popupMenu/btnOk/normalOKey.png" id="40_j5in2"]
+[ext_resource type="Texture2D" uid="uid://bxhqts4e7s120" path="res://Scene/PopupMenu/popupMenu/btnOk/pressedOKey.png" id="41_3ot7y"]
+[ext_resource type="Texture2D" uid="uid://bptorhsmdiri1" path="res://Scene/PopupMenu/popupMenu/btnCancel/hoverCancel.png" id="42_o8ssr"]
+[ext_resource type="Texture2D" uid="uid://dnvvpfaprht7q" path="res://Scene/PopupMenu/popupMenu/btnCancel/normalCancel.png" id="43_y2swk"]
 [ext_resource type="FontFile" uid="uid://b266fmqwrlsqt" path="res://fonts/Inter-ExtraBold.ttf" id="44_124c5"]
-[ext_resource type="Texture2D" uid="uid://g0w6k4o4upmo" path="res://TitlePart2D/ConstMap/popupMenu/line editnormal.png" id="44_l336e"]
-[ext_resource type="Texture2D" uid="uid://7xof2pvk4x13" path="res://Rectangle 88 (1).png" id="48_x3en1"]
+[ext_resource type="Texture2D" uid="uid://tgcx68ti3fr0" path="res://Scene/PopupMenu/popupMenu/btnCancel/pressedCancel.png" id="44_u16q4"]
+[ext_resource type="Texture2D" uid="uid://ddnc5ocgdaia3" path="res://Scene/PopupMenu/popupMenu/lineedit focus.png" id="45_t7rqv"]
+[ext_resource type="Texture2D" uid="uid://g0w6k4o4upmo" path="res://Scene/PopupMenu/popupMenu/line editnormal.png" id="46_bncur"]
+[ext_resource type="Texture2D" uid="uid://7xof2pvk4x13" path="res://Scene/Map/2d/Rectangle 88 (1).png" id="48_i1so1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y66ij"]
-texture = ExtResource("5_wwwal")
+texture = ExtResource("5_7qr1j")
 
 [sub_resource type="Theme" id="Theme_1nqic"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -77,7 +77,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_y66ij")
 Button/styles/pressed = SubResource("StyleBoxTexture_y66ij")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgx42"]
-texture = ExtResource("4_eeuw8")
+texture = ExtResource("6_p411q")
 
 [sub_resource type="Theme" id="Theme_ft2rg"]
 Button/styles/disabled = SubResource("StyleBoxTexture_pgx42")
@@ -103,7 +103,7 @@ corner_radius_bottom_right = 44
 corner_radius_bottom_left = 44
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vy5un"]
-texture = ExtResource("6_0ifst")
+texture = ExtResource("9_v3ge3")
 
 [sub_resource type="Theme" id="Theme_6ddet"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -140,7 +140,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ehbl"]
-texture = ExtResource("6_10cin")
+texture = ExtResource("11_qc4q8")
 
 [sub_resource type="Theme" id="Theme_48j1m"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -169,7 +169,7 @@ Button/styles/pressed = SubResource("StyleBoxTexture_6ehbl")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vipg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w4gta"]
-texture = ExtResource("6_pefhb")
+texture = ExtResource("16_n3f75")
 
 [sub_resource type="Theme" id="Theme_f8urm"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -196,19 +196,19 @@ Button/styles/normal = SubResource("StyleBoxTexture_w4gta")
 Button/styles/pressed = SubResource("StyleBoxTexture_w4gta")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18fgg"]
-texture = ExtResource("22_cninw")
+texture = ExtResource("18_2o83m")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svqvc"]
-texture = ExtResource("22_cninw")
+texture = ExtResource("18_2o83m")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4p2ip"]
-texture = ExtResource("22_cninw")
+texture = ExtResource("18_2o83m")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ppdx"]
-texture = ExtResource("22_cninw")
+texture = ExtResource("18_2o83m")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b5b5h"]
-texture = ExtResource("22_cninw")
+texture = ExtResource("18_2o83m")
 
 [sub_resource type="Theme" id="Theme_rvdhj"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -237,7 +237,7 @@ Button/styles/pressed = SubResource("StyleBoxTexture_b5b5h")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htrhg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw7fp"]
-texture = ExtResource("8_6j02d")
+texture = ExtResource("20_7hnba")
 
 [sub_resource type="Theme" id="Theme_c4c20"]
 Button/styles/disabled = SubResource("StyleBoxEmpty_htrhg")
@@ -262,13 +262,13 @@ corner_radius_bottom_left = 44
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xdwge"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ukndi"]
-texture = ExtResource("13_oiooy")
+texture = ExtResource("31_hh2u5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gbqia"]
-texture = ExtResource("14_wsjsw")
+texture = ExtResource("32_ax1sd")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7be01"]
-texture = ExtResource("15_m825g")
+texture = ExtResource("33_4ug4e")
 
 [sub_resource type="Theme" id="Theme_ewm0q"]
 Button/styles/disabled = SubResource("StyleBoxEmpty_3tyre")
@@ -289,13 +289,13 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ul01h"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_525m3"]
-texture = ExtResource("37_upqsl")
+texture = ExtResource("39_ix8em")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqseb"]
-texture = ExtResource("38_v1gnc")
+texture = ExtResource("40_j5in2")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pcw6b"]
-texture = ExtResource("39_r64g7")
+texture = ExtResource("41_3ot7y")
 
 [sub_resource type="Theme" id="Theme_8ty5a"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -326,13 +326,13 @@ Button/styles/pressed = SubResource("StyleBoxTexture_pcw6b")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kgc8w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5qp1"]
-texture = ExtResource("40_jhxlt")
+texture = ExtResource("42_o8ssr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfwoe"]
-texture = ExtResource("41_nuo11")
+texture = ExtResource("43_y2swk")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r2hrb"]
-texture = ExtResource("42_cehux")
+texture = ExtResource("44_u16q4")
 
 [sub_resource type="Theme" id="Theme_jnb7w"]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -358,7 +358,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_y5qp1")
 Button/styles/normal = SubResource("StyleBoxTexture_dfwoe")
 Button/styles/pressed = SubResource("StyleBoxTexture_r2hrb")
 
-[sub_resource type="Image" id="Image_7uyo3"]
+[sub_resource type="Image" id="Image_vn7yr"]
 data = {
 "data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 186, 255, 255, 255, 57, 255, 255, 255, 142, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 189, 255, 255, 255, 58, 255, 255, 255, 0, 255, 255, 255, 6, 255, 255, 255, 133, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 190, 255, 255, 255, 68, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 4, 255, 255, 255, 124, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 78, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 2, 255, 255, 255, 113, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 90, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 1, 255, 255, 255, 102, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
 "format": "RGBA8",
@@ -368,13 +368,13 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_epp6k"]
-image = SubResource("Image_7uyo3")
+image = SubResource("Image_vn7yr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_448gf"]
-texture = ExtResource("43_wp8qt")
+texture = ExtResource("45_t7rqv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4m8lk"]
-texture = ExtResource("44_l336e")
+texture = ExtResource("46_bncur")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0v16"]
 
@@ -819,7 +819,7 @@ handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="MapLoader" parent="Node3D/SubViewportContainer/SubViewport" instance=ExtResource("1_s5dra")]
+[node name="MapLoader" parent="Node3D/SubViewportContainer/SubViewport" instance=ExtResource("2_nli8l")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
 environment = ExtResource("1_47h5t")
@@ -853,7 +853,7 @@ offset_left = -42.0
 offset_top = -7.0
 offset_right = 1878.0
 offset_bottom = 138.0
-texture = ExtResource("8_k8ar5")
+texture = ExtResource("8_j3jrh")
 
 [node name="Result" type="Label" parent="Node3D/Panel3/TextureRect"]
 layout_mode = 0
@@ -910,7 +910,7 @@ offset_right = 2.0
 offset_bottom = 324.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ik1rl")
 
-[node name="speed" parent="Node3D/Panel2/Speed" instance=ExtResource("7_5vcqg")]
+[node name="speed" parent="Node3D/Panel2/Speed" instance=ExtResource("10_eo6q0")]
 layout_mode = 1
 offset_left = -250.0
 offset_top = -15.0
@@ -926,14 +926,14 @@ offset_bottom = 580.0
 theme = SubResource("Theme_48j1m")
 toggle_mode = true
 
-[node name="rotation" parent="Node3D/Panel2/Rotation" instance=ExtResource("7_kahm1")]
+[node name="rotation" parent="Node3D/Panel2/Rotation" instance=ExtResource("12_hd475")]
 layout_mode = 1
 offset_left = 29.0
 offset_top = -12.0
 offset_right = 29.0
 offset_bottom = -12.0
 
-[node name="time" parent="Node3D/Panel2" instance=ExtResource("5_71070")]
+[node name="time" parent="Node3D/Panel2" instance=ExtResource("13_42n2p")]
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
@@ -945,14 +945,14 @@ offset_bottom = 399.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="led" parent="Node3D/Panel2" instance=ExtResource("5_d3xoj")]
+[node name="led" parent="Node3D/Panel2" instance=ExtResource("14_r28mi")]
 layout_mode = 1
 offset_left = -43.0
 offset_top = 333.0
-offset_right = 13727.0
-offset_bottom = 12556.0
+offset_right = 16967.0
+offset_bottom = 15432.0
 
-[node name="duration" parent="Node3D/Panel2" instance=ExtResource("6_k7t7c")]
+[node name="duration" parent="Node3D/Panel2" instance=ExtResource("15_nlaqj")]
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
@@ -973,7 +973,7 @@ offset_bottom = 258.0
 theme = SubResource("Theme_f8urm")
 toggle_mode = true
 
-[node name="colorsensor" parent="Node3D/Panel2/ColorSensor" instance=ExtResource("7_wmsdv")]
+[node name="colorsensor" parent="Node3D/Panel2/ColorSensor" instance=ExtResource("17_65i2w")]
 layout_mode = 1
 offset_left = 29.0
 offset_top = -8.0
@@ -989,7 +989,7 @@ offset_bottom = 1.00018
 theme = SubResource("Theme_rvdhj")
 toggle_mode = true
 
-[node name="LineSensor" parent="Node3D/Panel2/Line" instance=ExtResource("5_e3moy")]
+[node name="LineSensor" parent="Node3D/Panel2/Line" instance=ExtResource("19_eqcvs")]
 layout_mode = 1
 offset_left = -8.0
 offset_top = 29.0
@@ -1005,7 +1005,7 @@ offset_bottom = 149.0
 theme = SubResource("Theme_c4c20")
 toggle_mode = true
 
-[node name="ultrasonic" parent="Node3D/Panel2/UltraSonnic" instance=ExtResource("9_d0jcs")]
+[node name="ultrasonic" parent="Node3D/Panel2/UltraSonnic" instance=ExtResource("21_5sogy")]
 offset_left = 29.0
 offset_top = -1.0
 offset_right = 29.0
@@ -1029,7 +1029,7 @@ anchor_bottom = 1.01113
 offset_left = -4.0
 offset_right = -4.00275
 offset_bottom = -0.00244141
-texture = ExtResource("5_71une")
+texture = ExtResource("23_aob7m")
 
 [node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel"]
 layout_mode = 0
@@ -1037,7 +1037,7 @@ offset_left = 91.0
 offset_top = 51.0
 offset_right = 387.0
 offset_bottom = 690.0
-texture = ExtResource("6_cuamn")
+texture = ExtResource("24_yi6xb")
 
 [node name="TextureRect3" type="TextureRect" parent="Node3D/Panel2/Panel"]
 layout_mode = 0
@@ -1047,7 +1047,7 @@ anchor_right = 0.920988
 anchor_bottom = 0.176634
 offset_right = -6.10352e-05
 offset_bottom = 0.000183105
-texture = ExtResource("7_i4t4f")
+texture = ExtResource("25_53vra")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Node3D/Panel2/Panel/TextureRect3"]
 layout_mode = 2
@@ -1060,8 +1060,8 @@ layout_mode = 2
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
-theme = ExtResource("8_svs0e")
-icon = ExtResource("9_y7axb")
+theme = ExtResource("26_h2lrx")
+icon = ExtResource("27_ko4dx")
 icon_alignment = 1
 
 [node name="Control2" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
@@ -1071,8 +1071,8 @@ layout_mode = 2
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
-theme = ExtResource("8_svs0e")
-icon = ExtResource("10_kkede")
+theme = ExtResource("26_h2lrx")
+icon = ExtResource("28_t2nic")
 icon_alignment = 1
 
 [node name="Control3" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
@@ -1082,8 +1082,8 @@ layout_mode = 2
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
-theme = ExtResource("8_svs0e")
-icon = ExtResource("11_atcd2")
+theme = ExtResource("26_h2lrx")
+icon = ExtResource("29_q5bmw")
 icon_alignment = 1
 
 [node name="Control4" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
@@ -1093,8 +1093,8 @@ layout_mode = 2
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
-theme = ExtResource("8_svs0e")
-icon = ExtResource("12_hdehy")
+theme = ExtResource("26_h2lrx")
+icon = ExtResource("30_ryfik")
 icon_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Node3D/Panel2/Panel"]
@@ -1113,7 +1113,7 @@ layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
 theme = SubResource("Theme_ewm0q")
-icon = ExtResource("16_g4gce")
+icon = ExtResource("34_doqwy")
 icon_alignment = 1
 
 [node name="Control2" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
@@ -1124,7 +1124,7 @@ layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
 theme = SubResource("Theme_ewm0q")
-icon = ExtResource("17_t7v8s")
+icon = ExtResource("35_jus23")
 icon_alignment = 1
 
 [node name="Control3" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
@@ -1135,7 +1135,7 @@ layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
 theme = SubResource("Theme_ewm0q")
-icon = ExtResource("18_rsdwy")
+icon = ExtResource("36_u70op")
 icon_alignment = 1
 
 [node name="Control4" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
@@ -1146,7 +1146,7 @@ layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
 theme = SubResource("Theme_ewm0q")
-icon = ExtResource("19_vmajn")
+icon = ExtResource("37_mjwcx")
 icon_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Node3D/Panel2/Panel"]
@@ -1197,7 +1197,7 @@ offset_right = 177.5
 offset_bottom = 150.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("38_gcip8")
+texture = ExtResource("38_g7m2w")
 
 [node name="ok" type="Button" parent="Node3D/Panel/TextureRect"]
 layout_mode = 0
@@ -1263,7 +1263,7 @@ offset_left = -5.0
 offset_top = 8.0
 offset_right = 253.0
 offset_bottom = 266.0
-texture = ExtResource("48_x3en1")
+texture = ExtResource("48_i1so1")
 
 [node name="Finish" type="Label" parent="Node3D/Panel4"]
 layout_mode = 0

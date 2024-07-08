@@ -15,7 +15,7 @@ run/main_scene="res://Scene/Menu/Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 run/max_fps=60
 boot_splash/bg_color=Color(0.00392157, 0.14902, 0.235294, 1)
-boot_splash/image="res://icon.png"
+boot_splash/image="res://poster.png"
 config/icon="res://icon.svg"
 
 [autoload]
