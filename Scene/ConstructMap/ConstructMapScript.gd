@@ -179,18 +179,24 @@ func _on_save_button_down():
 	pass # Replace with function body.
 
 func _on_ok_pressed():
-	print("Я нашел")
+	
 	var textedit = $Root3D/PanelBlur/PanelBlur4/TextureRect/TextEdit.text
+	
 	if textedit!="":
 		_save(textedit)
-	$Root3D/PanelBlur/PanelBlur2.hide()
-	$Root3D/PanelBlur/PanelBlur4.hide()
+		$Root3D/PanelBlur/PanelBlur2.hide()
+		$Root3D/PanelBlur/PanelBlur4.hide()
+		$Root3D/PanelBlur/PanelBlur4/TextureRect/Label.text=""
+	else:
+		$Root3D/PanelBlur/PanelBlur4/TextureRect/Label.text="Введите название карты"
+	
 	pass # Replace with function body.
 
 
 func _on_cancel_pressed():
 	$Root3D/PanelBlur/PanelBlur2.hide()
 	$Root3D/PanelBlur/PanelBlur4.hide()
+	$Root3D/PanelBlur/PanelBlur4/TextureRect/Label.text=""
 	pass # Replace with function body.
 
 
@@ -299,7 +305,7 @@ func _on_load_pressed():
 		
 	pass # Replace with function body.
 
-var loadname
+var loadname=""
 func getName():
 	
 	loadname=btn_group.get_pressed_button().text
@@ -315,15 +321,16 @@ func _on_back_pressed():
 
 func _on_o_kload_pressed():
 
-	
-	_load(loadname)
-	#get_node(btn_group.get_pressed_button().get_path())
-	$Root3D/PanelBlur/PanelBlur2.hide()
-	$Root3D/PanelBlur/PanelBlur3.hide()
-	var children = $Root3D/PanelBlur/PanelBlur3/TextureRect/ScrollContainer/VScrollBar.get_children()
-	for i in children:
-		i.queue_free()
-	pass # Replace with 
+	if loadname!="":
+		_load(loadname)
+		$Root3D/PanelBlur/PanelBlur2.hide()
+		$Root3D/PanelBlur/PanelBlur3.hide()
+		$Root3D/PanelBlur/PanelBlur3/TextureRect/Label.text=""
+		var children = $Root3D/PanelBlur/PanelBlur3/TextureRect/ScrollContainer/VScrollBar.get_children()
+		for i in children:
+			i.queue_free()
+	else:
+		$Root3D/PanelBlur/PanelBlur3/TextureRect/Label.text="Выберите карту которую хотите редактировать"
 	pass # Replace with function body.
 
 
@@ -331,6 +338,7 @@ func _on_o_kload_pressed():
 func _on_cancelload_pressed():
 	$Root3D/PanelBlur/PanelBlur2.hide()
 	$Root3D/PanelBlur/PanelBlur3.hide()
+	$Root3D/PanelBlur/PanelBlur3/TextureRect/Label.text=""
 	var children = $Root3D/PanelBlur/PanelBlur3/TextureRect/ScrollContainer/VScrollBar.get_children()
 	for i in children:
 		i.queue_free()
