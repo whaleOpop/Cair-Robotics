@@ -8,7 +8,7 @@ extends Camera3D
 @export var min_speed : float = 0.2
 
 @onready var _velocity = default_velocity
-@export var boundary_min: Vector3 = Vector3(-20, 7, -20)
+@export var boundary_min: Vector3 = Vector3(-20, 0, -20)
 @export var boundary_max: Vector3 = Vector3(20, 30, 20)
 func _input(event):
 	if not current:
