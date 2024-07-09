@@ -1,0 +1,239 @@
+[gd_scene load_steps=14 format=3 uid="uid://ctcp34j241wek"]
+
+[ext_resource type="Script" path="res://Scene/Car/Car.gd" id="1_p7ljc"]
+[ext_resource type="ArrayMesh" uid="uid://reebnk5mnsa4" path="res://import/corpus.res" id="1_qdl23"]
+[ext_resource type="ArrayMesh" uid="uid://bgoptsrdllnrk" path="res://import/bumper.res" id="2_q8r01"]
+[ext_resource type="Script" path="res://Scene/Car/LineSensor.gd" id="2_skftq"]
+[ext_resource type="ArrayMesh" uid="uid://dm71icggihnck" path="res://import/doors.res" id="3_gc6iu"]
+[ext_resource type="Material" uid="uid://cgmwn3i350scl" path="res://Scene/Car/black_transperent.tres" id="3_h1kuu"]
+[ext_resource type="Material" uid="uid://dq6tgw4uv2leq" path="res://Scene/Car/white_transperent.tres" id="4_283ou"]
+[ext_resource type="ArrayMesh" uid="uid://baw6wxnh0w2b5" path="res://import/windows doors.res" id="4_swed2"]
+[ext_resource type="ArrayMesh" uid="uid://cp5oy6tlvsx63" path="res://import/window.res" id="5_yatyu"]
+[ext_resource type="ArrayMesh" uid="uid://db1idtc0wkcdh" path="res://import/wheelLeft.res" id="6_ayg6w"]
+[ext_resource type="ArrayMesh" uid="uid://bvhyeit3gi543" path="res://import/whhelright.res" id="7_mibw7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqlse"]
+transparency = 1
+depth_draw_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 0.596078, 0.14902, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_miexi"]
+size = Vector3(0.58833, 0.238566, 2.6788)
+
+[node name="Spatial" type="Node3D"]
+script = ExtResource("1_p7ljc")
+metadata/Name = "Car"
+
+[node name="VehicleBody" type="VehicleBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000600457, 0.551558, -0.00260115)
+collision_layer = 15
+collision_mask = 15
+continuous_cd = true
+max_contacts_reported = 1
+
+[node name="LineSensor" type="Node3D" parent="VehicleBody"]
+script = ExtResource("2_skftq")
+
+[node name="LRay3" type="RayCast3D" parent="VehicleBody/LineSensor"]
+transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, 0.592295, 0.108559, 1.20214)
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
+
+[node name="CSGBox3D" type="CSGBox3D" parent="VehicleBody/LineSensor/LRay3"]
+transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
+material_override = ExtResource("3_h1kuu")
+size = Vector3(0.1, 0, 0.1)
+
+[node name="LRay2" type="RayCast3D" parent="VehicleBody/LineSensor"]
+transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, 0.355377, 0.108559, 1.20751)
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
+
+[node name="CSGBox3D" type="CSGBox3D" parent="VehicleBody/LineSensor/LRay2"]
+transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
+material_override = ExtResource("4_283ou")
+size = Vector3(0.1, 0, 0.1)
+
+[node name="LRay1" type="RayCast3D" parent="VehicleBody/LineSensor"]
+transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, 0.118459, 0.108559, 1.21288)
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
+
+[node name="CSGBox3D" type="CSGBox3D" parent="VehicleBody/LineSensor/LRay1"]
+transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
+size = Vector3(0.1, 0, 0.1)
+
+[node name="RRay1" type="RayCast3D" parent="VehicleBody/LineSensor"]
+transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, -0.118459, 0.108559, 1.21826)
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
+
+[node name="CSGBox3D" type="CSGBox3D" parent="VehicleBody/LineSensor/RRay1"]
+transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
+size = Vector3(0.1, 0, 0.1)
+
+[node name="RRay2" type="RayCast3D" parent="VehicleBody/LineSensor"]
+transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, -0.355377, 0.108559, 1.22363)
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
+
+[node name="CSGBox3D" type="CSGBox3D" parent="VehicleBody/LineSensor/RRay2"]
+transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
+size = Vector3(0.1, 0, 0.1)
+
+[node name="RRay3" type="RayCast3D" parent="VehicleBody/LineSensor"]
+transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, -0.592295, 0.108559, 1.229)
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
+
+[node name="CSGBox3D" type="CSGBox3D" parent="VehicleBody/LineSensor/RRay3"]
+transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
+size = Vector3(0.1, 0, 0.1)
+
+[node name="ColorSensor" type="Node3D" parent="VehicleBody"]
+
+[node name="Led" type="Node3D" parent="VehicleBody"]
+
+[node name="Time" type="Node3D" parent="VehicleBody"]
+
+[node name="CarCorpus" type="MeshInstance3D" parent="VehicleBody"]
+mesh = ExtResource("1_qdl23")
+skeleton = NodePath("../..")
+
+[node name="Bubper" type="MeshInstance3D" parent="VehicleBody/CarCorpus"]
+mesh = ExtResource("2_q8r01")
+skeleton = NodePath("../../..")
+
+[node name="Doors" type="MeshInstance3D" parent="VehicleBody/CarCorpus"]
+mesh = ExtResource("3_gc6iu")
+skeleton = NodePath("../../..")
+
+[node name="DoorsGlass" type="MeshInstance3D" parent="VehicleBody/CarCorpus"]
+mesh = ExtResource("4_swed2")
+skeleton = NodePath("../../..")
+
+[node name="mirrow" type="MeshInstance3D" parent="VehicleBody/CarCorpus"]
+mesh = ExtResource("5_yatyu")
+skeleton = NodePath("../../..")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="VehicleBody/CarCorpus"]
+transform = Transform3D(1.24573, -1.84768e-09, 1.05227e-09, 4.99352e-08, 0.0444399, -0.0515599, 6.74927e-09, 0.0122366, 0.187251, 2.02388e-07, 0.641691, -1.33576)
+visible = false
+material = SubResource("StandardMaterial3D_gqlse")
+
+[node name="WheelL" type="MeshInstance3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 0.2, -0.955)
+mesh = ExtResource("6_ayg6w")
+
+[node name="WheelL2" type="MeshInstance3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 0.2, 0.769)
+mesh = ExtResource("6_ayg6w")
+skeleton = NodePath("../..")
+
+[node name="WheelR" type="MeshInstance3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0.2, -0.955)
+mesh = ExtResource("7_mibw7")
+
+[node name="WheelR2" type="MeshInstance3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0.2, 0.769)
+mesh = ExtResource("7_mibw7")
+
+[node name="LWheelBac" type="VehicleWheel3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 0.2, -0.955)
+use_as_traction = true
+use_as_steering = true
+wheel_radius = 0.3
+suspension_travel = 0.1
+suspension_stiffness = 50.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="VehicleBody/LWheelBac"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+radius = 0.3
+height = 0.278
+
+[node name="LWheelFor" type="VehicleWheel3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 0.2, 0.955)
+use_as_traction = true
+use_as_steering = true
+wheel_radius = 0.3
+suspension_travel = 0.5
+suspension_stiffness = 25.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="VehicleBody/LWheelFor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+radius = 0.3
+height = 0.278
+
+[node name="RWheelBac" type="VehicleWheel3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0.2, -0.955)
+use_as_traction = true
+use_as_steering = true
+wheel_radius = 0.3
+suspension_travel = 0.5
+suspension_stiffness = 25.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="VehicleBody/RWheelBac"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+radius = 0.3
+height = 0.278
+
+[node name="RWheelFor" type="VehicleWheel3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0.203, 0.955)
+use_as_traction = true
+use_as_steering = true
+wheel_radius = 0.3
+suspension_travel = 0.5
+suspension_stiffness = 25.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="VehicleBody/RWheelFor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+radius = 0.3
+height = 0.278
+
+[node name="CollisionShape" type="CollisionShape3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.217864, 0)
+shape = SubResource("BoxShape3D_miexi")
+
+[node name="LWheelMiddle" type="VehicleWheel3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 0.2, 0)
+use_as_traction = true
+wheel_radius = 0.3
+suspension_travel = 0.5
+suspension_stiffness = 25.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="VehicleBody/LWheelMiddle"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+radius = 0.3
+height = 0.278
+
+[node name="RWheelMiddle" type="VehicleWheel3D" parent="VehicleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64, 0.203, 0)
+use_as_traction = true
+wheel_radius = 0.3
+suspension_travel = 0.5
+suspension_stiffness = 25.0
+damping_compression = 0.3
+damping_relaxation = 0.5
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="VehicleBody/RWheelMiddle"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+radius = 0.3
+height = 0.278
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
