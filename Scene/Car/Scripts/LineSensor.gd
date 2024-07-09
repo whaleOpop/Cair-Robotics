@@ -11,12 +11,6 @@ var white_material: StandardMaterial3D = load("res://Scene/Car/Material/white_tr
 var black_transperent: StandardMaterial3D = load("res://Scene/Car/Material/black_transperent.tres") as StandardMaterial3D
 
 
-
-
-
-var black_material
-
-
 func _ready():
 	for i in get_children():
 		sensors.append(i)
