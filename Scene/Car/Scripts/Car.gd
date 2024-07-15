@@ -11,6 +11,7 @@ var max_steering_angle_front = 45.0
 var max_steering_angle_rear = 30.0
 
 func _ready():
+	car.set_direction_in_degrees(float(Globals.RobotRot[0].y))
 	pass
 
 func _physics_process(delta):
