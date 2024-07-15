@@ -4,78 +4,68 @@ extends Node3D
 @onready var color_sensor = $tank_tracks_motion/ColorSensor
 @onready var car = $tank_tracks_motion
 @onready var timer = $Timer
+
 var _changeState = false
 var state
 
-# Максимальный угол поворота для передних и задних колёс
-var max_steering_angle_front = 45.0
-var max_steering_angle_rear = 30.0
-
 func _ready():
 	car.set_direction_in_degrees(float(Globals.RobotRot[0].y))
-	pass
 
 func _physics_process(delta):
 	if car != null:
 		var lineState = line_sensor.get_line_state()
-		var colorState= color_sensor.get_color_state()
-		print(lineState)
-		if !_changeState:
-			state = getState(lineState)
-			_changeState = true
+		var colorState = color_sensor.get_color_state()
 		
-		if state != null:
+		if !_changeState:
+			state = getState(lineState, colorState)
+			set_wheel_engine_force([0, 0])
+			_changeState = true
+			print(state)
+		if state != -1 and timer.time_left == 0.0:
 			var stateItem = Globals.statmentList[state]
 			timer.wait_time = Globals.getDurationValue(stateItem)
 			
+			timer.start() 
 			set_wheel_engine_force(stateItem.speed)
+		elif state == -1 and timer.time_left == 0.0:
+			set_wheel_engine_force([0, 0])  # Stop the robot if state is -1 
+func getState(lineState, colorState):
+ # Инициализируем переменную со значением -1, чтобы обозначить отсутствие совпадений
 
-			
-func getState(lineState):
 	for i in range(Globals.statmentList.size()):
-		if _compareArrayLine(Globals.statmentList[i].line, lineState):
-			return i
-	return null
+		# Получаем текущий элемент списка
+		var statement_item = Globals.statmentList[i]
+		# Проверяем совпадение строки и цвета
+		if _compareColor(statement_item.color, colorState) and \
+			_compareArrayLine(statement_item.line, lineState):
+				return i  # Обновляем значение переменной statement
+				  # Выходим из цикла, так как мы нашли первый совпадающий элемент
+	return -1
+
+func _compareColor(color, colorstate):
+	print(color," ",colorstate[0].r8," ",colorstate[0].g8," ",colorstate[0].b8," ")
+	return (color[0][0] <= colorstate[0].r8) and (color[0][1] >= colorstate[0].r8) and \
+		(color[1][0] <= colorstate[0].g8) and (color[1][1] >= colorstate[0].g8) and \
+		(color[2][0] <= colorstate[0].b8) and (color[2][1] >= colorstate[0].b8)
+
 
 func _compareArrayLine(line, linestate):
-	var mask = [false, false, false, false, false, false]
+	if line.size() != linestate.size():
+		return false  # Размеры массивов не совпадают
+
 	for i in range(line.size()):
-		if line[i] != 2:
-			mask[i] = true
-			
-	for i in range(line.size()):
-		if mask[i]:
-			if line[i] != linestate[i]:
-				return false
+		if line[i] != 2 and line[i] != linestate[i]:
+			return false
 	return true
 
 func _on_timer_timeout():
 	_changeState = false
-	pass # Replace with function body.
-
-func calculate_steering_angles(speed_diff):
-	# Calculate steering angles based on clamped speed difference
-	var clamped_speed_diff = clamp(speed_diff, -100, 100)
-	
-	var steering_angle_front = (clamped_speed_diff / 100.0) * max_steering_angle_front
-	var steering_angle_rear = (clamped_speed_diff / 100.0) * max_steering_angle_rear
-	
-	return {
-		"front_left": -steering_angle_front,
-		"front_right": steering_angle_front,
-		"rear_left": steering_angle_rear,
-		"rear_right": -steering_angle_rear
-	}
-
 
 func set_wheel_engine_force(speed):
-	# Clamp speeds between -100 and 100
 	var clamped_speed = [
 		clamp(speed[0], -100, 100),
 		clamp(speed[1], -100, 100)
 	]
 
-	# Set engine forces
 	car.set_left_track_speed_percent(clamped_speed[0])
 	car.set_right_track_speed_percent(clamped_speed[1])
-
