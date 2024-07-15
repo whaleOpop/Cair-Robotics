@@ -115,7 +115,7 @@ func _on_color_sensor_toggled(button_pressed):
 
 
 func _on_duration_toggled(button_pressed):
-	print("dskdsj")
+	
 	if button_pressed:
 		amimUI.play("dur_btn")
 	else:
@@ -222,7 +222,7 @@ func getCurrentState():
 	Globals.CurrentStatment=Globals.getStateByName(button_group.get_pressed_button().get_child(0).text)
 	$Node3D/Panel2/Line/LineSensor.setLineByState()
 	$Node3D/Panel2/UltraSonnic/ultrasonic.setUltraSonicByState()
-	$Node3D/Panel2/ColorSensor/colorsensor.setColorByState()
+	$Node3D/Panel2/ColorSensor/colorsensor.set_color_by_state()
 	$Node3D/Panel2/Speed/speed.setSpeedByState()
 	$Node3D/Panel2/Rotation/rotation.setRotationByState()
 	$Node3D/Panel2/duration.setDurationByState()
@@ -241,7 +241,7 @@ func _on_minus_pressed():
 			i.queue_free()
 			Globals.deleteState()
 	
-	print(Globals.statmentList)
+
 	$Node3D/Panel2/Panel/CurStatment.text="Deleted"
 	Globals.CurrentStatment=null
 	pass # Replace with function body.
@@ -332,7 +332,7 @@ func _on_btn_back_pressed():
 func _on_seconds_timeout():
 	secconds=secconds+1
 	
-	print(secconds)
+	
 	if (secconds%60==0):
 		minutos=secconds/60
 	if (secconds==60):
