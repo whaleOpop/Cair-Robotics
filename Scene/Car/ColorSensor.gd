@@ -10,9 +10,19 @@ func _ready():
 			sensors.append(i)
 	pass 
 
-
-func change_sensor_color(sensor, color):
+func get_color_state():
+	var color_state = []
+	for sensor in sensors:
+		var state = get_sensor_color(sensor)
+		color_state.append(state)
+		change_sensor_color(sensor, state)
+	return color_state
+	pass
 	
+func change_sensor_color(sensor, color):
+	print(color)
+	if color:
+		sensor.get_child(0).get("material_override").set("albedo_color",color)
 	pass
 
 func get_sensor_color(sensor):

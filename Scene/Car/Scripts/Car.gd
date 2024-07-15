@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var line_sensor = $tank_tracks_motion/LineSensor
+@onready var color_sensor = $tank_tracks_motion/ColorSensor
 @onready var car = $tank_tracks_motion
 @onready var timer = $Timer
 var _changeState = false
@@ -17,6 +18,7 @@ func _ready():
 func _physics_process(delta):
 	if car != null:
 		var lineState = line_sensor.get_line_state()
+		var colorState= color_sensor.get_color_state()
 		print(lineState)
 		if !_changeState:
 			state = getState(lineState)
