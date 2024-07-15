@@ -65,7 +65,7 @@ func parseVec3(strVec: String) -> Vector3:
 var isUsed = true
 
 func _on_area_3d_body_entered(body):
-	if body.get_class() == "VehicleBody3D" and isUsed:
+	if body.get_class() == "RigidBody3D" and isUsed:
 		Globals.Checkpoint += 1
 		isUsed = false
 
@@ -73,12 +73,10 @@ func reset():
 	isUsed = true
 
 func _on_area_3d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	print(local_shape_index)
-	print(body_rid)
-	print(body_shape_index)
+	pass
 
 func _on_finish_body_entered(body):
-	if body.get_class() == "VehicleBody3D":
+	if body.get_class() == "RigidBody3D":
 		if Globals.Finish == Globals.Checkpoint:
 			Globals.Succesfull = true
 			body.get_parent().queue_free()
