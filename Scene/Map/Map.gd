@@ -255,7 +255,7 @@ func _on_play_pressed():
 		
 		car.set("position",Globals.RobotPos[0])
 		car.set("rotation_degrees",Globals.RobotRot[0])
-		car.rotation_degrees.y+=0
+		
 
 		$Seconds.autostart=true
 		$Seconds.start()
