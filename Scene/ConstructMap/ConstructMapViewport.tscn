@@ -616,6 +616,7 @@ uppercase = true
 max_lines_visible = 10
 
 [node name="PanelBlur4" type="Panel" parent="Root3D/PanelBlur"]
+visible = false
 material = SubResource("ShaderMaterial_2deyx")
 layout_mode = 0
 offset_left = -597.0
@@ -631,6 +632,7 @@ offset_bottom = 40.0
 texture = ExtResource("38_hnv4d")
 
 [node name="Label" type="Label" parent="Root3D/PanelBlur/PanelBlur4/TextureRect"]
+layout_mode = 0
 offset_left = 60.0
 offset_top = 170.0
 offset_right = 308.0

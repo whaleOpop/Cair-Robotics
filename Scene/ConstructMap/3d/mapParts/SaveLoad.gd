@@ -17,6 +17,9 @@ func saveObject() -> Dictionary:
 		"Square":
 			dict["albedoColorMesh"] = str(get_child(0).get("surface_material_override/0").get("albedo_color"))
 
+	if node_name == "Checkpoint":
+		dict["albedoColor"] = str(get_child(2).get("surface_material_override/0").get("albedo_color"))
+
 	return dict
 
 func loadObject(loadedDict: Dictionary) -> void:
@@ -45,7 +48,7 @@ func loadObject(loadedDict: Dictionary) -> void:
 			mat_white.albedo_color = parseVec4(loadedDict["albedoColorMesh"])
 			get_child(0).set("surface_material_override/0", mat_white)
 
-	if node_name == "Checkpoint":
+	if node_name == "Checkpoint" and "albedoColor" in loadedDict:
 		mat_color.albedo_color = parseVec4(loadedDict["albedoColor"])
 		get_child(2).set("surface_material_override/0", mat_color)
 
@@ -62,7 +65,7 @@ func parseVec3(strVec: String) -> Vector3:
 var isUsed = true
 
 func _on_area_3d_body_entered(body):
-	if body.get_class() == "VehicleBody3D" and isUsed:
+	if body.get_class() == "RigidBody3D" and isUsed:
 		Globals.Checkpoint += 1
 		isUsed = false
 
@@ -70,12 +73,10 @@ func reset():
 	isUsed = true
 
 func _on_area_3d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	print(local_shape_index)
-	print(body_rid)
-	print(body_shape_index)
+	pass
 
 func _on_finish_body_entered(body):
-	if body.get_class() == "VehicleBody3D":
+	if body.get_class() == "RigidBody3D":
 		if Globals.Finish == Globals.Checkpoint:
 			Globals.Succesfull = true
 			body.get_parent().queue_free()
