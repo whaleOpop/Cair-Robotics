@@ -111,7 +111,7 @@ script = ExtResource("1_w1kgn")
 shape = SubResource("ConcavePolygonShape3D_vfu4m")
 
 [node name="line" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.57953e-07, 0, -3.61354, 0, 1, 0, 3.61354, 0, -1.57953e-07, -0.122035, -0.0464543, -1.99524)
+transform = Transform3D(-1.57953e-07, 0, -3.61354, 0, 1, 0, 3.61354, 0, -1.57953e-07, -0.122035, -0.0373255, -1.99524)
 mesh = SubResource("ArrayMesh_kqcec")
 surface_material_override/0 = SubResource("StandardMaterial3D_jbnhp")
 
