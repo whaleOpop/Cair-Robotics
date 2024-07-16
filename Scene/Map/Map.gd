@@ -44,7 +44,7 @@ func hideControl():
 
 func showControl():
 	btnSpeed.show()
-	btnRotation.show()
+	btnRotation.hide()
 	btnTime.show()
 	btnLed.show()
 	btnDuration.show()
@@ -65,8 +65,8 @@ func _on_button_pressed():
 	for i in MapLoader.get_children():
 		if i.get("metadata/Name") =="Car":
 			i.queue_free()
-	$Node3D/Panel2.show()
-	$Node3D/btnRestart.hide()
+	showControl()
+	$Node3D/Panel2/Panel/DebugPanel.hide()
 	$Seconds.stop()
 	Globals.Succesfull=false
 	$Seconds.autostart=false
@@ -260,14 +260,16 @@ func _on_play_pressed():
 		$Seconds.autostart=true
 		$Seconds.start()
 		MapLoader.add_child(car)
-		$Node3D/Panel2.hide()
-		$Node3D/btnRestart.show()
+		$Node3D/Panel2/Panel/DebugPanel.show()
+		hideControl()
 	else:
 		
 		$Seconds.stop()
 		$Seconds.autostart=true
 		$Node3D/Panel2.show()
 		$Node3D/btnRestart.hide()
+		$Node3D/Panel2/Panel/DebugPanel.hide()
+		showControl()
 	
 	pass # Replace with function body.
 func isCarOnMap(listpartmap):

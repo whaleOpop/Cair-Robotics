@@ -53,3 +53,9 @@ func set_left_track_speed_percent(percent):
 
 func set_right_track_speed_percent(percent):
 	rightTrackSpeedPercent = clamp(percent, -200, 200)
+
+func get_speedL():
+	return leftTrackSpeedPercent
+	
+func get_speedR():
+	return rightTrackSpeedPercent

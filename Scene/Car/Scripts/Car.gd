@@ -51,7 +51,27 @@ func _physics_process(delta):
 			set_wheel_engine_force([0, 0])
 			led.set_led(0)
 			state = get_state(line_state, color_state, timer_state, ultra_sonic_state)
-			
+
+func get_led_state():
+	return led.get_state_led()
+func get_speed_state():
+	return [car.get_speedL(),car.get_speedR()]
+func get_line_state():
+	return line_sensor.get_line_state()
+
+func get_color_state():
+	return color_sensor.get_color_state()
+
+func get_timer_state():
+	return time_sensor.get_time_state()
+
+func get_ultra_sonic_state():
+	return ultra_sonic_sensor.get_distances()
+	
+func get_state_now():
+	return state
+	pass
+	
 func get_state(line_state, color_state, timer_state, ultra_sonic_state):
 	for i in range(Globals.statmentList.size()):
 		var statement_item = Globals.statmentList[i]
