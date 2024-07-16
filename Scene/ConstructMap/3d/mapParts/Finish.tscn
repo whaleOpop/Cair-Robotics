@@ -112,7 +112,7 @@ script = ExtResource("1_blhdn")
 shape = SubResource("ConcavePolygonShape3D_0gmop")
 
 [node name="line" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.57953e-07, 0, -3.61354, 0, 1, 0, 3.61354, 0, -1.57953e-07, -0.122035, 0, -1.99524)
+transform = Transform3D(-1.57953e-07, 0, -3.61354, 0, 1, 0, 3.61354, 0, -1.57953e-07, -0.122035, -0.0464543, -1.99524)
 mesh = SubResource("ArrayMesh_bls6n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="line"]

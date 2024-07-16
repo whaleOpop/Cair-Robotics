@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ctcp34j241wek"]
+[gd_scene load_steps=18 format=3 uid="uid://ctcp34j241wek"]
 
 [ext_resource type="Script" path="res://Scene/Car/Scripts/Car.gd" id="1_3wv73"]
 [ext_resource type="ArrayMesh" uid="uid://reebnk5mnsa4" path="res://import/corpus.res" id="1_qdl23"]
@@ -10,13 +10,9 @@
 [ext_resource type="ArrayMesh" uid="uid://baw6wxnh0w2b5" path="res://import/windows doors.res" id="4_swed2"]
 [ext_resource type="Material" uid="uid://dq6tgw4uv2leq" path="res://Scene/Car/Material/white_transperent.tres" id="5_fnypm"]
 [ext_resource type="ArrayMesh" uid="uid://cp5oy6tlvsx63" path="res://import/window.res" id="5_yatyu"]
+[ext_resource type="Script" path="res://Scene/Car/ColorSensor.gd" id="6_1td38"]
 [ext_resource type="ArrayMesh" uid="uid://db1idtc0wkcdh" path="res://import/wheelLeft.res" id="6_ayg6w"]
 [ext_resource type="ArrayMesh" uid="uid://bvhyeit3gi543" path="res://import/whhelright.res" id="7_mibw7"]
-[ext_resource type="Script" path="res://Scene/Car/Scripts/ColorSensor.gd" id="13_45yfb"]
-[ext_resource type="Script" path="res://Scene/Car/Scripts/Led.gd" id="14_d4taf"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71ju1"]
-shading_mode = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a37ib"]
 
@@ -33,53 +29,15 @@ size = Vector3(1.36608, 0.545788, 1.21248)
 height = 1.40369
 radius = 0.2
 
-[sub_resource type="Animation" id="Animation_3epcl"]
-resource_name = "FLASH"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("tank_tracks_motion/Led/CSGBox3D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_xxuwh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("tank_tracks_motion/Led/CSGBox3D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_t0tik"]
-_data = {
-"FLASH": SubResource("Animation_3epcl"),
-"RESET": SubResource("Animation_xxuwh")
-}
-
 [node name="Spatial" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.83933, 0)
 script = ExtResource("1_3wv73")
 metadata/Name = "Car"
 
 [node name="Timer" type="Timer" parent="."]
-process_mode = 3
-process_physics_priority = 1
 process_callback = 0
-one_shot = true
+wait_time = 0.05
+autostart = true
 
 [node name="tank_tracks_motion" type="RigidBody3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -134,8 +92,8 @@ script = ExtResource("3_4q1i6")
 
 [node name="LRay3" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
 transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, 0.592295, 0.108559, 1.20214)
-target_position = Vector3(0, 0.1, 0)
-collision_mask = 14
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/LRay3"]
 transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
@@ -144,8 +102,8 @@ size = Vector3(0.1, 0, 0.1)
 
 [node name="LRay2" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
 transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, 0.355377, 0.108559, 1.20751)
-target_position = Vector3(0, 0.1, 0)
-collision_mask = 14
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/LRay2"]
 transform = Transform3D(1, -2.84217e-14, 0, -3.62423e-14, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
@@ -154,8 +112,8 @@ size = Vector3(0.1, 0, 0.1)
 
 [node name="LRay1" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
 transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, 0.118459, 0.108559, 1.21288)
-target_position = Vector3(0, 0.1, 0)
-collision_mask = 14
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/LRay1"]
 transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
@@ -163,8 +121,8 @@ size = Vector3(0.1, 0, 0.1)
 
 [node name="RRay1" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
 transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, -0.118459, 0.108559, 1.21826)
-target_position = Vector3(0, 0.1, 0)
-collision_mask = 14
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/RRay1"]
 transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
@@ -172,8 +130,8 @@ size = Vector3(0.1, 0, 0.1)
 
 [node name="RRay2" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
 transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, -0.355377, 0.108559, 1.22363)
-target_position = Vector3(0, 0.1, 0)
-collision_mask = 14
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/RRay2"]
 transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
@@ -181,8 +139,8 @@ size = Vector3(0.1, 0, 0.1)
 
 [node name="RRay3" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
 transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, -0.592295, 0.108559, 1.229)
-target_position = Vector3(0, 0.1, 0)
-collision_mask = 14
+target_position = Vector3(0, 1, 0)
+collision_mask = 6
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/RRay3"]
 transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
@@ -190,24 +148,21 @@ size = Vector3(0.1, 0, 0.1)
 
 [node name="ColorSensor" type="Node3D" parent="tank_tracks_motion"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.24786, 0.0599999, -0.945498)
-script = ExtResource("13_45yfb")
+script = ExtResource("6_1td38")
 
 [node name="RayCast3D" type="RayCast3D" parent="tank_tracks_motion/ColorSensor"]
-collision_mask = 8
+collision_mask = 9
 
-[node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/ColorSensor/RayCast3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/ColorSensor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602512, 0)
-material_override = SubResource("StandardMaterial3D_71ju1")
 size = Vector3(0.1, 0, 0.1)
 material = SubResource("StandardMaterial3D_a37ib")
 
 [node name="Led" type="Node3D" parent="tank_tracks_motion"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
-script = ExtResource("14_d4taf")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/Led"]
 transform = Transform3D(1.24573, -1.84768e-09, 1.05227e-09, 4.99352e-08, 0.0444399, -0.0515599, 6.74927e-09, 0.0122366, 0.187251, 2.02388e-07, 0.641691, -1.33576)
-visible = false
 material = SubResource("StandardMaterial3D_gqlse")
 
 [node name="Time" type="Node3D" parent="tank_tracks_motion"]
@@ -224,10 +179,5 @@ shape = SubResource("CylinderShape3D_12uyp")
 [node name="CollisionShape3" type="CollisionShape3D" parent="tank_tracks_motion"]
 transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 0.00969841, 0.200934, 0.950145)
 shape = SubResource("CylinderShape3D_12uyp")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_t0tik")
-}
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

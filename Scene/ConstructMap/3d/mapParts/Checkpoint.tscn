@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://r7qnwo6h65xq"]
+[gd_scene load_steps=18 format=3 uid="uid://r7qnwo6h65xq"]
 
 [ext_resource type="Script" path="res://Scene/ConstructMap/3d/mapParts/SaveLoad.gd" id="1_dk6rs"]
 [ext_resource type="Script" path="res://Scene/ConstructMap/3d/mapParts/line.gd" id="2_i86x4"]
@@ -90,6 +90,8 @@ data = PackedVector3Array(0, 0.1, -0.0705, 1.1289, 0.1, -0.0705, 1.1289, 0.1, 0,
 
 [sub_resource type="BoxMesh" id="BoxMesh_fu6e8"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frdkv"]
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1m0fr"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
@@ -117,7 +119,7 @@ script = ExtResource("2_jp0c8")
 shape = SubResource("ConcavePolygonShape3D_c0nwu")
 
 [node name="line" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.57953e-07, 0, -3.61354, 0, 1, 0, 3.61354, 0, -1.57953e-07, -0.122035, 0, -1.99524)
+transform = Transform3D(-1.57953e-07, 0, -3.61354, 0, 1, 0, 3.61354, 0, -1.57953e-07, -0.122035, -0.0464543, -1.99524)
 mesh = SubResource("ArrayMesh_yie71")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="line"]
@@ -129,8 +131,9 @@ script = ExtResource("2_i86x4")
 shape = SubResource("ConcavePolygonShape3D_0hiyn")
 
 [node name="color" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.03837, 0, 0, 0, 0.122537, 0, 0, 0, 1, 0, 0.0177693, 0)
+transform = Transform3D(4.03837, 0, 0, 0, 0.122537, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_fu6e8")
+surface_material_override/0 = SubResource("StandardMaterial3D_frdkv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="color"]
 collision_layer = 8
