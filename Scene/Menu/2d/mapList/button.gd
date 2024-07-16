@@ -7,7 +7,7 @@ var Map = preload("res://Scene/Map/Map.tscn").instantiate()
 @export var Finish = preload("res://Scene/ConstructMap/3d/mapParts/Finish.tscn")
 @export var CheckPoint = preload("res://Scene/ConstructMap/3d/mapParts/Checkpoint.tscn")
 @export var Square = preload( "res://Scene/ConstructMap/3d/mapParts/Square.tscn")
-
+@export var Box = preload( "res://Scene/ConstructMap/3d/mapParts/Box.tscn")
 
 
 var mapLoader = Map.get_child(0).get_child(0).get_child(0).get_child(0)
@@ -78,7 +78,11 @@ func _load(filename) -> void:
 			square.loadObject(node_data)
 			mapLoader.add_child(square)
 			square.add_to_group("save");
-		
+		elif node_data["nodeName"]=="Box":
+			var box = Box.instantiate()
+			box.loadObject(node_data)
+			mapLoader.add_child(box)
+			box.add_to_group("save");
 		
 	save_file.close() # Close File
 	pass

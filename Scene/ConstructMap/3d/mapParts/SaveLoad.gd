@@ -14,7 +14,7 @@ func saveObject() -> Dictionary:
 			dict["albedoColorMesh"] = str(get_child(0).get("surface_material_override/0").get("albedo_color"))
 		"Color":
 			dict["albedoColor"] = str(get_child(0).get("surface_material_override/0").get("albedo_color"))
-		"Square":
+		"Square", "Box":
 			dict["albedoColorMesh"] = str(get_child(0).get("surface_material_override/0").get("albedo_color"))
 
 	if node_name == "Checkpoint":
@@ -44,7 +44,7 @@ func loadObject(loadedDict: Dictionary) -> void:
 		"Color":
 			mat_color.albedo_color = parseVec4(loadedDict["albedoColor"])
 			get_child(0).set("surface_material_override/0", mat_color)
-		"Square":
+		"Square", "Box":
 			mat_white.albedo_color = parseVec4(loadedDict["albedoColorMesh"])
 			get_child(0).set("surface_material_override/0", mat_white)
 
