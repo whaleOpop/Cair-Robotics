@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://bfghle0qsaduw"]
+[gd_scene load_steps=131 format=3 uid="uid://bfghle0qsaduw"]
 
 [ext_resource type="Script" path="res://Scene/ConstructMap/ConstructMapScript.gd" id="1_upuab"]
 [ext_resource type="Environment" uid="uid://bvy1jx3l4sjxp" path="res://Environment.tres" id="2_q2icd"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://qw0x76iqqx4u" path="res://Scene/ConstructMap/2d/mapParts/finish.png" id="10_44ccl"]
 [ext_resource type="Texture2D" uid="uid://bjj1whsh331kk" path="res://Scene/ConstructMap/2d/mapParts/checkpoint.png" id="11_7cgsa"]
 [ext_resource type="Texture2D" uid="uid://bfxp3lajsjad8" path="res://Scene/ConstructMap/2d/mapParts/square.png" id="12_npllo"]
+[ext_resource type="Texture2D" uid="uid://c24gik4m2a6xe" path="res://Scene/ConstructMap/2d/mapParts/Box.png" id="13_bksb0"]
 [ext_resource type="Texture2D" uid="uid://de4nx1x1gtbek" path="res://Scene/ConstructMap/2d/ItemList/properties/Rgb.png" id="13_cnbar"]
 [ext_resource type="Script" path="res://Scene/ConstructMap/2d/ColorPickerButton.gd" id="14_mfxkn"]
 [ext_resource type="Texture2D" uid="uid://cheawvpqglxjk" path="res://Scene/ConstructMap/2d/ItemList/properties/white.png" id="15_cxlte"]
@@ -413,7 +414,7 @@ theme = SubResource("Theme_fwxew")
 theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_h0pip")
 allow_rmb_select = true
 text_overrun_behavior = 4
-item_count = 6
+item_count = 7
 max_columns = 3
 same_column_width = true
 fixed_column_width = 157
@@ -430,6 +431,8 @@ item_4/text = ""
 item_4/icon = ExtResource("11_7cgsa")
 item_5/text = ""
 item_5/icon = ExtResource("12_npllo")
+item_6/text = ""
+item_6/icon = ExtResource("13_bksb0")
 
 [node name="TextureRGB" type="TextureRect" parent="Root3D/PanelBlur/TextureRect"]
 layout_mode = 0

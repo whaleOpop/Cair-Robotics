@@ -15,6 +15,7 @@ var MainScene = load("res://Scene/Menu/Main.tscn")
 @export var Finish = preload("res://Scene/ConstructMap/3d/mapParts/Finish.tscn")
 @export var CheckPoint = preload("res://Scene/ConstructMap/3d/mapParts/Checkpoint.tscn")
 @export var Square = preload( "res://Scene/ConstructMap/3d/mapParts/Square.tscn")
+@export var Box = preload( "res://Scene/ConstructMap/3d/mapParts/Box.tscn")
 @export var Buttons = preload("res://Scene/PopupMenu/popupMenu/btnEmpty/buttonEmpty.tscn")
 
 @onready var ConstMap = $Root3D/SubViewportContainer/SubViewport/ConstMap
@@ -48,7 +49,10 @@ func _on_item_list_item_selected(index):
 		btnRGB.visible=true
 	elif SelectItem == 5:
 		btnWB.visible=true
-	
+		btnRGB.visible=false
+	elif SelectItem == 6:
+		btnWB.visible=true
+		btnRGB.visible=false
 	
 			
 	print(SelectItem)
@@ -155,9 +159,17 @@ func _on_add_button_down():
 			matSquare.set("surface_material_override/0",matBlack)
 		get_node("Root3D/SubViewportContainer/SubViewport/ConstMap").add_child(square)
 		square.add_to_group("save");
+	elif SelectItem==6:
+		var box= Box.instantiate()
+		var matSquare = box.get_child(0)
+		if !wb:
+			matSquare.set("surface_material_override/0",matWhite)
+		else:
+			matSquare.set("surface_material_override/0",matBlack)
+		get_node("Root3D/SubViewportContainer/SubViewport/ConstMap").add_child(box)
+		box.add_to_group("save");
 	else:
 		SelectItem==null
-
 	
 	
 	pass # Replace with function body.
@@ -282,6 +294,11 @@ func _load(filename) -> void:
 			square.loadObject(node_data)
 			get_node("Root3D/SubViewportContainer/SubViewport/ConstMap").add_child(square)
 			square.add_to_group("save");
+		elif node_data["nodeName"]=="Box":
+			var box = Box.instantiate()
+			box.loadObject(node_data)
+			get_node("Root3D/SubViewportContainer/SubViewport/ConstMap").add_child(box)
+			box.add_to_group("save");
 		
 		
 	save_file.close() # Close File

@@ -9,6 +9,19 @@ func _ready():
 	led_mesh.visible=false
 	pass 
 
+func set_led(index):
+	if index==0:
+		offLed()
+	elif index ==1:
+		onLed()
+	elif index == 2:
+		flashLed()
+	pass
+
+func offLed():
+	led_mesh.visible=false
+	pass 
+
 func onLed():
 	led_mesh.visible=true
 	pass
