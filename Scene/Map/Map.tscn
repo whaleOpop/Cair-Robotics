@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://d4kp45ihwxstf"]
+[gd_scene load_steps=125 format=3 uid="uid://d4kp45ihwxstf"]
 
 [ext_resource type="Script" path="res://Scene/Map/Map.gd" id="1_0hvd8"]
 [ext_resource type="Environment" uid="uid://bvy1jx3l4sjxp" path="res://Environment.tres" id="1_47h5t"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scene/Map/Panel.gd" id="4_x1yt8"]
 [ext_resource type="Texture2D" uid="uid://mm2dost66w0g" path="res://Scene/Map/2d/upper/back_hover.png" id="5_7qr1j"]
 [ext_resource type="Texture2D" uid="uid://ce0uapasrul6g" path="res://Scene/Map/2d/upper/Group 109.png" id="6_p411q"]
-[ext_resource type="Texture2D" uid="uid://koxcbrb0cdkn" path="res://Scene/Map/2d/upper/Шапка (2).png" id="8_j3jrh"]
+[ext_resource type="Texture2D" uid="uid://ef6sn44elg2c" path="res://Scene/Map/2d/upper/Шапка (1).png" id="8_efgyt"]
 [ext_resource type="Texture2D" uid="uid://prmo4l4a67n3" path="res://Scene/Map/2d/speed/speed_btn.png" id="9_v3ge3"]
 [ext_resource type="PackedScene" uid="uid://b6trfh0eudnha" path="res://Scene/Map/2d/speed/speed.tscn" id="10_eo6q0"]
 [ext_resource type="Texture2D" uid="uid://be6uxpufupfpg" path="res://Scene/Map/2d/rotation/btn_rotation.png" id="11_qc4q8"]
@@ -37,17 +37,34 @@
 [ext_resource type="Texture2D" uid="uid://c2l20rrp1xpt2" path="res://Scene/Map/2d/StBar/icon/minus.png" id="35_jus23"]
 [ext_resource type="Texture2D" uid="uid://djmjhdyuar5ng" path="res://Scene/Map/2d/StBar/icon/up.png" id="36_u70op"]
 [ext_resource type="Texture2D" uid="uid://bx0qht5ykxn8x" path="res://Scene/Map/2d/StBar/icon/down.png" id="37_mjwcx"]
+[ext_resource type="Script" path="res://Scene/Map/DebugMod.gd" id="37_tdpea"]
 [ext_resource type="Texture2D" uid="uid://cpkynv6tj17kt" path="res://Scene/Map/2d/Add Statement.png" id="38_g7m2w"]
+[ext_resource type="Texture2D" uid="uid://raama3fau47f" path="res://Scene/Map/2d/debug/Group 119.png" id="38_kexm5"]
+[ext_resource type="FontFile" uid="uid://ccw28gg2prmqw" path="res://fonts/Inter-Black.ttf" id="39_cb3d8"]
 [ext_resource type="Texture2D" uid="uid://dgryrosr1d3r5" path="res://Scene/PopupMenu/popupMenu/btnOk/hoverOKey.png" id="39_ix8em"]
+[ext_resource type="Texture2D" uid="uid://eqh0fmbyxtj1" path="res://Scene/Map/2d/debug/Ellipse 8.png" id="40_cdeyq"]
 [ext_resource type="Texture2D" uid="uid://fypb7a11hj4r" path="res://Scene/PopupMenu/popupMenu/btnOk/normalOKey.png" id="40_j5in2"]
+[ext_resource type="Texture2D" uid="uid://c4aj42j5uu4ct" path="res://Scene/Map/2d/debug/Rectangle 13.png" id="41_1g8ki"]
+[ext_resource type="Texture2D" uid="uid://cpdhjnobprnsw" path="res://Scene/Map/2d/debug/Ellipse 9.png" id="41_2fhua"]
 [ext_resource type="Texture2D" uid="uid://bxhqts4e7s120" path="res://Scene/PopupMenu/popupMenu/btnOk/pressedOKey.png" id="41_3ot7y"]
+[ext_resource type="Texture2D" uid="uid://wb4m4m8jh0nl" path="res://Scene/Map/2d/debug/Rectangle 15.png" id="42_h6u51"]
 [ext_resource type="Texture2D" uid="uid://bptorhsmdiri1" path="res://Scene/PopupMenu/popupMenu/btnCancel/hoverCancel.png" id="42_o8ssr"]
+[ext_resource type="Texture2D" uid="uid://cdw3kba3ib3x" path="res://Scene/Map/2d/debug/Rectangle 17.png" id="43_i27ju"]
 [ext_resource type="Texture2D" uid="uid://dnvvpfaprht7q" path="res://Scene/PopupMenu/popupMenu/btnCancel/normalCancel.png" id="43_y2swk"]
 [ext_resource type="FontFile" uid="uid://b266fmqwrlsqt" path="res://fonts/Inter-ExtraBold.ttf" id="44_124c5"]
 [ext_resource type="Texture2D" uid="uid://tgcx68ti3fr0" path="res://Scene/PopupMenu/popupMenu/btnCancel/pressedCancel.png" id="44_u16q4"]
 [ext_resource type="Texture2D" uid="uid://ddnc5ocgdaia3" path="res://Scene/PopupMenu/popupMenu/lineedit focus.png" id="45_t7rqv"]
 [ext_resource type="Texture2D" uid="uid://g0w6k4o4upmo" path="res://Scene/PopupMenu/popupMenu/line editnormal.png" id="46_bncur"]
 [ext_resource type="Texture2D" uid="uid://7xof2pvk4x13" path="res://Scene/Map/2d/Rectangle 88 (1).png" id="48_i1so1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vlgal"]
+shader = ExtResource("3_35o6i")
+shader_parameter/amount = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omfgw"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y66ij"]
 texture = ExtResource("5_7qr1j")
@@ -76,24 +93,15 @@ Button/styles/hover = SubResource("StyleBoxTexture_y66ij")
 Button/styles/normal = SubResource("StyleBoxTexture_y66ij")
 Button/styles/pressed = SubResource("StyleBoxTexture_y66ij")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgx42"]
-texture = ExtResource("6_p411q")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8k74"]
+bg_color = Color(0, 0.14902, 0.235294, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
-[sub_resource type="Theme" id="Theme_ft2rg"]
-Button/styles/disabled = SubResource("StyleBoxTexture_pgx42")
-Button/styles/focus = SubResource("StyleBoxTexture_pgx42")
-Button/styles/hover = SubResource("StyleBoxTexture_pgx42")
-Button/styles/normal = SubResource("StyleBoxTexture_pgx42")
-Button/styles/pressed = SubResource("StyleBoxTexture_pgx42")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vlgal"]
-shader = ExtResource("3_35o6i")
-shader_parameter/amount = 3.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omfgw"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
+[sub_resource type="Theme" id="Theme_tts4t"]
+Panel/styles/panel = SubResource("StyleBoxFlat_a8k74")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ei0s"]
 bg_color = Color(1, 1, 1, 1)
@@ -246,16 +254,15 @@ Button/styles/hover = SubResource("StyleBoxTexture_gw7fp")
 Button/styles/normal = SubResource("StyleBoxTexture_gw7fp")
 Button/styles/pressed = SubResource("StyleBoxTexture_gw7fp")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_us5du"]
-shader = ExtResource("3_35o6i")
-shader_parameter/amount = 3.9
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xio0c"]
+bg_color = Color(0.00392157, 0.188235, 0.301961, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dihes"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 44
-corner_radius_top_right = 44
-corner_radius_bottom_right = 44
-corner_radius_bottom_left = 44
+[sub_resource type="Theme" id="Theme_ap4k4"]
+Panel/styles/panel = SubResource("StyleBoxFlat_xio0c")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tyre"]
 
@@ -276,6 +283,21 @@ Button/styles/focus = SubResource("StyleBoxEmpty_xdwge")
 Button/styles/hover = SubResource("StyleBoxTexture_ukndi")
 Button/styles/normal = SubResource("StyleBoxTexture_gbqia")
 Button/styles/pressed = SubResource("StyleBoxTexture_7be01")
+
+[sub_resource type="Theme" id="Theme_8ld4s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgx42"]
+texture = ExtResource("6_p411q")
+
+[sub_resource type="Theme" id="Theme_ft2rg"]
+Button/styles/disabled = SubResource("StyleBoxTexture_pgx42")
+Button/styles/focus = SubResource("StyleBoxTexture_pgx42")
+Button/styles/hover = SubResource("StyleBoxTexture_pgx42")
+Button/styles/normal = SubResource("StyleBoxTexture_pgx42")
+Button/styles/pressed = SubResource("StyleBoxTexture_pgx42")
+
+[sub_resource type="Theme" id="Theme_qapen"]
+Label/fonts/font = ExtResource("39_cb3d8")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g22of"]
 shader = ExtResource("3_35o6i")
@@ -358,7 +380,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_y5qp1")
 Button/styles/normal = SubResource("StyleBoxTexture_dfwoe")
 Button/styles/pressed = SubResource("StyleBoxTexture_r2hrb")
 
-[sub_resource type="Image" id="Image_jmp2m"]
+[sub_resource type="Image" id="Image_t40n5"]
 data = {
 "data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 186, 255, 255, 255, 57, 255, 255, 255, 142, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 189, 255, 255, 255, 58, 255, 255, 255, 0, 255, 255, 255, 6, 255, 255, 255, 133, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 190, 255, 255, 255, 68, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 4, 255, 255, 255, 124, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 78, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 2, 255, 255, 255, 113, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 90, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 1, 255, 255, 255, 102, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
 "format": "RGBA8",
@@ -368,7 +390,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_yphtv"]
-image = SubResource("Image_jmp2m")
+image = SubResource("Image_t40n5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tpyu"]
 texture = ExtResource("45_t7rqv")
@@ -824,22 +846,6 @@ render_target_update_mode = 4
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
 environment = ExtResource("1_47h5t")
 
-[node name="btnBack" type="Button" parent="Node3D"]
-offset_left = 1816.0
-offset_top = 894.0
-offset_right = 1890.0
-offset_bottom = 968.0
-size_flags_vertical = 8
-theme = SubResource("Theme_1nqic")
-
-[node name="btnRestart" type="Button" parent="Node3D"]
-visible = false
-offset_left = 816.0
-offset_top = 144.0
-offset_right = 1114.0
-offset_bottom = 191.0
-theme = SubResource("Theme_ft2rg")
-
 [node name="Panel3" type="Panel" parent="Node3D"]
 material = SubResource("ShaderMaterial_vlgal")
 offset_right = 1920.0
@@ -852,14 +858,14 @@ offset_left = 5.0
 offset_top = -11.0
 offset_right = 1925.0
 offset_bottom = 134.0
-texture = ExtResource("8_j3jrh")
+texture = ExtResource("8_efgyt")
 
 [node name="Result" type="Label" parent="Node3D/Panel3/TextureRect"]
 layout_mode = 0
-offset_left = 1375.0
-offset_top = 65.0
-offset_right = 1478.0
-offset_bottom = 109.0
+offset_left = 1420.0
+offset_top = 56.0
+offset_right = 1523.0
+offset_bottom = 100.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 horizontal_alignment = 1
@@ -867,21 +873,30 @@ vertical_alignment = 1
 
 [node name="TimeRace" type="Label" parent="Node3D/Panel3/TextureRect"]
 layout_mode = 0
-offset_left = 803.0
-offset_top = 81.0
-offset_right = 1114.0
-offset_bottom = 122.0
+offset_left = 991.0
+offset_top = 80.0
+offset_right = 1302.0
+offset_bottom = 121.0
 theme_override_font_sizes/font_size = 30
 text = "00 : 00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="btnBack" type="Button" parent="Node3D/Panel3"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 27.0
+offset_right = 150.0
+offset_bottom = 101.0
+size_flags_vertical = 8
+theme = SubResource("Theme_1nqic")
+
 [node name="Panel2" type="Panel" parent="Node3D"]
-material = SubResource("ShaderMaterial_vlgal")
 offset_left = 98.0
 offset_top = 314.0
-offset_right = 908.0
+offset_right = 903.31
 offset_bottom = 1033.0
+theme = SubResource("Theme_tts4t")
 theme_override_styles/panel = SubResource("StyleBoxFlat_4ei0s")
 
 [node name="Speed" type="Button" parent="Node3D/Panel2"]
@@ -948,8 +963,8 @@ grow_vertical = 1
 layout_mode = 1
 offset_left = -43.0
 offset_top = 333.0
-offset_right = 33167.0
-offset_bottom = 29812.0
+offset_right = 37212.3
+offset_bottom = 33407.0
 
 [node name="duration" parent="Node3D/Panel2" instance=ExtResource("15_nlaqj")]
 layout_mode = 1
@@ -1011,13 +1026,12 @@ offset_right = 29.0
 offset_bottom = -1.0
 
 [node name="Panel" type="Panel" parent="Node3D/Panel2"]
-material = SubResource("ShaderMaterial_us5du")
 layout_mode = 0
 offset_left = -4.0
 offset_top = 1.0
 offset_right = 806.0
 offset_bottom = 720.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_dihes")
+theme = SubResource("Theme_ap4k4")
 script = ExtResource("4_x1yt8")
 
 [node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel"]
@@ -1168,6 +1182,305 @@ offset_bottom = 47.0
 text = "Add first statment"
 horizontal_alignment = 2
 
+[node name="DebugPanel" type="Panel" parent="Node3D/Panel2/Panel"]
+layout_mode = 0
+offset_right = 810.0
+offset_bottom = 719.0
+script = ExtResource("37_tdpea")
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_8ld4s")
+texture = ExtResource("38_kexm5")
+
+[node name="btnRestart" type="Button" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 29.0
+offset_right = 786.0
+offset_bottom = 76.0
+scale = Vector2(0.997384, 1.0247)
+theme = SubResource("Theme_ft2rg")
+
+[node name="State" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 91.0
+offset_right = 537.0
+offset_bottom = 111.0
+theme = SubResource("Theme_qapen")
+text = "State: "
+
+[node name="Time" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+offset_left = 497.0
+offset_top = 122.0
+offset_right = 537.0
+offset_bottom = 142.0
+theme = SubResource("Theme_qapen")
+text = "Time: "
+
+[node name="WheelLeft" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+offset_left = 497.0
+offset_top = 152.0
+offset_right = 546.0
+offset_bottom = 172.0
+theme = SubResource("Theme_qapen")
+text = "WheelLeft: 
+"
+
+[node name="WheelRight" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+offset_left = 497.0
+offset_top = 183.0
+offset_right = 592.0
+offset_bottom = 203.0
+theme = SubResource("Theme_qapen")
+text = "WheelRight: 
+"
+
+[node name="Ultrasonic" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+offset_left = 497.0
+offset_top = 214.0
+offset_right = 597.0
+offset_bottom = 234.0
+theme = SubResource("Theme_qapen")
+text = "Ultrasonic:"
+
+[node name="LineText" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+offset_left = 156.0
+offset_top = 118.0
+offset_right = 207.0
+offset_bottom = 138.0
+theme = SubResource("Theme_qapen")
+text = "Line:"
+
+[node name="Led" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+offset_left = 499.0
+offset_top = 242.0
+offset_right = 550.0
+offset_bottom = 262.0
+theme = SubResource("Theme_qapen")
+text = "Led: "
+
+[node name="Line" type="HBoxContainer" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 139.0
+offset_right = 315.0
+offset_bottom = 179.0
+
+[node name="Control" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control"]
+custom_minimum_size = Vector2(24, 24)
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="Control2" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control2"]
+custom_minimum_size = Vector2(24, 24)
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="Control3" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control3"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control3"]
+custom_minimum_size = Vector2(24, 24)
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="Control4" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control4"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control4"]
+custom_minimum_size = Vector2(24, 24)
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="Control5" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control5"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control5"]
+custom_minimum_size = Vector2(24, 24)
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="Control6" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control6"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control6"]
+custom_minimum_size = Vector2(24, 24)
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="ColorText" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+offset_left = 180.0
+offset_top = 266.0
+offset_right = 231.0
+offset_bottom = 286.0
+theme = SubResource("Theme_qapen")
+text = "Color:
+"
+
+[node name="Color" type="HBoxContainer" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 287.0
+offset_right = 298.0
+offset_bottom = 327.0
+
+[node name="Red" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Color"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Color/Red"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 28.0
+texture = ExtResource("41_1g8ki")
+
+[node name="Red" type="Label" parent="Node3D/Panel2/Panel/DebugPanel/Color/Red/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Color"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Color/Control2"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 28.0
+texture = ExtResource("42_h6u51")
+
+[node name="Green" type="Label" parent="Node3D/Panel2/Panel/DebugPanel/Color/Control2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Color"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Color/Control3"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 28.0
+texture = ExtResource("43_i27ju")
+
+[node name="Blue" type="Label" parent="Node3D/Panel2/Panel/DebugPanel/Color/Control3/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+
 [node name="Panel" type="Panel" parent="Node3D"]
 visible = false
 material = SubResource("ShaderMaterial_g22of")
@@ -1257,6 +1570,7 @@ size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_83508")
 
 [node name="TextureRect" type="TextureRect" parent="Node3D/Panel4"]
+visible = false
 layout_mode = 0
 offset_left = -5.0
 offset_top = 8.0
@@ -1314,8 +1628,7 @@ libraries = {
 [node name="Seconds" type="Timer" parent="."]
 process_callback = 0
 
-[connection signal="pressed" from="Node3D/btnBack" to="." method="_on_btn_back_pressed"]
-[connection signal="pressed" from="Node3D/btnRestart" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Node3D/Panel3/btnBack" to="." method="_on_btn_back_pressed"]
 [connection signal="toggled" from="Node3D/Panel2/Speed" to="." method="_on_speed_toggled"]
 [connection signal="toggled" from="Node3D/Panel2/Rotation" to="." method="_on_rotation_toggled"]
 [connection signal="gui_input" from="Node3D/Panel2/time" to="." method="_on_time_gui_input"]
@@ -1333,6 +1646,9 @@ process_callback = 0
 [connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control4/down" to="." method="_on_down_pressed"]
 [connection signal="child_entered_tree" from="Node3D/Panel2/Panel/ScrollContainer/VBoxContainer" to="." method="_on_v_box_container_child_entered_tree"]
 [connection signal="child_exiting_tree" from="Node3D/Panel2/Panel/ScrollContainer/VBoxContainer" to="." method="_on_v_box_container_child_exiting_tree"]
+[connection signal="draw" from="Node3D/Panel2/Panel/DebugPanel" to="Node3D/Panel2/Panel/DebugPanel" method="_on_draw"]
+[connection signal="hidden" from="Node3D/Panel2/Panel/DebugPanel" to="Node3D/Panel2/Panel/DebugPanel" method="_on_hidden"]
+[connection signal="pressed" from="Node3D/Panel2/Panel/DebugPanel/btnRestart" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Node3D/Panel/TextureRect/ok" to="." method="_on_ok_pressed"]
 [connection signal="pressed" from="Node3D/Panel/TextureRect/cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="Node3D/Panel4/okSuck" to="." method="_on_ok_suck_pressed"]
