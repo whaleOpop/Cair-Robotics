@@ -1,10 +1,9 @@
 [gd_scene load_steps=125 format=3 uid="uid://d4kp45ihwxstf"]
 
-[ext_resource type="Script" path="res://Scene/Map/Map.gd" id="1_0hvd8"]
 [ext_resource type="Environment" uid="uid://bvy1jx3l4sjxp" path="res://Environment.tres" id="1_47h5t"]
+[ext_resource type="Script" path="res://Scene/Map/scripts/Map.gd" id="1_ibakg"]
 [ext_resource type="PackedScene" uid="uid://c3v1t4e0e4qs1" path="res://Scene/Map/3d/MapLoader/MapLoader.tscn" id="2_nli8l"]
 [ext_resource type="Shader" path="res://Shader/blur.gdshader" id="3_35o6i"]
-[ext_resource type="Script" path="res://Scene/Map/Panel.gd" id="4_x1yt8"]
 [ext_resource type="Texture2D" uid="uid://mm2dost66w0g" path="res://Scene/Map/2d/upper/back_hover.png" id="5_7qr1j"]
 [ext_resource type="Texture2D" uid="uid://ce0uapasrul6g" path="res://Scene/Map/2d/upper/Group 109.png" id="6_p411q"]
 [ext_resource type="Texture2D" uid="uid://ef6sn44elg2c" path="res://Scene/Map/2d/upper/Шапка (1).png" id="8_efgyt"]
@@ -21,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://qeqx5pcetu6n" path="res://Scene/Map/2d/linesensor/LineSensor.tscn" id="19_eqcvs"]
 [ext_resource type="Texture2D" uid="uid://dy1t103scg7t" path="res://Scene/Map/2d/ultrasonic/button/ultrasonic.png" id="20_7hnba"]
 [ext_resource type="PackedScene" uid="uid://c0b8vjfg0pwt1" path="res://Scene/Map/2d/ultrasonic/ultrasonic.tscn" id="21_5sogy"]
+[ext_resource type="Script" path="res://Scene/Map/scripts/Panel.gd" id="21_l5thr"]
 [ext_resource type="FontFile" uid="uid://b4emn1rakq1q1" path="res://fonts/Inter-Light.ttf" id="21_rlyqe"]
 [ext_resource type="Texture2D" uid="uid://gmnkmupdb7pn" path="res://Scene/Map/2d/background/Background (1).png" id="23_aob7m"]
 [ext_resource type="Texture2D" uid="uid://bxc0i3wctl30j" path="res://Scene/Map/2d/background/Сarcarui.png" id="24_yi6xb"]
@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://c2l20rrp1xpt2" path="res://Scene/Map/2d/StBar/icon/minus.png" id="35_jus23"]
 [ext_resource type="Texture2D" uid="uid://djmjhdyuar5ng" path="res://Scene/Map/2d/StBar/icon/up.png" id="36_u70op"]
 [ext_resource type="Texture2D" uid="uid://bx0qht5ykxn8x" path="res://Scene/Map/2d/StBar/icon/down.png" id="37_mjwcx"]
-[ext_resource type="Script" path="res://Scene/Map/DebugMod.gd" id="37_tdpea"]
+[ext_resource type="Script" path="res://Scene/Map/scripts/DebugMod.gd" id="37_srjge"]
 [ext_resource type="Texture2D" uid="uid://cpkynv6tj17kt" path="res://Scene/Map/2d/Add Statement.png" id="38_g7m2w"]
 [ext_resource type="Texture2D" uid="uid://raama3fau47f" path="res://Scene/Map/2d/debug/Group 119.png" id="38_kexm5"]
 [ext_resource type="FontFile" uid="uid://ccw28gg2prmqw" path="res://fonts/Inter-Black.ttf" id="39_cb3d8"]
@@ -828,7 +828,7 @@ _data = {
 }
 
 [node name="Map" type="CanvasLayer"]
-script = ExtResource("1_0hvd8")
+script = ExtResource("1_ibakg")
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -1032,7 +1032,7 @@ offset_top = 1.0
 offset_right = 806.0
 offset_bottom = 720.0
 theme = SubResource("Theme_ap4k4")
-script = ExtResource("4_x1yt8")
+script = ExtResource("21_l5thr")
 
 [node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel"]
 layout_mode = 1
@@ -1186,7 +1186,7 @@ horizontal_alignment = 2
 layout_mode = 0
 offset_right = 810.0
 offset_bottom = 719.0
-script = ExtResource("37_tdpea")
+script = ExtResource("37_srjge")
 
 [node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel"]
 layout_mode = 0
@@ -1214,6 +1214,7 @@ theme = SubResource("Theme_qapen")
 text = "State: "
 
 [node name="Time" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
 offset_left = 497.0
 offset_top = 122.0
 offset_right = 537.0
@@ -1222,6 +1223,7 @@ theme = SubResource("Theme_qapen")
 text = "Time: "
 
 [node name="WheelLeft" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
 offset_left = 497.0
 offset_top = 152.0
 offset_right = 546.0
@@ -1231,6 +1233,7 @@ text = "WheelLeft:
 "
 
 [node name="WheelRight" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
 offset_left = 497.0
 offset_top = 183.0
 offset_right = 592.0
@@ -1240,6 +1243,7 @@ text = "WheelRight:
 "
 
 [node name="Ultrasonic" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
 offset_left = 497.0
 offset_top = 214.0
 offset_right = 597.0
@@ -1248,6 +1252,7 @@ theme = SubResource("Theme_qapen")
 text = "Ultrasonic:"
 
 [node name="LineText" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
 offset_left = 156.0
 offset_top = 118.0
 offset_right = 207.0
@@ -1256,6 +1261,7 @@ theme = SubResource("Theme_qapen")
 text = "Line:"
 
 [node name="Led" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
 offset_left = 499.0
 offset_top = 242.0
 offset_right = 550.0
@@ -1284,6 +1290,7 @@ texture = ExtResource("40_cdeyq")
 
 [node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control"]
 custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
 offset_left = 4.0
 offset_right = 20.0
 offset_bottom = 16.0
@@ -1303,6 +1310,7 @@ texture = ExtResource("40_cdeyq")
 
 [node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control2"]
 custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
 offset_left = 4.0
 offset_right = 20.0
 offset_bottom = 16.0
@@ -1322,6 +1330,7 @@ texture = ExtResource("40_cdeyq")
 
 [node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control3"]
 custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
 offset_left = 4.0
 offset_right = 20.0
 offset_bottom = 16.0
@@ -1341,6 +1350,7 @@ texture = ExtResource("40_cdeyq")
 
 [node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control4"]
 custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
 offset_left = 4.0
 offset_right = 20.0
 offset_bottom = 16.0
@@ -1360,6 +1370,7 @@ texture = ExtResource("40_cdeyq")
 
 [node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control5"]
 custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
 offset_left = 4.0
 offset_right = 20.0
 offset_bottom = 16.0
@@ -1379,12 +1390,14 @@ texture = ExtResource("40_cdeyq")
 
 [node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control6"]
 custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
 offset_left = 4.0
 offset_right = 20.0
 offset_bottom = 16.0
 texture = ExtResource("41_2fhua")
 
 [node name="ColorText" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+layout_mode = 0
 offset_left = 180.0
 offset_top = 266.0
 offset_right = 231.0

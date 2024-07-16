@@ -95,7 +95,7 @@ render_target_update_mode = 4
 
 [node name="IslandScene" parent="Root3D/SubViewportContainer/SubViewport" instance=ExtResource("2_yvq3d")]
 
-[node name="Panel" type="Panel" parent="Root3D"]
+[node name="Menu_panel" type="Panel" parent="Root3D"]
 material = SubResource("ShaderMaterial_7g6y0")
 anchors_preset = 4
 anchor_top = 0.5
@@ -108,7 +108,7 @@ size_flags_horizontal = 0
 theme = SubResource("Theme_00oyi")
 theme_override_styles/panel = SubResource("StyleBoxFlat_srd1b")
 
-[node name="TextureRect" type="TextureRect" parent="Root3D/Panel"]
+[node name="TextureRect" type="TextureRect" parent="Root3D/Menu_panel"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -122,7 +122,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 6
 texture = ExtResource("5_reeye")
 
-[node name="Maps" type="Button" parent="Root3D/Panel/TextureRect"]
+[node name="Maps" type="Button" parent="Root3D/Menu_panel/TextureRect"]
 layout_mode = 2
 offset_left = 27.03
 offset_top = 157.0
@@ -136,7 +136,7 @@ text = "    Maps
 "
 alignment = 0
 
-[node name="TextureRect" type="TextureRect" parent="Root3D/Panel/TextureRect/Maps"]
+[node name="TextureRect" type="TextureRect" parent="Root3D/Menu_panel/TextureRect/Maps"]
 layout_mode = 0
 offset_left = 402.97
 offset_top = 13.5
@@ -144,7 +144,7 @@ offset_right = 458.97
 offset_bottom = 70.5
 texture = ExtResource("10_gjh7e")
 
-[node name="СonstMap" type="Button" parent="Root3D/Panel/TextureRect"]
+[node name="СonstMap" type="Button" parent="Root3D/Menu_panel/TextureRect"]
 layout_mode = 2
 offset_left = 28.0
 offset_top = 249.5
@@ -157,7 +157,7 @@ text = "    Constructor map
 "
 alignment = 0
 
-[node name="TextureRect" type="TextureRect" parent="Root3D/Panel/TextureRect/СonstMap"]
+[node name="TextureRect" type="TextureRect" parent="Root3D/Menu_panel/TextureRect/СonstMap"]
 layout_mode = 0
 offset_left = 399.0
 offset_top = 13.0
@@ -165,7 +165,7 @@ offset_right = 461.0
 offset_bottom = 75.0
 texture = ExtResource("11_lep6t")
 
-[node name="Settings" type="Button" parent="Root3D/Panel/TextureRect"]
+[node name="Settings" type="Button" parent="Root3D/Menu_panel/TextureRect"]
 layout_mode = 2
 offset_left = 30.0
 offset_top = 342.5
@@ -180,7 +180,7 @@ text = "    Settings
 alignment = 0
 icon_alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="Root3D/Panel/TextureRect/Settings"]
+[node name="TextureRect" type="TextureRect" parent="Root3D/Menu_panel/TextureRect/Settings"]
 layout_mode = 0
 offset_left = 404.036
 offset_top = 14.0
@@ -188,7 +188,7 @@ offset_right = 460.036
 offset_bottom = 70.0
 texture = ExtResource("12_ypyvv")
 
-[node name="Exit" type="Button" parent="Root3D/Panel/TextureRect"]
+[node name="Exit" type="Button" parent="Root3D/Menu_panel/TextureRect"]
 layout_mode = 0
 offset_left = 30.0
 offset_top = 429.5
@@ -201,7 +201,7 @@ text = "    Exit
 alignment = 0
 icon_alignment = 2
 
-[node name="mapslist" type="Panel" parent="Root3D"]
+[node name="Menu_MapList_panel" type="Panel" parent="Root3D"]
 visible = false
 material = SubResource("ShaderMaterial_7g6y0")
 anchors_preset = 4
@@ -215,7 +215,7 @@ size_flags_horizontal = 0
 theme = SubResource("Theme_00oyi")
 theme_override_styles/panel = SubResource("StyleBoxFlat_srd1b")
 
-[node name="TextureRect" type="TextureRect" parent="Root3D/mapslist"]
+[node name="TextureRect" type="TextureRect" parent="Root3D/Menu_MapList_panel"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -229,7 +229,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 6
 texture = ExtResource("14_nqpv0")
 
-[node name="VScrollBar" type="ScrollContainer" parent="Root3D/mapslist/TextureRect"]
+[node name="VScrollBar" type="ScrollContainer" parent="Root3D/Menu_MapList_panel/TextureRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.051
@@ -239,11 +239,11 @@ offset_top = 114.0
 offset_right = 477.868
 offset_bottom = 558.679
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Root3D/mapslist/TextureRect/VScrollBar"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Root3D/Menu_MapList_panel/TextureRect/VScrollBar"]
 layout_mode = 2
 theme_override_constants/separation = 82
 
-[node name="Button" type="Button" parent="Root3D/mapslist"]
+[node name="Button" type="Button" parent="Root3D/Menu_MapList_panel"]
 layout_mode = 0
 offset_left = 449.0
 offset_top = 632.0
@@ -251,7 +251,7 @@ offset_right = 515.0
 offset_bottom = 698.0
 theme = SubResource("Theme_twis4")
 
-[connection signal="pressed" from="Root3D/Panel/TextureRect/Maps" to="." method="_on_maps_pressed"]
-[connection signal="pressed" from="Root3D/Panel/TextureRect/СonstMap" to="." method="_on_onst_map_pressed"]
-[connection signal="pressed" from="Root3D/Panel/TextureRect/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Root3D/mapslist/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Root3D/Menu_panel/TextureRect/Maps" to="." method="_on_maps_pressed"]
+[connection signal="pressed" from="Root3D/Menu_panel/TextureRect/СonstMap" to="." method="_on_onst_map_pressed"]
+[connection signal="pressed" from="Root3D/Menu_panel/TextureRect/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Root3D/Menu_MapList_panel/Button" to="." method="_on_button_pressed"]
