@@ -1,16 +1,16 @@
 extends Panel
-@onready var MapLoader = $"../../../SubViewportContainer/SubViewport/MapLoader"
+@onready var map_loader = $"../../../SubViewportContainer/SubViewport/map_loader"
 
-@onready var stateText = $State
-@onready var timeText = $Time
-@onready var wheelLeft = $WheelLeft
-@onready var wheelRight = $WheelRight
-@onready var ultrasonic = $Ultrasonic 
-@onready var led = $Led
-@onready var line = $Line
-@onready var red =$Color/Red/TextureRect/Red
-@onready var green =$Color/Control2/TextureRect/Green
-@onready var blue =$Color/Control3/TextureRect/Blue
+@onready var state_label = $state_label
+@onready var time_label = $time_label
+@onready var wheel_left_label = $wheel_left_label
+@onready var wheel_right_label = $wheel_right_label
+@onready var ultra_sonic_label = $ultra_sonic_label
+@onready var led_label = $led_label
+@onready var line_visual = $line_visual
+@onready var red_label = $Color/Control/TextureRect/red_label
+@onready var green_label = $Color/Control2/TextureRect/green_label
+@onready var blue_label = $Color/Control3/TextureRect/blue_label
 var Car
 
 
@@ -18,8 +18,8 @@ func _ready():
 	pass 
 
 func getCar():
-	if MapLoader:
-		for i in MapLoader.get_children():
+	if map_loader:
+		for i in map_loader.get_children():
 			if i.get("metadata/Name") =="Car":
 				Car=i
 
@@ -34,30 +34,30 @@ func _process(_delta):
 		set_state(Car.get_state_now())
 	pass
 func set_led(state):
-	led.text = "Led: "+ str(state)
+	led_label.text = "Led: "+ str(state)
 func set_speed(state):
-	wheelLeft.text = "$WheelLeft: "+str(state[0])
-	wheelRight.text ="$WheelRight: "+ str(state[1])
+	wheel_left_label.text = "$WheelLeft: "+str(state[0])
+	wheel_right_label.text ="$WheelRight: "+ str(state[1])
 	pass
 func set_color(state):
-	red.text=str(state[0].r8)
-	green.text=str(state[0].g8)
-	blue.text=str(state[0].b8)
+	red_label.text=str(state[0].r8)
+	green_label.text=str(state[0].g8)
+	blue_label.text=str(state[0].b8)
 	pass
 
 func set_ultra(state):
-	ultrasonic.text="Ultrasonic: "+str(state[0])
+	ultra_sonic_label.text="Ultrasonic: "+str(state[0])
 	pass
 func set_state(state):
-	stateText.text="State: "+str(Globals.getStateById(state))
+	state_label.text="State: "+str(Globals.getStateById(state))
 	pass
 	
 func set_time(state):
-	timeText.text="Time: "+str(state)
+	time_label.text="Time: "+str(state)
 	pass
 func set_line(state):
 	var count = 0
-	for i in line.get_children():
+	for i in line_visual.get_children():
 		
 		if state[count]==0:
 			i.get_child(1).show()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://d4kp45ihwxstf"]
+[gd_scene load_steps=124 format=3 uid="uid://d4kp45ihwxstf"]
 
 [ext_resource type="Environment" uid="uid://bvy1jx3l4sjxp" path="res://Environment.tres" id="1_47h5t"]
 [ext_resource type="Script" path="res://Scene/Map/scripts/Map.gd" id="1_ibakg"]
@@ -136,16 +136,6 @@ Button/styles/focus = SubResource("StyleBoxTexture_vy5un")
 Button/styles/hover = SubResource("StyleBoxTexture_vy5un")
 Button/styles/normal = SubResource("StyleBoxTexture_vy5un")
 Button/styles/pressed = SubResource("StyleBoxTexture_vy5un")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4kns"]
-bg_color = Color(0, 0, 0, 0.184314)
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ik1rl"]
-bg_color = Color(0, 0, 0, 0.184314)
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ehbl"]
 texture = ExtResource("11_qc4q8")
@@ -306,6 +296,11 @@ shader_parameter/amount = 2.768
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vu2x"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4kns"]
+bg_color = Color(0, 0, 0, 0.184314)
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oevtu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ul01h"]
@@ -432,7 +427,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/Line:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/line_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -443,7 +438,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/Line:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/line_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -454,7 +449,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Node3D/Panel2/UltraSonnic:position:x")
+tracks/2/path = NodePath("Node3D/robot_control_back/ultra_sonic_btn:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -465,7 +460,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Node3D/Panel2/UltraSonnic:position:y")
+tracks/3/path = NodePath("Node3D/robot_control_back/ultra_sonic_btn:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -476,7 +471,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Node3D/Panel2/ColorSensor:position:x")
+tracks/4/path = NodePath("Node3D/robot_control_back/color_sensor_btn:position:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -487,7 +482,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Node3D/Panel2/ColorSensor:position:y")
+tracks/5/path = NodePath("Node3D/robot_control_back/color_sensor_btn:position:y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -498,7 +493,7 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Node3D/Panel2/duration:position:x")
+tracks/6/path = NodePath("Node3D/robot_control_back/duration_btn:position:x")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -509,7 +504,7 @@ tracks/6/keys = {
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Node3D/Panel2/duration:position:y")
+tracks/7/path = NodePath("Node3D/robot_control_back/duration_btn:position:y")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -520,7 +515,7 @@ tracks/7/keys = {
 tracks/8/type = "bezier"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Node3D/Panel2/led:position:x")
+tracks/8/path = NodePath("Node3D/robot_control_back/led_btn:position:x")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -531,7 +526,7 @@ tracks/8/keys = {
 tracks/9/type = "bezier"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Node3D/Panel2/led:position:y")
+tracks/9/path = NodePath("Node3D/robot_control_back/led_btn:position:y")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -542,7 +537,7 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Node3D/Panel2/time:position:x")
+tracks/10/path = NodePath("Node3D/robot_control_back/timer_btn:position:x")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -553,7 +548,7 @@ tracks/10/keys = {
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Node3D/Panel2/time:position:y")
+tracks/11/path = NodePath("Node3D/robot_control_back/timer_btn:position:y")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -564,7 +559,7 @@ tracks/11/keys = {
 tracks/12/type = "bezier"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Node3D/Panel2/Rotation:position:x")
+tracks/12/path = NodePath("Node3D/robot_control_back/rotation_xyz_btn:position:x")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -575,7 +570,7 @@ tracks/12/keys = {
 tracks/13/type = "bezier"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Node3D/Panel2/Rotation:position:y")
+tracks/13/path = NodePath("Node3D/robot_control_back/rotation_xyz_btn:position:y")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -586,7 +581,7 @@ tracks/13/keys = {
 tracks/14/type = "bezier"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Node3D/Panel2/Speed:position:x")
+tracks/14/path = NodePath("Node3D/robot_control_back/speed_btn:position:x")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -597,7 +592,7 @@ tracks/14/keys = {
 tracks/15/type = "bezier"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Node3D/Panel2/Speed:position:y")
+tracks/15/path = NodePath("Node3D/robot_control_back/speed_btn:position:y")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -612,7 +607,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/ColorSensor:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/color_sensor_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -623,7 +618,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/ColorSensor:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/color_sensor_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -638,7 +633,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/duration:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/duration_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -649,7 +644,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/duration:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/duration_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -664,7 +659,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/led:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/led_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -675,7 +670,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/led:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/led_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -690,7 +685,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/Line:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/line_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -701,7 +696,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/Line:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/line_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -716,7 +711,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/Rotation:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/rotation_xyz_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -727,7 +722,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/Rotation:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/rotation_xyz_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -742,7 +737,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/Speed:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/speed_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -753,7 +748,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/Speed:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/speed_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -768,7 +763,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/time:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/timer_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -779,7 +774,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/time:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/timer_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -794,7 +789,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/UltraSonnic:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/ultra_sonic_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -805,7 +800,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/UltraSonnic:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/ultra_sonic_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -841,18 +836,18 @@ handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="MapLoader" parent="Node3D/SubViewportContainer/SubViewport" instance=ExtResource("2_nli8l")]
+[node name="map_loader" parent="Node3D/SubViewportContainer/SubViewport" instance=ExtResource("2_nli8l")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
 environment = ExtResource("1_47h5t")
 
-[node name="Panel3" type="Panel" parent="Node3D"]
+[node name="Header" type="Panel" parent="Node3D"]
 material = SubResource("ShaderMaterial_vlgal")
 offset_right = 1920.0
 offset_bottom = 133.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_omfgw")
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel3"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/Header"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = -11.0
@@ -860,7 +855,7 @@ offset_right = 1925.0
 offset_bottom = 134.0
 texture = ExtResource("8_efgyt")
 
-[node name="Result" type="Label" parent="Node3D/Panel3/TextureRect"]
+[node name="count_checkpoint" type="Label" parent="Node3D/Header/TextureRect"]
 layout_mode = 0
 offset_left = 1420.0
 offset_top = 56.0
@@ -871,7 +866,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimeRace" type="Label" parent="Node3D/Panel3/TextureRect"]
+[node name="time_race" type="Label" parent="Node3D/Header/TextureRect"]
 layout_mode = 0
 offset_left = 991.0
 offset_top = 80.0
@@ -882,7 +877,7 @@ text = "00 : 00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="btnBack" type="Button" parent="Node3D/Panel3"]
+[node name="btnBack" type="Button" parent="Node3D/Header"]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 27.0
@@ -891,7 +886,7 @@ offset_bottom = 101.0
 size_flags_vertical = 8
 theme = SubResource("Theme_1nqic")
 
-[node name="Panel2" type="Panel" parent="Node3D"]
+[node name="robot_control_back" type="Panel" parent="Node3D"]
 offset_left = 98.0
 offset_top = 314.0
 offset_right = 903.31
@@ -899,7 +894,7 @@ offset_bottom = 1033.0
 theme = SubResource("Theme_tts4t")
 theme_override_styles/panel = SubResource("StyleBoxFlat_4ei0s")
 
-[node name="Speed" type="Button" parent="Node3D/Panel2"]
+[node name="speed_btn" type="Button" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = 805.0
 offset_top = 214.0
@@ -908,30 +903,14 @@ offset_bottom = 300.0
 theme = SubResource("Theme_6ddet")
 toggle_mode = true
 
-[node name="PanelBlac" type="Panel" parent="Node3D/Panel2/Speed"]
-layout_mode = 0
-offset_left = -248.0
-offset_top = -16.0
-offset_right = 2.0
-offset_bottom = 324.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_m4kns")
-
-[node name="PanelBlur" type="Panel" parent="Node3D/Panel2/Speed"]
-layout_mode = 0
-offset_left = -248.0
-offset_top = -16.0
-offset_right = 2.0
-offset_bottom = 324.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ik1rl")
-
-[node name="speed" parent="Node3D/Panel2/Speed" instance=ExtResource("10_eo6q0")]
+[node name="speed" parent="Node3D/robot_control_back/speed_btn" instance=ExtResource("10_eo6q0")]
 layout_mode = 1
 offset_left = -250.0
 offset_top = -15.0
 offset_right = -250.0
 offset_bottom = -15.0
 
-[node name="Rotation" type="Button" parent="Node3D/Panel2"]
+[node name="rotation_xyz_btn" type="Button" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = -33.0
 offset_top = 483.0
@@ -940,45 +919,40 @@ offset_bottom = 580.0
 theme = SubResource("Theme_48j1m")
 toggle_mode = true
 
-[node name="rotation" parent="Node3D/Panel2/Rotation" instance=ExtResource("12_hd475")]
+[node name="rotation" parent="Node3D/robot_control_back/rotation_xyz_btn" instance=ExtResource("12_hd475")]
 layout_mode = 1
 offset_left = 29.0
 offset_top = -12.0
 offset_right = 29.0
 offset_bottom = -12.0
 
-[node name="time" parent="Node3D/Panel2" instance=ExtResource("13_42n2p")]
+[node name="timer_btn" parent="Node3D/robot_control_back" instance=ExtResource("13_42n2p")]
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = -44.0
 offset_top = 398.0
-offset_right = -43.0
-offset_bottom = 399.0
+offset_right = 165.0
+offset_bottom = 438.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="led" parent="Node3D/Panel2" instance=ExtResource("14_r28mi")]
+[node name="led_btn" parent="Node3D/robot_control_back" instance=ExtResource("14_r28mi")]
 layout_mode = 1
 offset_left = -43.0
 offset_top = 333.0
-offset_right = 37212.3
-offset_bottom = 33407.0
+offset_right = 166.0
+offset_bottom = 373.0
 
-[node name="duration" parent="Node3D/Panel2" instance=ExtResource("15_nlaqj")]
+[node name="duration_btn" parent="Node3D/robot_control_back" instance=ExtResource("15_nlaqj")]
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
 offset_left = -85.0
 offset_top = 281.0
-offset_right = -84.0
-offset_bottom = 282.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_right = 140.0
+offset_bottom = 324.0
 
-[node name="ColorSensor" type="Button" parent="Node3D/Panel2"]
+[node name="color_sensor_btn" type="Button" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = -33.0
 offset_top = 172.0
@@ -987,14 +961,14 @@ offset_bottom = 258.0
 theme = SubResource("Theme_f8urm")
 toggle_mode = true
 
-[node name="colorsensor" parent="Node3D/Panel2/ColorSensor" instance=ExtResource("17_65i2w")]
+[node name="colorsensor" parent="Node3D/robot_control_back/color_sensor_btn" instance=ExtResource("17_65i2w")]
 layout_mode = 1
 offset_left = 29.0
 offset_top = -8.0
 offset_right = 29.0
 offset_bottom = -8.0
 
-[node name="Line" type="Button" parent="Node3D/Panel2"]
+[node name="line_btn" type="Button" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = 77.0
 offset_top = -28.0
@@ -1003,14 +977,14 @@ offset_bottom = 1.00018
 theme = SubResource("Theme_rvdhj")
 toggle_mode = true
 
-[node name="LineSensor" parent="Node3D/Panel2/Line" instance=ExtResource("19_eqcvs")]
+[node name="LineSensor" parent="Node3D/robot_control_back/line_btn" instance=ExtResource("19_eqcvs")]
 layout_mode = 1
 offset_left = -8.0
 offset_top = 29.0
 offset_right = -8.0
 offset_bottom = 29.0
 
-[node name="UltraSonnic" type="Button" parent="Node3D/Panel2"]
+[node name="ultra_sonic_btn" type="Button" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = -33.0
 offset_top = 45.0
@@ -1019,13 +993,13 @@ offset_bottom = 149.0
 theme = SubResource("Theme_c4c20")
 toggle_mode = true
 
-[node name="ultrasonic" parent="Node3D/Panel2/UltraSonnic" instance=ExtResource("21_5sogy")]
+[node name="ultrasonic" parent="Node3D/robot_control_back/ultra_sonic_btn" instance=ExtResource("21_5sogy")]
 offset_left = 29.0
 offset_top = -1.0
 offset_right = 29.0
 offset_bottom = -1.0
 
-[node name="Panel" type="Panel" parent="Node3D/Panel2"]
+[node name="robot_control_front" type="Panel" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = -4.0
 offset_top = 1.0
@@ -1034,7 +1008,7 @@ offset_bottom = 720.0
 theme = SubResource("Theme_ap4k4")
 script = ExtResource("21_l5thr")
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.00988
@@ -1044,7 +1018,7 @@ offset_right = -4.00275
 offset_bottom = -0.00244141
 texture = ExtResource("23_aob7m")
 
-[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel"]
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 0
 offset_left = 91.0
 offset_top = 51.0
@@ -1052,7 +1026,7 @@ offset_right = 387.0
 offset_bottom = 690.0
 texture = ExtResource("24_yi6xb")
 
-[node name="TextureRect3" type="TextureRect" parent="Node3D/Panel2/Panel"]
+[node name="TextureRect3" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 0
 anchor_left = 0.658025
 anchor_top = 0.077886
@@ -1062,14 +1036,14 @@ offset_right = -6.10352e-05
 offset_bottom = 0.000183105
 texture = ExtResource("25_53vra")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Node3D/Panel2/Panel/TextureRect3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Node3D/robot_control_back/robot_control_front/TextureRect3"]
 layout_mode = 2
 theme_override_constants/separation = 53
 
-[node name="Control" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+[node name="Control" type="Control" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer"]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control"]
+[node name="play_btn" type="Button" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control"]
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
@@ -1077,10 +1051,10 @@ theme = ExtResource("26_h2lrx")
 icon = ExtResource("27_ko4dx")
 icon_alignment = 1
 
-[node name="Control2" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+[node name="Control2" type="Control" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer"]
 layout_mode = 2
 
-[node name="Package" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control2"]
+[node name="load_btn" type="Button" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control2"]
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
@@ -1088,10 +1062,10 @@ theme = ExtResource("26_h2lrx")
 icon = ExtResource("28_t2nic")
 icon_alignment = 1
 
-[node name="Control3" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+[node name="Control3" type="Control" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer"]
 layout_mode = 2
 
-[node name="Save" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control3"]
+[node name="save_btn" type="Button" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control3"]
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
@@ -1099,10 +1073,10 @@ theme = ExtResource("26_h2lrx")
 icon = ExtResource("29_q5bmw")
 icon_alignment = 1
 
-[node name="Control4" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+[node name="Control4" type="Control" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer"]
 layout_mode = 2
 
-[node name="Upload" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control4"]
+[node name="export_btn" type="Button" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control4"]
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
@@ -1110,7 +1084,7 @@ theme = ExtResource("26_h2lrx")
 icon = ExtResource("30_ryfik")
 icon_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Node3D/Panel2/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 0
 offset_left = 547.0
 offset_top = 115.0
@@ -1118,10 +1092,10 @@ offset_right = 628.0
 offset_bottom = 155.0
 theme_override_constants/separation = 27
 
-[node name="Control" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+[node name="Control" type="Control" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer"]
 layout_mode = 2
 
-[node name="plus" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control"]
+[node name="plus" type="Button" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control"]
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
@@ -1129,10 +1103,10 @@ theme = SubResource("Theme_ewm0q")
 icon = ExtResource("34_doqwy")
 icon_alignment = 1
 
-[node name="Control2" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+[node name="Control2" type="Control" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer"]
 layout_mode = 2
 
-[node name="minus" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control2"]
+[node name="minus" type="Button" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control2"]
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
@@ -1140,10 +1114,10 @@ theme = SubResource("Theme_ewm0q")
 icon = ExtResource("35_jus23")
 icon_alignment = 1
 
-[node name="Control3" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+[node name="Control3" type="Control" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer"]
 layout_mode = 2
 
-[node name="up" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control3"]
+[node name="up" type="Button" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control3"]
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
@@ -1151,10 +1125,10 @@ theme = SubResource("Theme_ewm0q")
 icon = ExtResource("36_u70op")
 icon_alignment = 1
 
-[node name="Control4" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+[node name="Control4" type="Control" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer"]
 layout_mode = 2
 
-[node name="down" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control4"]
+[node name="down" type="Button" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control4"]
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
@@ -1162,18 +1136,18 @@ theme = SubResource("Theme_ewm0q")
 icon = ExtResource("37_mjwcx")
 icon_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Node3D/Panel2/Panel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 0
 offset_left = 508.0
 offset_top = 148.0
 offset_right = 772.0
 offset_bottom = 676.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Node3D/Panel2/Panel/ScrollContainer"]
+[node name="statement_list" type="VBoxContainer" parent="Node3D/robot_control_back/robot_control_front/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 47
 
-[node name="CurStatment" type="Label" parent="Node3D/Panel2/Panel"]
+[node name="current_statment" type="Label" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 0
 offset_left = 235.0
 offset_top = 11.0
@@ -1182,21 +1156,21 @@ offset_bottom = 47.0
 text = "Add first statment"
 horizontal_alignment = 2
 
-[node name="DebugPanel" type="Panel" parent="Node3D/Panel2/Panel"]
+[node name="debug_panel" type="Panel" parent="Node3D/robot_control_back/robot_control_front"]
 visible = false
 layout_mode = 0
 offset_right = 810.0
 offset_bottom = 719.0
 script = ExtResource("37_srjge")
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_8ld4s")
 texture = ExtResource("38_kexm5")
 
-[node name="btnRestart" type="Button" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="restart_btn" type="Button" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_left = 488.0
 offset_top = 29.0
@@ -1205,7 +1179,7 @@ offset_bottom = 76.0
 scale = Vector2(0.997384, 1.0247)
 theme = SubResource("Theme_ft2rg")
 
-[node name="State" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="state_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_left = 497.0
 offset_top = 91.0
@@ -1214,7 +1188,7 @@ offset_bottom = 111.0
 theme = SubResource("Theme_qapen")
 text = "State: "
 
-[node name="Time" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="time_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_left = 497.0
 offset_top = 122.0
@@ -1223,7 +1197,7 @@ offset_bottom = 142.0
 theme = SubResource("Theme_qapen")
 text = "Time: "
 
-[node name="WheelLeft" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="wheel_left_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_left = 497.0
 offset_top = 152.0
@@ -1233,7 +1207,7 @@ theme = SubResource("Theme_qapen")
 text = "WheelLeft: 
 "
 
-[node name="WheelRight" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="wheel_right_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_left = 497.0
 offset_top = 183.0
@@ -1243,7 +1217,7 @@ theme = SubResource("Theme_qapen")
 text = "WheelRight: 
 "
 
-[node name="Ultrasonic" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="ultra_sonic_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_left = 497.0
 offset_top = 214.0
@@ -1252,7 +1226,7 @@ offset_bottom = 234.0
 theme = SubResource("Theme_qapen")
 text = "Ultrasonic:"
 
-[node name="LineText" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="line_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_left = 156.0
 offset_top = 118.0
@@ -1261,7 +1235,7 @@ offset_bottom = 138.0
 theme = SubResource("Theme_qapen")
 text = "Line:"
 
-[node name="Led" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="led_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_left = 499.0
 offset_top = 242.0
@@ -1270,38 +1244,18 @@ offset_bottom = 262.0
 theme = SubResource("Theme_qapen")
 text = "Led: "
 
-[node name="Line" type="HBoxContainer" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="line_visual" type="HBoxContainer" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_left = 151.0
 offset_top = 139.0
 offset_right = 315.0
 offset_bottom = 179.0
 
-[node name="Control" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
+[node name="Control" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control"]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
-offset_left = 4.0
-offset_right = 20.0
-offset_bottom = 16.0
-texture = ExtResource("40_cdeyq")
-
-[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control"]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 0
-offset_left = 4.0
-offset_right = 20.0
-offset_bottom = 16.0
-texture = ExtResource("41_2fhua")
-
-[node name="Control2" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control2"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 offset_left = 4.0
@@ -1309,7 +1263,7 @@ offset_right = 20.0
 offset_bottom = 16.0
 texture = ExtResource("40_cdeyq")
 
-[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control2"]
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 0
 offset_left = 4.0
@@ -1317,11 +1271,11 @@ offset_right = 20.0
 offset_bottom = 16.0
 texture = ExtResource("41_2fhua")
 
-[node name="Control3" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
+[node name="Control2" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control3"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control2"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 offset_left = 4.0
@@ -1329,7 +1283,7 @@ offset_right = 20.0
 offset_bottom = 16.0
 texture = ExtResource("40_cdeyq")
 
-[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control3"]
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control2"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 0
 offset_left = 4.0
@@ -1337,11 +1291,11 @@ offset_right = 20.0
 offset_bottom = 16.0
 texture = ExtResource("41_2fhua")
 
-[node name="Control4" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
+[node name="Control3" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control4"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control3"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 offset_left = 4.0
@@ -1349,7 +1303,7 @@ offset_right = 20.0
 offset_bottom = 16.0
 texture = ExtResource("40_cdeyq")
 
-[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control4"]
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control3"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 0
 offset_left = 4.0
@@ -1357,11 +1311,11 @@ offset_right = 20.0
 offset_bottom = 16.0
 texture = ExtResource("41_2fhua")
 
-[node name="Control5" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
+[node name="Control4" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control5"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control4"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 offset_left = 4.0
@@ -1369,7 +1323,7 @@ offset_right = 20.0
 offset_bottom = 16.0
 texture = ExtResource("40_cdeyq")
 
-[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control5"]
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control4"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 0
 offset_left = 4.0
@@ -1377,11 +1331,11 @@ offset_right = 20.0
 offset_bottom = 16.0
 texture = ExtResource("41_2fhua")
 
-[node name="Control6" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Line"]
+[node name="Control5" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control6"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control5"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 offset_left = 4.0
@@ -1389,7 +1343,7 @@ offset_right = 20.0
 offset_bottom = 16.0
 texture = ExtResource("40_cdeyq")
 
-[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Line/Control6"]
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control5"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 0
 offset_left = 4.0
@@ -1397,7 +1351,27 @@ offset_right = 20.0
 offset_bottom = 16.0
 texture = ExtResource("41_2fhua")
 
-[node name="ColorText" type="Label" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="Control6" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control6"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control6"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="ColorText" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_left = 180.0
 offset_top = 266.0
@@ -1407,25 +1381,25 @@ theme = SubResource("Theme_qapen")
 text = "Color:
 "
 
-[node name="Color" type="HBoxContainer" parent="Node3D/Panel2/Panel/DebugPanel"]
+[node name="Color" type="HBoxContainer" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
 layout_mode = 0
 offset_left = 179.0
 offset_top = 287.0
 offset_right = 298.0
 offset_bottom = 327.0
 
-[node name="Red" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Color"]
+[node name="Control" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color"]
 custom_minimum_size = Vector2(37, 28)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Color/Red"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control"]
 custom_minimum_size = Vector2(37, 28)
 layout_mode = 0
 offset_right = 37.0
 offset_bottom = 28.0
 texture = ExtResource("41_1g8ki")
 
-[node name="Red" type="Label" parent="Node3D/Panel2/Panel/DebugPanel/Color/Red/TextureRect"]
+[node name="red_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1441,18 +1415,18 @@ grow_vertical = 2
 text = "0"
 horizontal_alignment = 1
 
-[node name="Control2" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Color"]
+[node name="Control2" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color"]
 custom_minimum_size = Vector2(37, 28)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Color/Control2"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control2"]
 custom_minimum_size = Vector2(37, 28)
 layout_mode = 0
 offset_right = 37.0
 offset_bottom = 28.0
 texture = ExtResource("42_h6u51")
 
-[node name="Green" type="Label" parent="Node3D/Panel2/Panel/DebugPanel/Color/Control2/TextureRect"]
+[node name="green_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control2/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1468,18 +1442,18 @@ grow_vertical = 2
 text = "0"
 horizontal_alignment = 1
 
-[node name="Control3" type="Control" parent="Node3D/Panel2/Panel/DebugPanel/Color"]
+[node name="Control3" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color"]
 custom_minimum_size = Vector2(37, 28)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel/DebugPanel/Color/Control3"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control3"]
 custom_minimum_size = Vector2(37, 28)
 layout_mode = 0
 offset_right = 37.0
 offset_bottom = 28.0
 texture = ExtResource("43_i27ju")
 
-[node name="Blue" type="Label" parent="Node3D/Panel2/Panel/DebugPanel/Color/Control3/TextureRect"]
+[node name="blue_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control3/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1495,7 +1469,7 @@ grow_vertical = 2
 text = "0"
 horizontal_alignment = 1
 
-[node name="Panel" type="Panel" parent="Node3D"]
+[node name="add_statment_panel" type="Panel" parent="Node3D"]
 visible = false
 material = SubResource("ShaderMaterial_g22of")
 offset_top = -4.0
@@ -1503,14 +1477,14 @@ offset_right = 1915.0
 offset_bottom = 1075.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7vu2x")
 
-[node name="Panel" type="Panel" parent="Node3D/Panel"]
+[node name="Panel" type="Panel" parent="Node3D/add_statment_panel"]
 layout_mode = 0
 offset_right = 1919.0
 offset_bottom = 999.0
 scale = Vector2(1, 1.08)
 theme_override_styles/panel = SubResource("StyleBoxFlat_m4kns")
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/add_statment_panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1525,7 +1499,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("38_g7m2w")
 
-[node name="ok" type="Button" parent="Node3D/Panel/TextureRect"]
+[node name="ok" type="Button" parent="Node3D/add_statment_panel/TextureRect"]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 235.0
@@ -1533,7 +1507,7 @@ offset_right = 161.0
 offset_bottom = 273.0
 theme = SubResource("Theme_8ty5a")
 
-[node name="cancel" type="Button" parent="Node3D/Panel/TextureRect"]
+[node name="cancel" type="Button" parent="Node3D/add_statment_panel/TextureRect"]
 layout_mode = 0
 offset_left = 190.0
 offset_top = 235.0
@@ -1541,7 +1515,7 @@ offset_right = 309.0
 offset_bottom = 273.0
 theme = SubResource("Theme_jnb7w")
 
-[node name="LineEdit" type="LineEdit" parent="Node3D/Panel/TextureRect"]
+[node name="name_st_edit" type="LineEdit" parent="Node3D/add_statment_panel/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1558,7 +1532,7 @@ theme = SubResource("Theme_d6xgk")
 alignment = 1
 max_length = 10
 
-[node name="Label" type="Label" parent="Node3D/Panel/TextureRect"]
+[node name="add_st_error_label" type="Label" parent="Node3D/add_statment_panel/TextureRect"]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 189.0
@@ -1574,7 +1548,7 @@ autowrap_mode = 3
 uppercase = true
 max_lines_visible = 10
 
-[node name="Panel4" type="Panel" parent="Node3D"]
+[node name="result_panel" type="Panel" parent="Node3D"]
 visible = false
 offset_left = 986.0
 offset_top = 475.0
@@ -1583,7 +1557,7 @@ offset_bottom = 733.0
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_83508")
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel4"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/result_panel"]
 visible = false
 layout_mode = 0
 offset_left = -5.0
@@ -1592,7 +1566,7 @@ offset_right = 253.0
 offset_bottom = 266.0
 texture = ExtResource("48_i1so1")
 
-[node name="Finish" type="Label" parent="Node3D/Panel4"]
+[node name="Finish" type="Label" parent="Node3D/result_panel"]
 layout_mode = 0
 offset_left = 81.0
 offset_top = 26.0
@@ -1603,7 +1577,7 @@ text = "Succesfull"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Time" type="Label" parent="Node3D/Panel4"]
+[node name="Time" type="Label" parent="Node3D/result_panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1619,14 +1593,14 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Node3D/Panel4"]
+[node name="count_checkpoint_result" type="Label" parent="Node3D/result_panel"]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 132.0
 offset_right = 140.0
 offset_bottom = 152.0
 
-[node name="okSuck" type="Button" parent="Node3D/Panel4"]
+[node name="okSuck" type="Button" parent="Node3D/result_panel"]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 198.0
@@ -1634,36 +1608,36 @@ offset_right = 191.0
 offset_bottom = 236.0
 theme = SubResource("Theme_8ty5a")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="amim_ui" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_sloar")
 }
 
-[node name="Seconds" type="Timer" parent="."]
+[node name="timer_seconds" type="Timer" parent="."]
 process_callback = 0
 
-[connection signal="pressed" from="Node3D/Panel3/btnBack" to="." method="_on_btn_back_pressed"]
-[connection signal="toggled" from="Node3D/Panel2/Speed" to="." method="_on_speed_toggled"]
-[connection signal="toggled" from="Node3D/Panel2/Rotation" to="." method="_on_rotation_toggled"]
-[connection signal="gui_input" from="Node3D/Panel2/time" to="." method="_on_time_gui_input"]
-[connection signal="gui_input" from="Node3D/Panel2/led" to="." method="_on_led_gui_input"]
-[connection signal="gui_input" from="Node3D/Panel2/duration" to="." method="_on_duration_gui_input"]
-[connection signal="toggled" from="Node3D/Panel2/ColorSensor" to="." method="_on_color_sensor_toggled"]
-[connection signal="pressed" from="Node3D/Panel2/Line" to="." method="_on_button_pressed"]
-[connection signal="toggled" from="Node3D/Panel2/Line" to="." method="_on_button_toggled"]
-[connection signal="toggled" from="Node3D/Panel2/UltraSonnic" to="." method="_on_ultra_sonnic_toggled"]
-[connection signal="gui_input" from="Node3D/Panel2/Panel" to="Node3D/Panel2/Panel" method="_on_gui_input"]
-[connection signal="pressed" from="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control/plus" to="." method="_on_plus_pressed"]
-[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control2/minus" to="." method="_on_minus_pressed"]
-[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control3/up" to="." method="_on_up_pressed"]
-[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control4/down" to="." method="_on_down_pressed"]
-[connection signal="child_entered_tree" from="Node3D/Panel2/Panel/ScrollContainer/VBoxContainer" to="." method="_on_v_box_container_child_entered_tree"]
-[connection signal="child_exiting_tree" from="Node3D/Panel2/Panel/ScrollContainer/VBoxContainer" to="." method="_on_v_box_container_child_exiting_tree"]
-[connection signal="draw" from="Node3D/Panel2/Panel/DebugPanel" to="Node3D/Panel2/Panel/DebugPanel" method="_on_draw"]
-[connection signal="hidden" from="Node3D/Panel2/Panel/DebugPanel" to="Node3D/Panel2/Panel/DebugPanel" method="_on_hidden"]
-[connection signal="pressed" from="Node3D/Panel2/Panel/DebugPanel/btnRestart" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Node3D/Panel/TextureRect/ok" to="." method="_on_ok_pressed"]
-[connection signal="pressed" from="Node3D/Panel/TextureRect/cancel" to="." method="_on_cancel_pressed"]
-[connection signal="pressed" from="Node3D/Panel4/okSuck" to="." method="_on_ok_suck_pressed"]
-[connection signal="timeout" from="Seconds" to="." method="_on_seconds_timeout"]
+[connection signal="pressed" from="Node3D/Header/btnBack" to="." method="_on_btn_back_pressed"]
+[connection signal="toggled" from="Node3D/robot_control_back/speed_btn" to="." method="_on_speed_toggled"]
+[connection signal="toggled" from="Node3D/robot_control_back/rotation_xyz_btn" to="." method="_on_rotation_toggled"]
+[connection signal="gui_input" from="Node3D/robot_control_back/timer_btn" to="." method="_on_time_gui_input"]
+[connection signal="gui_input" from="Node3D/robot_control_back/led_btn" to="." method="_on_led_gui_input"]
+[connection signal="gui_input" from="Node3D/robot_control_back/duration_btn" to="." method="_on_duration_gui_input"]
+[connection signal="toggled" from="Node3D/robot_control_back/color_sensor_btn" to="." method="_on_color_sensor_toggled"]
+[connection signal="pressed" from="Node3D/robot_control_back/line_btn" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="Node3D/robot_control_back/line_btn" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Node3D/robot_control_back/ultra_sonic_btn" to="." method="_on_ultra_sonnic_toggled"]
+[connection signal="gui_input" from="Node3D/robot_control_back/robot_control_front" to="Node3D/robot_control_back/robot_control_front" method="_on_gui_input"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control/play_btn" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control/plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control2/minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control3/up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control4/down" to="." method="_on_down_pressed"]
+[connection signal="child_entered_tree" from="Node3D/robot_control_back/robot_control_front/ScrollContainer/statement_list" to="." method="_on_v_box_container_child_entered_tree"]
+[connection signal="child_exiting_tree" from="Node3D/robot_control_back/robot_control_front/ScrollContainer/statement_list" to="." method="_on_v_box_container_child_exiting_tree"]
+[connection signal="draw" from="Node3D/robot_control_back/robot_control_front/debug_panel" to="Node3D/robot_control_back/robot_control_front/debug_panel" method="_on_draw"]
+[connection signal="hidden" from="Node3D/robot_control_back/robot_control_front/debug_panel" to="Node3D/robot_control_back/robot_control_front/debug_panel" method="_on_hidden"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/debug_panel/restart_btn" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Node3D/add_statment_panel/TextureRect/ok" to="." method="_on_ok_pressed"]
+[connection signal="pressed" from="Node3D/add_statment_panel/TextureRect/cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Node3D/result_panel/okSuck" to="." method="_on_ok_suck_pressed"]
+[connection signal="timeout" from="timer_seconds" to="." method="_on_seconds_timeout"]
