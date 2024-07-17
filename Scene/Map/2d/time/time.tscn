@@ -13,17 +13,19 @@ LineEdit/styles/normal = SubResource("StyleBoxTexture_50sqo")
 LineEdit/styles/read_only = SubResource("StyleBoxTexture_50sqo")
 
 [node name="time" type="Control"]
+custom_minimum_size = Vector2(209, 40)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1920.0
-offset_bottom = -1000.0
+offset_right = -1711.0
+offset_bottom = -1040.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bubiq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(209, 40)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
