@@ -18,9 +18,9 @@ func _on_maps_pressed():
 	var map_names = get_map_files()
 	var container = vbox_map_list
 
-	for name in map_names:
+	for map in map_names:
 		var button = Buttons.instantiate()
-		button.get_child(0).text = name
+		button.get_child(0).text = map
 		container.add_child(button)
 
 
