@@ -16,7 +16,7 @@ func _ready():
 	# Set the initial direction of the car based on the global rotation value
 	car.set_direction_in_degrees(float(Globals.RobotRot[0].y))
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if car != null:
 		# Gather sensor states
 		var line_state = line_sensor.get_line_state()
@@ -70,7 +70,6 @@ func get_ultra_sonic_state():
 	
 func get_state_now():
 	return state
-	pass
 	
 func get_state(line_state, color_state, timer_state, ultra_sonic_state):
 	for i in range(Globals.statmentList.size()):

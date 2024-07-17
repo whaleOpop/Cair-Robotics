@@ -65,7 +65,6 @@ func isStateUseName(nameStat):
 	
 	
 func getStateByName(nameBtnCur):
-	var index
 	for i in range(0,statmentList.size()):
 		if nameBtnCur==statmentList[i].stName:
 			return i

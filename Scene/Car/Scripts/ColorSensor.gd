@@ -33,6 +33,3 @@ func get_sensor_color(sensor):
 				return col._get_color()
 	return null
 
-	
-func _process(delta):
-	pass

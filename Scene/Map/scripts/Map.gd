@@ -70,7 +70,7 @@ func _on_button_pressed():
 			
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	$Node3D/Panel3/TextureRect/Result.text=var_to_str(Globals.Checkpoint)
 	if Globals.Succesfull==true:
 		$Seconds.stop()
@@ -269,14 +269,14 @@ func isCarOnMap(listpartmap):
 	return true
 
 
-func _on_v_box_container_child_entered_tree(node):
+func _on_v_box_container_child_entered_tree(_node):
 	btnPlay.disabled=false
 	showControl()
 		
 	pass # Replace with function body.
 
 
-func _on_v_box_container_child_exiting_tree(node):
+func _on_v_box_container_child_exiting_tree(_node):
 	if Globals.statmentList.size()==0:
 		btnPlay.disabled=true
 		hideControl()
@@ -288,26 +288,20 @@ func _on_v_box_container_child_exiting_tree(node):
 
 
 func _on_up_pressed():
-	if Globals.CurrentStatment!=0:
-		var item = visualStatmentlist.get_child(Globals.CurrentStatment)
-		var itemswap = visualStatmentlist.get_child(Globals.CurrentStatment-1)	
-		visualStatmentlist.move_child(visualStatmentlist.get_child(Globals.CurrentStatment),Globals.CurrentStatment-1)
-	
-		var itemId = Globals.statmentList[Globals.CurrentStatment]
-		Globals.statmentList[Globals.CurrentStatment]=Globals.statmentList[Globals.CurrentStatment-1]
-		Globals.statmentList[Globals.CurrentStatment-1]=itemId
-	pass # Replace with function body.
-
+	if Globals.CurrentStatment > 0:
+		var current_index = Globals.CurrentStatment
+		var previous_index = current_index - 1
+		visualStatmentlist.move_child(current_index, previous_index)
+		Globals.statmentList.swap(current_index, previous_index)
+		Globals.CurrentStatment = previous_index
 
 func _on_down_pressed():
-	if Globals.CurrentStatment!=Globals.statmentList.size()-1:
-		var item = visualStatmentlist.get_child(Globals.CurrentStatment)
-		var itemswap = visualStatmentlist.get_child(Globals.CurrentStatment+1)	
-		visualStatmentlist.move_child(visualStatmentlist.get_child(Globals.CurrentStatment),Globals.CurrentStatment+1)
-		var itemId = Globals.statmentList[Globals.CurrentStatment]
-		Globals.statmentList[Globals.CurrentStatment]=Globals.statmentList[Globals.CurrentStatment+1]
-		Globals.statmentList[Globals.CurrentStatment-1]=itemId
-	pass # Replace with function body.
+	if Globals.CurrentStatment < Globals.statmentList.size() - 1:
+		var current_index = Globals.CurrentStatment
+		var next_index = current_index + 1
+		visualStatmentlist.move_child(current_index, next_index)
+		Globals.statmentList.swap(current_index, next_index)
+		Globals.CurrentStatment = next_index
 
 	
 var MainScene = load("res://Scene/Menu/Main.tscn")

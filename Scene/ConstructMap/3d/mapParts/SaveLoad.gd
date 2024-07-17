@@ -1,4 +1,7 @@
 extends Node3D
+@onready var Car = preload("res://Scene/Car/Car.tscn")
+
+var isUsed = true
 
 func saveObject() -> Dictionary:
 	var node_name = get("metadata/NameCell")
@@ -60,9 +63,7 @@ func parseVec3(strVec: String) -> Vector3:
 	var vec3 = strVec.strip_edges().replace("(", "").replace(")", "").split(",")
 	return Vector3(vec3[0].to_float(), vec3[1].to_float(), vec3[2].to_float())
 
-@onready var Car = preload("res://Scene/Car/Car.tscn")
 
-var isUsed = true
 
 func _on_area_3d_body_entered(body):
 	if body.get_class() == "RigidBody3D" and isUsed:
@@ -72,8 +73,7 @@ func _on_area_3d_body_entered(body):
 func reset():
 	isUsed = true
 
-func _on_area_3d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	pass
+
 
 func _on_finish_body_entered(body):
 	if body.get_class() == "RigidBody3D":
