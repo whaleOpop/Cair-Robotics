@@ -44,17 +44,13 @@ OptionButton/styles/pressed = SubResource("StyleBoxTexture_lgj6e")
 OptionButton/styles/pressed_mirrored = SubResource("StyleBoxTexture_lgj6e")
 
 [node name="duration" type="Control"]
+custom_minimum_size = Vector2(211, 43)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1920.0
-offset_bottom = -1000.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_ok0pr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(211, 43)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
