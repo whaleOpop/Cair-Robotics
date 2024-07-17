@@ -24,21 +24,63 @@ steering: список из одного значения, представля�
 extends Node
 class_name Statment 
 	
-func _init(param_name):
+func _init(param_name: String = "") -> void:
 	stName = param_name
 	
-var stName
-var line = [2,2,2,2,2,2]
-var ultrasonic = [0,100]
-var colorGreen = [0,255]
-var colorRed = [0,255]
-var colorBlue = [0,255]
-var color=[colorRed,colorGreen,colorBlue]
-var speed = [0,0]
-var rotationX=[0,0]
-var rotationZ=[0,0]
-var rotationY=[0,0]
-var led=[0]
-var time = [0,1000]
-var duration=[0]
-var steering=[0]
+var stName : String
+var line : Array = [2,2,2,2,2,2]
+var ultrasonic : Array = [0,100]
+var colorGreen : Array = [0,255]
+var colorRed : Array = [0,255]
+var colorBlue : Array = [0,255]
+var color : Array = [colorRed,colorGreen,colorBlue]
+var speed : Array = [0,0]
+var rotationX : Array = [0,0]
+var rotationZ : Array = [0,0]
+var rotationY : Array = [0,0]
+var led : Array = [0]
+var time : Array = [0,1000]
+var duration : Array = [0]
+var steering : Array = [0]
+
+
+
+
+
+func to_dict() -> Dictionary:
+	return {
+		"stName": stName,
+		"line": line,
+		"ultrasonic": ultrasonic,
+		"colorRed": colorRed,
+		"colorGreen": colorGreen,
+		"colorBlue": colorBlue,
+		"speed": speed,
+		"rotationX": rotationX,
+		"rotationZ": rotationZ,
+		"rotationY": rotationY,
+		"led": led,
+		"time": time,
+		"duration": duration,
+		"steering": steering
+	}
+
+static func from_dict(dict: Dictionary) -> Statment:
+	var statment = Statment.new()
+	statment.stName = dict["stName"]
+	statment.line = dict["line"]
+	statment.ultrasonic = dict["ultrasonic"]
+	statment.colorRed = dict["colorRed"]
+	statment.colorGreen = dict["colorGreen"]
+	statment.colorBlue = dict["colorBlue"]
+	statment.speed = dict["speed"]
+	statment.rotationX = dict["rotationX"]
+	statment.rotationZ = dict["rotationZ"]
+	statment.rotationY = dict["rotationY"]
+	statment.led = dict["led"]
+	statment.time = dict["time"]
+	statment.duration = dict["duration"]
+	statment.steering = dict["steering"]
+	return statment
+
+
