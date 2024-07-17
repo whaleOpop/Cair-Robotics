@@ -30,10 +30,13 @@ Button/styles/normal = SubResource("StyleBoxTexture_esqrn")
 Button/styles/pressed = SubResource("StyleBoxTexture_yh5fe")
 
 [node name="buttonEmpty" type="Control"]
+custom_minimum_size = Vector2(237, 38)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1683.0
+offset_bottom = -1042.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4gae7")
