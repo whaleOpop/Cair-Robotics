@@ -43,6 +43,7 @@ offset_bottom = 40.0
 script = ExtResource("1_al13u")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(209, 40)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
