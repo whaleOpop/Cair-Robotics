@@ -13,12 +13,11 @@ var target_position: Vector3 = Vector3(0, 20, 0)
 var acceleration: float = 10.0
 var damping: float = 0.1
 var posmouse: Vector3 = Vector3()
-var state: String = ""
 var obj: Node = null
 var lastobj: Node = null
 var objPress: bool = false
 var lastObjPress: bool = false
-
+var state: String = ""
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 
 func _ready():
@@ -61,9 +60,9 @@ func _perform_raycast() -> void:
 		var collider = result.collider
 		if collider and collider.has_method("_on_interact"):
 			state = collider._on_interact()
-			handle_interaction(state, collider)
+			handle_interaction( collider)
 
-func handle_interaction(state: String, collider: Node) -> void:
+func handle_interaction( collider: Node) -> void:
 	match state:
 		"delete":
 			if obj:
