@@ -23,7 +23,7 @@ func getCar():
 			if i.get("metadata/Name") =="Car":
 				Car=i
 
-func _process(delta):
+func _process(_delta):
 	if Car:
 		set_led(Car.get_led_state())
 		set_speed(Car.get_speed_state())
