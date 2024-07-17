@@ -1,79 +1,53 @@
-"""
-Краткое описание:
-Этот скрипт отвечает за взаимодействие с меню выбора карты и загрузку списка сохраненных карт. 
-
-Скрипт содержит функции, которые вызываются при нажатии на кнопки в меню.
-
-Функция _on_onst_map_pressed вызывается при нажатии на кнопку для создания новой карты. Она 
-использует метод change_scene_to_packed, чтобы загрузить сцену, в которой пользователь может 
-создавать новую карту.
-
-Функция _on_maps_pressed вызывается при нажатии на кнопку для отображения списка сохраненных карт. 
-Она отображает список карт в экранном меню, используя префаб кнопки из файла button.tscn, который был 
-предварительно загружен в переменную Buttons. Для каждой сохраненной карты создается новая кнопка, содержащая имя карты, и добавляется в контейнер VBoxContainer в меню. Для получения списка сохраненных карт используется функция getMapFile, которая возвращает массив имен файлов с расширением .cair из директории res://.
-
-Функция _on_button_pressed вызывается при нажатии на кнопку закрытия меню выбора карты. Она скрывает
-меню выбора карты и очищает контейнер VBoxContainer, удаляя все созданные кнопки.
-
-В целом, данный скрипт позволяет пользователю выбирать между созданием новой карты или загрузкой 
-сохраненной карты.
-"""
-
 extends CanvasLayer
 
-var ConstructMap = preload("res://Scene/ConstructMap/ConstructMapViewport.tscn")
+@export var Buttons := preload("res://Scene/Menu/2d/mapList/button.tscn")
+@export var ConstructMap := preload("res://Scene/ConstructMap/ConstructMapViewport.tscn")
 
-@export var Buttons = preload("res://Scene/Menu/2d/mapList/button.tscn")
-
-func _ready():
-	
-
-	pass
+@onready var menu_panel = $Root3D/Menu_panel
+@onready var menu_map_list_panel = $Root3D/Menu_MapList_panel
+@onready var vbox_map_list = $Root3D/Menu_MapList_panel/TextureRect/VScrollBar/VBoxContainer
 
 
 func _on_onst_map_pressed():
 	get_tree().change_scene_to_packed(ConstructMap)
-	pass # Replace with function body.
+
 
 func _on_maps_pressed():
-	$Root3D/mapslist.show()
-	$Root3D/Panel.hide()
-	var mapsNAme =getMapFile() 
-	for i in mapsNAme:
-		var buttons = Buttons.instantiate() 
-		buttons.get_child(0).text=i
-		$Root3D/mapslist/TextureRect/VScrollBar/VBoxContainer.add_child(buttons)
-	pass # Replace with function body.
+	menu_map_list_panel.show()
+	menu_panel.hide()
+	var map_names = get_map_files()
+	var container = vbox_map_list
+
+	for map in map_names:
+		var button = Buttons.instantiate()
+		button.get_child(0).text = map
+		container.add_child(button)
 
 
 func _on_button_pressed():
-	$Root3D/mapslist.hide()
-	$Root3D/Panel.show()
-	var children = $Root3D/mapslist/TextureRect/VScrollBar/VBoxContainer.get_children()
-	for i in children:
-		i.queue_free()
-	pass # Replace with function body.
-	
-func getMapFile():
+	menu_map_list_panel.hide()
+	menu_panel.show()
+	var container = vbox_map_list
+
+	for child in container.get_children():
+		child.queue_free()
+
+func get_map_files() -> Array:
 	var files = []
 	var dir = DirAccess.open("user://")
-	dir.list_dir_begin()
 
-	
-	while true:
+	if dir:
+		dir.list_dir_begin()
 		var file = dir.get_next()
-		if file == "":
-			break
-		elif not file.begins_with("."):
-			if file.get_extension()=="cair":
-				files.append(file)
 
-	dir.list_dir_end()
+		while file:
+			if not file.begins_with(".") and file.get_extension() == "cair":
+				files.append(file)
+			file = dir.get_next()
+
+		dir.list_dir_end()
 
 	return files
 
-
 func _on_exit_pressed():
-	
 	get_tree().quit()
-	pass # Replace with function body.

@@ -1,13 +1,12 @@
-[gd_scene load_steps=113 format=3 uid="uid://d4kp45ihwxstf"]
+[gd_scene load_steps=135 format=3 uid="uid://d4kp45ihwxstf"]
 
-[ext_resource type="Script" path="res://Scene/Map/Map.gd" id="1_0hvd8"]
 [ext_resource type="Environment" uid="uid://bvy1jx3l4sjxp" path="res://Environment.tres" id="1_47h5t"]
+[ext_resource type="Script" path="res://Scene/Map/scripts/Map.gd" id="1_ibakg"]
 [ext_resource type="PackedScene" uid="uid://c3v1t4e0e4qs1" path="res://Scene/Map/3d/MapLoader/MapLoader.tscn" id="2_nli8l"]
 [ext_resource type="Shader" path="res://Shader/blur.gdshader" id="3_35o6i"]
-[ext_resource type="Script" path="res://Scene/Map/Panel.gd" id="4_x1yt8"]
 [ext_resource type="Texture2D" uid="uid://mm2dost66w0g" path="res://Scene/Map/2d/upper/back_hover.png" id="5_7qr1j"]
 [ext_resource type="Texture2D" uid="uid://ce0uapasrul6g" path="res://Scene/Map/2d/upper/Group 109.png" id="6_p411q"]
-[ext_resource type="Texture2D" uid="uid://koxcbrb0cdkn" path="res://Scene/Map/2d/upper/Шапка (2).png" id="8_j3jrh"]
+[ext_resource type="Texture2D" uid="uid://ef6sn44elg2c" path="res://Scene/Map/2d/upper/Шапка (1).png" id="8_efgyt"]
 [ext_resource type="Texture2D" uid="uid://prmo4l4a67n3" path="res://Scene/Map/2d/speed/speed_btn.png" id="9_v3ge3"]
 [ext_resource type="PackedScene" uid="uid://b6trfh0eudnha" path="res://Scene/Map/2d/speed/speed.tscn" id="10_eo6q0"]
 [ext_resource type="Texture2D" uid="uid://be6uxpufupfpg" path="res://Scene/Map/2d/rotation/btn_rotation.png" id="11_qc4q8"]
@@ -21,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://qeqx5pcetu6n" path="res://Scene/Map/2d/linesensor/LineSensor.tscn" id="19_eqcvs"]
 [ext_resource type="Texture2D" uid="uid://dy1t103scg7t" path="res://Scene/Map/2d/ultrasonic/button/ultrasonic.png" id="20_7hnba"]
 [ext_resource type="PackedScene" uid="uid://c0b8vjfg0pwt1" path="res://Scene/Map/2d/ultrasonic/ultrasonic.tscn" id="21_5sogy"]
+[ext_resource type="Script" path="res://Scene/Map/scripts/Panel.gd" id="21_l5thr"]
 [ext_resource type="FontFile" uid="uid://b4emn1rakq1q1" path="res://fonts/Inter-Light.ttf" id="21_rlyqe"]
 [ext_resource type="Texture2D" uid="uid://gmnkmupdb7pn" path="res://Scene/Map/2d/background/Background (1).png" id="23_aob7m"]
 [ext_resource type="Texture2D" uid="uid://bxc0i3wctl30j" path="res://Scene/Map/2d/background/Сarcarui.png" id="24_yi6xb"]
@@ -37,17 +37,36 @@
 [ext_resource type="Texture2D" uid="uid://c2l20rrp1xpt2" path="res://Scene/Map/2d/StBar/icon/minus.png" id="35_jus23"]
 [ext_resource type="Texture2D" uid="uid://djmjhdyuar5ng" path="res://Scene/Map/2d/StBar/icon/up.png" id="36_u70op"]
 [ext_resource type="Texture2D" uid="uid://bx0qht5ykxn8x" path="res://Scene/Map/2d/StBar/icon/down.png" id="37_mjwcx"]
+[ext_resource type="Script" path="res://Scene/Map/scripts/DebugMod.gd" id="37_srjge"]
 [ext_resource type="Texture2D" uid="uid://cpkynv6tj17kt" path="res://Scene/Map/2d/Add Statement.png" id="38_g7m2w"]
+[ext_resource type="Texture2D" uid="uid://raama3fau47f" path="res://Scene/Map/2d/debug/Group 119.png" id="38_kexm5"]
+[ext_resource type="FontFile" uid="uid://ccw28gg2prmqw" path="res://fonts/Inter-Black.ttf" id="39_cb3d8"]
 [ext_resource type="Texture2D" uid="uid://dgryrosr1d3r5" path="res://Scene/PopupMenu/popupMenu/btnOk/hoverOKey.png" id="39_ix8em"]
+[ext_resource type="Texture2D" uid="uid://eqh0fmbyxtj1" path="res://Scene/Map/2d/debug/Ellipse 8.png" id="40_cdeyq"]
 [ext_resource type="Texture2D" uid="uid://fypb7a11hj4r" path="res://Scene/PopupMenu/popupMenu/btnOk/normalOKey.png" id="40_j5in2"]
+[ext_resource type="Texture2D" uid="uid://c4aj42j5uu4ct" path="res://Scene/Map/2d/debug/Rectangle 13.png" id="41_1g8ki"]
+[ext_resource type="Texture2D" uid="uid://cpdhjnobprnsw" path="res://Scene/Map/2d/debug/Ellipse 9.png" id="41_2fhua"]
 [ext_resource type="Texture2D" uid="uid://bxhqts4e7s120" path="res://Scene/PopupMenu/popupMenu/btnOk/pressedOKey.png" id="41_3ot7y"]
+[ext_resource type="Texture2D" uid="uid://wb4m4m8jh0nl" path="res://Scene/Map/2d/debug/Rectangle 15.png" id="42_h6u51"]
 [ext_resource type="Texture2D" uid="uid://bptorhsmdiri1" path="res://Scene/PopupMenu/popupMenu/btnCancel/hoverCancel.png" id="42_o8ssr"]
+[ext_resource type="Texture2D" uid="uid://cdw3kba3ib3x" path="res://Scene/Map/2d/debug/Rectangle 17.png" id="43_i27ju"]
 [ext_resource type="Texture2D" uid="uid://dnvvpfaprht7q" path="res://Scene/PopupMenu/popupMenu/btnCancel/normalCancel.png" id="43_y2swk"]
 [ext_resource type="FontFile" uid="uid://b266fmqwrlsqt" path="res://fonts/Inter-ExtraBold.ttf" id="44_124c5"]
 [ext_resource type="Texture2D" uid="uid://tgcx68ti3fr0" path="res://Scene/PopupMenu/popupMenu/btnCancel/pressedCancel.png" id="44_u16q4"]
 [ext_resource type="Texture2D" uid="uid://ddnc5ocgdaia3" path="res://Scene/PopupMenu/popupMenu/lineedit focus.png" id="45_t7rqv"]
 [ext_resource type="Texture2D" uid="uid://g0w6k4o4upmo" path="res://Scene/PopupMenu/popupMenu/line editnormal.png" id="46_bncur"]
 [ext_resource type="Texture2D" uid="uid://7xof2pvk4x13" path="res://Scene/Map/2d/Rectangle 88 (1).png" id="48_i1so1"]
+[ext_resource type="Texture2D" uid="uid://qmix6mfwnr7v" path="res://Scene/Map/2d/LoadProjects/Group 120.png" id="57_qga4h"]
+[ext_resource type="Texture2D" uid="uid://dkwq44qiu2pdw" path="res://Scene/Map/2d/saveProject/Group 121.png" id="58_3ooru"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vlgal"]
+shader = ExtResource("3_35o6i")
+shader_parameter/amount = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omfgw"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y66ij"]
 texture = ExtResource("5_7qr1j")
@@ -76,24 +95,15 @@ Button/styles/hover = SubResource("StyleBoxTexture_y66ij")
 Button/styles/normal = SubResource("StyleBoxTexture_y66ij")
 Button/styles/pressed = SubResource("StyleBoxTexture_y66ij")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgx42"]
-texture = ExtResource("6_p411q")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8k74"]
+bg_color = Color(0, 0.14902, 0.235294, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
-[sub_resource type="Theme" id="Theme_ft2rg"]
-Button/styles/disabled = SubResource("StyleBoxTexture_pgx42")
-Button/styles/focus = SubResource("StyleBoxTexture_pgx42")
-Button/styles/hover = SubResource("StyleBoxTexture_pgx42")
-Button/styles/normal = SubResource("StyleBoxTexture_pgx42")
-Button/styles/pressed = SubResource("StyleBoxTexture_pgx42")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vlgal"]
-shader = ExtResource("3_35o6i")
-shader_parameter/amount = 3.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omfgw"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
+[sub_resource type="Theme" id="Theme_tts4t"]
+Panel/styles/panel = SubResource("StyleBoxFlat_a8k74")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ei0s"]
 bg_color = Color(1, 1, 1, 1)
@@ -128,16 +138,6 @@ Button/styles/focus = SubResource("StyleBoxTexture_vy5un")
 Button/styles/hover = SubResource("StyleBoxTexture_vy5un")
 Button/styles/normal = SubResource("StyleBoxTexture_vy5un")
 Button/styles/pressed = SubResource("StyleBoxTexture_vy5un")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4kns"]
-bg_color = Color(0, 0, 0, 0.184314)
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ik1rl"]
-bg_color = Color(0, 0, 0, 0.184314)
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ehbl"]
 texture = ExtResource("11_qc4q8")
@@ -246,16 +246,15 @@ Button/styles/hover = SubResource("StyleBoxTexture_gw7fp")
 Button/styles/normal = SubResource("StyleBoxTexture_gw7fp")
 Button/styles/pressed = SubResource("StyleBoxTexture_gw7fp")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_us5du"]
-shader = ExtResource("3_35o6i")
-shader_parameter/amount = 3.9
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xio0c"]
+bg_color = Color(0.00392157, 0.188235, 0.301961, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dihes"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 44
-corner_radius_top_right = 44
-corner_radius_bottom_right = 44
-corner_radius_bottom_left = 44
+[sub_resource type="Theme" id="Theme_ap4k4"]
+Panel/styles/panel = SubResource("StyleBoxFlat_xio0c")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tyre"]
 
@@ -277,12 +276,32 @@ Button/styles/hover = SubResource("StyleBoxTexture_ukndi")
 Button/styles/normal = SubResource("StyleBoxTexture_gbqia")
 Button/styles/pressed = SubResource("StyleBoxTexture_7be01")
 
+[sub_resource type="Theme" id="Theme_8ld4s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgx42"]
+texture = ExtResource("6_p411q")
+
+[sub_resource type="Theme" id="Theme_ft2rg"]
+Button/styles/disabled = SubResource("StyleBoxTexture_pgx42")
+Button/styles/focus = SubResource("StyleBoxTexture_pgx42")
+Button/styles/hover = SubResource("StyleBoxTexture_pgx42")
+Button/styles/normal = SubResource("StyleBoxTexture_pgx42")
+Button/styles/pressed = SubResource("StyleBoxTexture_pgx42")
+
+[sub_resource type="Theme" id="Theme_qapen"]
+Label/fonts/font = ExtResource("39_cb3d8")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g22of"]
 shader = ExtResource("3_35o6i")
 shader_parameter/amount = 2.768
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vu2x"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4kns"]
+bg_color = Color(0, 0, 0, 0.184314)
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oevtu"]
 
@@ -358,7 +377,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_y5qp1")
 Button/styles/normal = SubResource("StyleBoxTexture_dfwoe")
 Button/styles/pressed = SubResource("StyleBoxTexture_r2hrb")
 
-[sub_resource type="Image" id="Image_jmp2m"]
+[sub_resource type="Image" id="Image_rly4v"]
 data = {
 "data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 186, 255, 255, 255, 57, 255, 255, 255, 142, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 189, 255, 255, 255, 58, 255, 255, 255, 0, 255, 255, 255, 6, 255, 255, 255, 133, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 190, 255, 255, 255, 68, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 4, 255, 255, 255, 124, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 78, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 2, 255, 255, 255, 113, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 90, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 1, 255, 255, 255, 102, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
 "format": "RGBA8",
@@ -368,7 +387,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_yphtv"]
-image = SubResource("Image_jmp2m")
+image = SubResource("Image_rly4v")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tpyu"]
 texture = ExtResource("45_t7rqv")
@@ -405,12 +424,42 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qprw6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1qvpa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8h5qg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bj71t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xysl5"]
+
+[sub_resource type="Theme" id="Theme_b8mew"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_qprw6")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_1qvpa")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_8h5qg")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_bj71t")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_xysl5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pubyi"]
+texture = ExtResource("45_t7rqv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jghg6"]
+texture = ExtResource("46_bncur")
+
+[sub_resource type="Theme" id="Theme_v3qth"]
+TextEdit/constants/line_spacing = 8
+TextEdit/constants/outline_size = 0
+TextEdit/fonts/font = ExtResource("21_rlyqe")
+TextEdit/styles/focus = SubResource("StyleBoxTexture_pubyi")
+TextEdit/styles/normal = SubResource("StyleBoxTexture_jghg6")
+
 [sub_resource type="Animation" id="Animation_3cnbj"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/Line:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/line_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -421,7 +470,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/Line:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/line_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -432,7 +481,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Node3D/Panel2/UltraSonnic:position:x")
+tracks/2/path = NodePath("Node3D/robot_control_back/ultra_sonic_btn:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -443,7 +492,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Node3D/Panel2/UltraSonnic:position:y")
+tracks/3/path = NodePath("Node3D/robot_control_back/ultra_sonic_btn:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -454,7 +503,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Node3D/Panel2/ColorSensor:position:x")
+tracks/4/path = NodePath("Node3D/robot_control_back/color_sensor_btn:position:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -465,7 +514,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Node3D/Panel2/ColorSensor:position:y")
+tracks/5/path = NodePath("Node3D/robot_control_back/color_sensor_btn:position:y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -476,7 +525,7 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Node3D/Panel2/duration:position:x")
+tracks/6/path = NodePath("Node3D/robot_control_back/duration_btn:position:x")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -487,7 +536,7 @@ tracks/6/keys = {
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Node3D/Panel2/duration:position:y")
+tracks/7/path = NodePath("Node3D/robot_control_back/duration_btn:position:y")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -498,7 +547,7 @@ tracks/7/keys = {
 tracks/8/type = "bezier"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Node3D/Panel2/led:position:x")
+tracks/8/path = NodePath("Node3D/robot_control_back/led_btn:position:x")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -509,7 +558,7 @@ tracks/8/keys = {
 tracks/9/type = "bezier"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Node3D/Panel2/led:position:y")
+tracks/9/path = NodePath("Node3D/robot_control_back/led_btn:position:y")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -520,7 +569,7 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Node3D/Panel2/time:position:x")
+tracks/10/path = NodePath("Node3D/robot_control_back/timer_btn:position:x")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -531,7 +580,7 @@ tracks/10/keys = {
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Node3D/Panel2/time:position:y")
+tracks/11/path = NodePath("Node3D/robot_control_back/timer_btn:position:y")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -542,7 +591,7 @@ tracks/11/keys = {
 tracks/12/type = "bezier"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Node3D/Panel2/Rotation:position:x")
+tracks/12/path = NodePath("Node3D/robot_control_back/rotation_xyz_btn:position:x")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -553,7 +602,7 @@ tracks/12/keys = {
 tracks/13/type = "bezier"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Node3D/Panel2/Rotation:position:y")
+tracks/13/path = NodePath("Node3D/robot_control_back/rotation_xyz_btn:position:y")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -564,7 +613,7 @@ tracks/13/keys = {
 tracks/14/type = "bezier"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Node3D/Panel2/Speed:position:x")
+tracks/14/path = NodePath("Node3D/robot_control_back/speed_btn:position:x")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -575,7 +624,7 @@ tracks/14/keys = {
 tracks/15/type = "bezier"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Node3D/Panel2/Speed:position:y")
+tracks/15/path = NodePath("Node3D/robot_control_back/speed_btn:position:y")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -590,7 +639,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/ColorSensor:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/color_sensor_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -601,7 +650,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/ColorSensor:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/color_sensor_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -616,7 +665,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/duration:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/duration_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -627,7 +676,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/duration:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/duration_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -642,7 +691,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/led:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/led_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -653,7 +702,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/led:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/led_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -668,7 +717,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/Line:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/line_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -679,7 +728,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/Line:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/line_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -694,7 +743,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/Rotation:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/rotation_xyz_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -705,7 +754,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/Rotation:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/rotation_xyz_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -720,7 +769,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/Speed:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/speed_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -731,7 +780,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/Speed:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/speed_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -746,7 +795,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/time:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/timer_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -757,7 +806,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/time:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/timer_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -772,7 +821,7 @@ length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Panel2/UltraSonnic:position:x")
+tracks/0/path = NodePath("Node3D/robot_control_back/ultra_sonic_btn:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -783,7 +832,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Panel2/UltraSonnic:position:y")
+tracks/1/path = NodePath("Node3D/robot_control_back/ultra_sonic_btn:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -806,7 +855,7 @@ _data = {
 }
 
 [node name="Map" type="CanvasLayer"]
-script = ExtResource("1_0hvd8")
+script = ExtResource("1_ibakg")
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -819,72 +868,65 @@ handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="MapLoader" parent="Node3D/SubViewportContainer/SubViewport" instance=ExtResource("2_nli8l")]
+[node name="map_loader" parent="Node3D/SubViewportContainer/SubViewport" instance=ExtResource("2_nli8l")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
 environment = ExtResource("1_47h5t")
 
-[node name="btnBack" type="Button" parent="Node3D"]
-offset_left = 1816.0
-offset_top = 894.0
-offset_right = 1890.0
-offset_bottom = 968.0
-size_flags_vertical = 8
-theme = SubResource("Theme_1nqic")
-
-[node name="btnRestart" type="Button" parent="Node3D"]
-visible = false
-offset_left = 816.0
-offset_top = 144.0
-offset_right = 1114.0
-offset_bottom = 191.0
-theme = SubResource("Theme_ft2rg")
-
-[node name="Panel3" type="Panel" parent="Node3D"]
+[node name="Header" type="Panel" parent="Node3D"]
 material = SubResource("ShaderMaterial_vlgal")
 offset_right = 1920.0
 offset_bottom = 133.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_omfgw")
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel3"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/Header"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = -11.0
 offset_right = 1925.0
 offset_bottom = 134.0
-texture = ExtResource("8_j3jrh")
+texture = ExtResource("8_efgyt")
 
-[node name="Result" type="Label" parent="Node3D/Panel3/TextureRect"]
+[node name="count_checkpoint" type="Label" parent="Node3D/Header/TextureRect"]
 layout_mode = 0
-offset_left = 1375.0
-offset_top = 65.0
-offset_right = 1478.0
-offset_bottom = 109.0
+offset_left = 1420.0
+offset_top = 56.0
+offset_right = 1523.0
+offset_bottom = 100.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimeRace" type="Label" parent="Node3D/Panel3/TextureRect"]
+[node name="time_race" type="Label" parent="Node3D/Header/TextureRect"]
 layout_mode = 0
-offset_left = 803.0
-offset_top = 81.0
-offset_right = 1114.0
-offset_bottom = 122.0
+offset_left = 991.0
+offset_top = 80.0
+offset_right = 1302.0
+offset_bottom = 121.0
 theme_override_font_sizes/font_size = 30
 text = "00 : 00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="Node3D"]
-material = SubResource("ShaderMaterial_vlgal")
+[node name="btnBack" type="Button" parent="Node3D/Header"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 27.0
+offset_right = 150.0
+offset_bottom = 101.0
+size_flags_vertical = 8
+theme = SubResource("Theme_1nqic")
+
+[node name="robot_control_back" type="Panel" parent="Node3D"]
 offset_left = 98.0
 offset_top = 314.0
-offset_right = 908.0
+offset_right = 903.31
 offset_bottom = 1033.0
+theme = SubResource("Theme_tts4t")
 theme_override_styles/panel = SubResource("StyleBoxFlat_4ei0s")
 
-[node name="Speed" type="Button" parent="Node3D/Panel2"]
+[node name="speed_btn" type="Button" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = 805.0
 offset_top = 214.0
@@ -893,30 +935,14 @@ offset_bottom = 300.0
 theme = SubResource("Theme_6ddet")
 toggle_mode = true
 
-[node name="PanelBlac" type="Panel" parent="Node3D/Panel2/Speed"]
-layout_mode = 0
-offset_left = -248.0
-offset_top = -16.0
-offset_right = 2.0
-offset_bottom = 324.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_m4kns")
-
-[node name="PanelBlur" type="Panel" parent="Node3D/Panel2/Speed"]
-layout_mode = 0
-offset_left = -248.0
-offset_top = -16.0
-offset_right = 2.0
-offset_bottom = 324.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ik1rl")
-
-[node name="speed" parent="Node3D/Panel2/Speed" instance=ExtResource("10_eo6q0")]
+[node name="speed" parent="Node3D/robot_control_back/speed_btn" instance=ExtResource("10_eo6q0")]
 layout_mode = 1
 offset_left = -250.0
 offset_top = -15.0
 offset_right = -250.0
 offset_bottom = -15.0
 
-[node name="Rotation" type="Button" parent="Node3D/Panel2"]
+[node name="rotation_xyz_btn" type="Button" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = -33.0
 offset_top = 483.0
@@ -925,45 +951,40 @@ offset_bottom = 580.0
 theme = SubResource("Theme_48j1m")
 toggle_mode = true
 
-[node name="rotation" parent="Node3D/Panel2/Rotation" instance=ExtResource("12_hd475")]
+[node name="rotation" parent="Node3D/robot_control_back/rotation_xyz_btn" instance=ExtResource("12_hd475")]
 layout_mode = 1
 offset_left = 29.0
 offset_top = -12.0
 offset_right = 29.0
 offset_bottom = -12.0
 
-[node name="time" parent="Node3D/Panel2" instance=ExtResource("13_42n2p")]
+[node name="timer_btn" parent="Node3D/robot_control_back" instance=ExtResource("13_42n2p")]
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = -44.0
 offset_top = 398.0
-offset_right = -43.0
-offset_bottom = 399.0
+offset_right = 165.0
+offset_bottom = 438.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="led" parent="Node3D/Panel2" instance=ExtResource("14_r28mi")]
+[node name="led_btn" parent="Node3D/robot_control_back" instance=ExtResource("14_r28mi")]
 layout_mode = 1
 offset_left = -43.0
 offset_top = 333.0
-offset_right = 33167.0
-offset_bottom = 29812.0
+offset_right = 166.0
+offset_bottom = 373.0
 
-[node name="duration" parent="Node3D/Panel2" instance=ExtResource("15_nlaqj")]
+[node name="duration_btn" parent="Node3D/robot_control_back" instance=ExtResource("15_nlaqj")]
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
 offset_left = -85.0
 offset_top = 281.0
-offset_right = -84.0
-offset_bottom = 282.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_right = 140.0
+offset_bottom = 324.0
 
-[node name="ColorSensor" type="Button" parent="Node3D/Panel2"]
+[node name="color_sensor_btn" type="Button" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = -33.0
 offset_top = 172.0
@@ -972,14 +993,14 @@ offset_bottom = 258.0
 theme = SubResource("Theme_f8urm")
 toggle_mode = true
 
-[node name="colorsensor" parent="Node3D/Panel2/ColorSensor" instance=ExtResource("17_65i2w")]
+[node name="colorsensor" parent="Node3D/robot_control_back/color_sensor_btn" instance=ExtResource("17_65i2w")]
 layout_mode = 1
 offset_left = 29.0
 offset_top = -8.0
 offset_right = 29.0
 offset_bottom = -8.0
 
-[node name="Line" type="Button" parent="Node3D/Panel2"]
+[node name="line_btn" type="Button" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = 77.0
 offset_top = -28.0
@@ -988,14 +1009,14 @@ offset_bottom = 1.00018
 theme = SubResource("Theme_rvdhj")
 toggle_mode = true
 
-[node name="LineSensor" parent="Node3D/Panel2/Line" instance=ExtResource("19_eqcvs")]
+[node name="LineSensor" parent="Node3D/robot_control_back/line_btn" instance=ExtResource("19_eqcvs")]
 layout_mode = 1
 offset_left = -8.0
 offset_top = 29.0
 offset_right = -8.0
 offset_bottom = 29.0
 
-[node name="UltraSonnic" type="Button" parent="Node3D/Panel2"]
+[node name="ultra_sonic_btn" type="Button" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = -33.0
 offset_top = 45.0
@@ -1004,23 +1025,22 @@ offset_bottom = 149.0
 theme = SubResource("Theme_c4c20")
 toggle_mode = true
 
-[node name="ultrasonic" parent="Node3D/Panel2/UltraSonnic" instance=ExtResource("21_5sogy")]
+[node name="ultrasonic" parent="Node3D/robot_control_back/ultra_sonic_btn" instance=ExtResource("21_5sogy")]
 offset_left = 29.0
 offset_top = -1.0
 offset_right = 29.0
 offset_bottom = -1.0
 
-[node name="Panel" type="Panel" parent="Node3D/Panel2"]
-material = SubResource("ShaderMaterial_us5du")
+[node name="robot_control_front" type="Panel" parent="Node3D/robot_control_back"]
 layout_mode = 0
 offset_left = -4.0
 offset_top = 1.0
 offset_right = 806.0
 offset_bottom = 720.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_dihes")
-script = ExtResource("4_x1yt8")
+theme = SubResource("Theme_ap4k4")
+script = ExtResource("21_l5thr")
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel2/Panel"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.00988
@@ -1030,7 +1050,7 @@ offset_right = -4.00275
 offset_bottom = -0.00244141
 texture = ExtResource("23_aob7m")
 
-[node name="TextureRect2" type="TextureRect" parent="Node3D/Panel2/Panel"]
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 0
 offset_left = 91.0
 offset_top = 51.0
@@ -1038,7 +1058,7 @@ offset_right = 387.0
 offset_bottom = 690.0
 texture = ExtResource("24_yi6xb")
 
-[node name="TextureRect3" type="TextureRect" parent="Node3D/Panel2/Panel"]
+[node name="TextureRect3" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 0
 anchor_left = 0.658025
 anchor_top = 0.077886
@@ -1048,14 +1068,14 @@ offset_right = -6.10352e-05
 offset_bottom = 0.000183105
 texture = ExtResource("25_53vra")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Node3D/Panel2/Panel/TextureRect3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Node3D/robot_control_back/robot_control_front/TextureRect3"]
 layout_mode = 2
 theme_override_constants/separation = 53
 
-[node name="Control" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+[node name="Control" type="Control" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer"]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control"]
+[node name="play_btn" type="Button" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control"]
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
@@ -1063,10 +1083,10 @@ theme = ExtResource("26_h2lrx")
 icon = ExtResource("27_ko4dx")
 icon_alignment = 1
 
-[node name="Control2" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+[node name="Control2" type="Control" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer"]
 layout_mode = 2
 
-[node name="Package" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control2"]
+[node name="load_btn" type="Button" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control2"]
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
@@ -1074,10 +1094,10 @@ theme = ExtResource("26_h2lrx")
 icon = ExtResource("28_t2nic")
 icon_alignment = 1
 
-[node name="Control3" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+[node name="Control3" type="Control" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer"]
 layout_mode = 2
 
-[node name="Save" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control3"]
+[node name="save_btn" type="Button" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control3"]
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
@@ -1085,10 +1105,10 @@ theme = ExtResource("26_h2lrx")
 icon = ExtResource("29_q5bmw")
 icon_alignment = 1
 
-[node name="Control4" type="Control" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer"]
+[node name="Control4" type="Control" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer"]
 layout_mode = 2
 
-[node name="Upload" type="Button" parent="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control4"]
+[node name="export_btn" type="Button" parent="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control4"]
 layout_mode = 2
 offset_right = 54.0
 offset_bottom = 54.0
@@ -1096,7 +1116,7 @@ theme = ExtResource("26_h2lrx")
 icon = ExtResource("30_ryfik")
 icon_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Node3D/Panel2/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 0
 offset_left = 547.0
 offset_top = 115.0
@@ -1104,10 +1124,10 @@ offset_right = 628.0
 offset_bottom = 155.0
 theme_override_constants/separation = 27
 
-[node name="Control" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+[node name="Control" type="Control" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer"]
 layout_mode = 2
 
-[node name="plus" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control"]
+[node name="plus" type="Button" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control"]
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
@@ -1115,10 +1135,10 @@ theme = SubResource("Theme_ewm0q")
 icon = ExtResource("34_doqwy")
 icon_alignment = 1
 
-[node name="Control2" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+[node name="Control2" type="Control" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer"]
 layout_mode = 2
 
-[node name="minus" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control2"]
+[node name="minus" type="Button" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control2"]
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
@@ -1126,10 +1146,10 @@ theme = SubResource("Theme_ewm0q")
 icon = ExtResource("35_jus23")
 icon_alignment = 1
 
-[node name="Control3" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+[node name="Control3" type="Control" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer"]
 layout_mode = 2
 
-[node name="up" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control3"]
+[node name="up" type="Button" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control3"]
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
@@ -1137,10 +1157,10 @@ theme = SubResource("Theme_ewm0q")
 icon = ExtResource("36_u70op")
 icon_alignment = 1
 
-[node name="Control4" type="Control" parent="Node3D/Panel2/Panel/HBoxContainer"]
+[node name="Control4" type="Control" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer"]
 layout_mode = 2
 
-[node name="down" type="Button" parent="Node3D/Panel2/Panel/HBoxContainer/Control4"]
+[node name="down" type="Button" parent="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control4"]
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
@@ -1148,18 +1168,18 @@ theme = SubResource("Theme_ewm0q")
 icon = ExtResource("37_mjwcx")
 icon_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Node3D/Panel2/Panel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 0
 offset_left = 508.0
 offset_top = 148.0
 offset_right = 772.0
 offset_bottom = 676.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Node3D/Panel2/Panel/ScrollContainer"]
+[node name="statement_list" type="VBoxContainer" parent="Node3D/robot_control_back/robot_control_front/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 47
 
-[node name="CurStatment" type="Label" parent="Node3D/Panel2/Panel"]
+[node name="current_statment" type="Label" parent="Node3D/robot_control_back/robot_control_front"]
 layout_mode = 0
 offset_left = 235.0
 offset_top = 11.0
@@ -1168,7 +1188,320 @@ offset_bottom = 47.0
 text = "Add first statment"
 horizontal_alignment = 2
 
-[node name="Panel" type="Panel" parent="Node3D"]
+[node name="debug_panel" type="Panel" parent="Node3D/robot_control_back/robot_control_front"]
+visible = false
+layout_mode = 0
+offset_right = 810.0
+offset_bottom = 719.0
+script = ExtResource("37_srjge")
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_8ld4s")
+texture = ExtResource("38_kexm5")
+
+[node name="restart_btn" type="Button" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 29.0
+offset_right = 786.0
+offset_bottom = 76.0
+scale = Vector2(0.997384, 1.0247)
+theme = SubResource("Theme_ft2rg")
+
+[node name="state_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 91.0
+offset_right = 537.0
+offset_bottom = 111.0
+theme = SubResource("Theme_qapen")
+text = "State: "
+
+[node name="time_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 122.0
+offset_right = 537.0
+offset_bottom = 142.0
+theme = SubResource("Theme_qapen")
+text = "Time: "
+
+[node name="wheel_left_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 152.0
+offset_right = 546.0
+offset_bottom = 172.0
+theme = SubResource("Theme_qapen")
+text = "WheelLeft: 
+"
+
+[node name="wheel_right_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 183.0
+offset_right = 592.0
+offset_bottom = 203.0
+theme = SubResource("Theme_qapen")
+text = "WheelRight: 
+"
+
+[node name="ultra_sonic_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 214.0
+offset_right = 597.0
+offset_bottom = 234.0
+theme = SubResource("Theme_qapen")
+text = "Ultrasonic:"
+
+[node name="line_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 118.0
+offset_right = 207.0
+offset_bottom = 138.0
+theme = SubResource("Theme_qapen")
+text = "Line:"
+
+[node name="led_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 242.0
+offset_right = 550.0
+offset_bottom = 262.0
+theme = SubResource("Theme_qapen")
+text = "Led: "
+
+[node name="line_visual" type="HBoxContainer" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 139.0
+offset_right = 315.0
+offset_bottom = 179.0
+
+[node name="Control" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="Control2" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="Control3" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control3"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control3"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="Control4" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control4"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control4"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="Control5" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control5"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control5"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="Control6" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control6"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("40_cdeyq")
+
+[node name="TextureRect2" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/line_visual/Control6"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_left = 4.0
+offset_right = 20.0
+offset_bottom = 16.0
+texture = ExtResource("41_2fhua")
+
+[node name="ColorText" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 266.0
+offset_right = 231.0
+offset_bottom = 286.0
+theme = SubResource("Theme_qapen")
+text = "Color:
+"
+
+[node name="Color" type="HBoxContainer" parent="Node3D/robot_control_back/robot_control_front/debug_panel"]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 287.0
+offset_right = 298.0
+offset_bottom = 327.0
+
+[node name="Control" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 28.0
+texture = ExtResource("41_1g8ki")
+
+[node name="red_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control2"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 28.0
+texture = ExtResource("42_h6u51")
+
+[node name="green_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="Control3" type="Control" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control3"]
+custom_minimum_size = Vector2(37, 28)
+layout_mode = 0
+offset_right = 37.0
+offset_bottom = 28.0
+texture = ExtResource("43_i27ju")
+
+[node name="blue_label" type="Label" parent="Node3D/robot_control_back/robot_control_front/debug_panel/Color/Control3/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="add_statment_panel" type="Panel" parent="Node3D"]
 visible = false
 material = SubResource("ShaderMaterial_g22of")
 offset_top = -4.0
@@ -1176,14 +1509,14 @@ offset_right = 1915.0
 offset_bottom = 1075.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7vu2x")
 
-[node name="Panel" type="Panel" parent="Node3D/Panel"]
+[node name="Panel" type="Panel" parent="Node3D/add_statment_panel"]
 layout_mode = 0
 offset_right = 1919.0
 offset_bottom = 999.0
 scale = Vector2(1, 1.08)
 theme_override_styles/panel = SubResource("StyleBoxFlat_m4kns")
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/add_statment_panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1198,7 +1531,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("38_g7m2w")
 
-[node name="ok" type="Button" parent="Node3D/Panel/TextureRect"]
+[node name="ok" type="Button" parent="Node3D/add_statment_panel/TextureRect"]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 235.0
@@ -1206,7 +1539,7 @@ offset_right = 161.0
 offset_bottom = 273.0
 theme = SubResource("Theme_8ty5a")
 
-[node name="cancel" type="Button" parent="Node3D/Panel/TextureRect"]
+[node name="cancel" type="Button" parent="Node3D/add_statment_panel/TextureRect"]
 layout_mode = 0
 offset_left = 190.0
 offset_top = 235.0
@@ -1214,7 +1547,7 @@ offset_right = 309.0
 offset_bottom = 273.0
 theme = SubResource("Theme_jnb7w")
 
-[node name="LineEdit" type="LineEdit" parent="Node3D/Panel/TextureRect"]
+[node name="name_st_edit" type="LineEdit" parent="Node3D/add_statment_panel/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1231,7 +1564,7 @@ theme = SubResource("Theme_d6xgk")
 alignment = 1
 max_length = 10
 
-[node name="Label" type="Label" parent="Node3D/Panel/TextureRect"]
+[node name="add_st_error_label" type="Label" parent="Node3D/add_statment_panel/TextureRect"]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 189.0
@@ -1247,7 +1580,7 @@ autowrap_mode = 3
 uppercase = true
 max_lines_visible = 10
 
-[node name="Panel4" type="Panel" parent="Node3D"]
+[node name="result_panel" type="Panel" parent="Node3D"]
 visible = false
 offset_left = 986.0
 offset_top = 475.0
@@ -1256,7 +1589,8 @@ offset_bottom = 733.0
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_83508")
 
-[node name="TextureRect" type="TextureRect" parent="Node3D/Panel4"]
+[node name="TextureRect" type="TextureRect" parent="Node3D/result_panel"]
+visible = false
 layout_mode = 0
 offset_left = -5.0
 offset_top = 8.0
@@ -1264,7 +1598,7 @@ offset_right = 253.0
 offset_bottom = 266.0
 texture = ExtResource("48_i1so1")
 
-[node name="Finish" type="Label" parent="Node3D/Panel4"]
+[node name="Finish" type="Label" parent="Node3D/result_panel"]
 layout_mode = 0
 offset_left = 81.0
 offset_top = 26.0
@@ -1275,7 +1609,7 @@ text = "Succesfull"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Time" type="Label" parent="Node3D/Panel4"]
+[node name="Time" type="Label" parent="Node3D/result_panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1291,14 +1625,14 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Node3D/Panel4"]
+[node name="count_checkpoint_result" type="Label" parent="Node3D/result_panel"]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 132.0
 offset_right = 140.0
 offset_bottom = 152.0
 
-[node name="okSuck" type="Button" parent="Node3D/Panel4"]
+[node name="okSuck" type="Button" parent="Node3D/result_panel"]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 198.0
@@ -1306,34 +1640,185 @@ offset_right = 191.0
 offset_bottom = 236.0
 theme = SubResource("Theme_8ty5a")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="projects_list_panel" type="Panel" parent="Node3D"]
+visible = false
+material = SubResource("ShaderMaterial_g22of")
+offset_top = -4.0
+offset_right = 1915.0
+offset_bottom = 1075.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vu2x")
+
+[node name="Panel" type="Panel" parent="Node3D/projects_list_panel"]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 999.0
+scale = Vector2(1, 1.08)
+theme_override_styles/panel = SubResource("StyleBoxFlat_m4kns")
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/projects_list_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.5
+offset_top = -150.5
+offset_right = 177.5
+offset_bottom = 150.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("57_qga4h")
+
+[node name="ok_load" type="Button" parent="Node3D/projects_list_panel/TextureRect"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 400.5
+offset_right = 163.0
+offset_bottom = 438.5
+theme = SubResource("Theme_8ty5a")
+
+[node name="cancel_load" type="Button" parent="Node3D/projects_list_panel/TextureRect"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 400.5
+offset_right = 311.0
+offset_bottom = 438.5
+theme = SubResource("Theme_jnb7w")
+
+[node name="add_st_error_load_label" type="Label" parent="Node3D/projects_list_panel/TextureRect"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 94.5
+offset_right = 299.0
+offset_bottom = 130.5
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("44_124c5")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+max_lines_visible = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Node3D/projects_list_panel/TextureRect"]
+offset_left = 64.0
+offset_top = 139.5
+offset_right = 301.0
+offset_bottom = 308.5
+scale = Vector2(1, 1.24)
+
+[node name="vbox_projects_list" type="VBoxContainer" parent="Node3D/projects_list_panel/TextureRect/ScrollContainer"]
+layout_mode = 2
+theme = SubResource("Theme_b8mew")
+
+[node name="project_save_panel" type="Panel" parent="Node3D"]
+visible = false
+material = SubResource("ShaderMaterial_g22of")
+offset_top = -4.0
+offset_right = 1915.0
+offset_bottom = 1075.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vu2x")
+
+[node name="Panel" type="Panel" parent="Node3D/project_save_panel"]
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 999.0
+scale = Vector2(1, 1.08)
+theme_override_styles/panel = SubResource("StyleBoxFlat_m4kns")
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/project_save_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.5
+offset_top = -150.5
+offset_right = 177.5
+offset_bottom = 150.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("58_3ooru")
+
+[node name="ok_save" type="Button" parent="Node3D/project_save_panel/TextureRect"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 224.0
+offset_right = 163.0
+offset_bottom = 262.0
+theme = SubResource("Theme_8ty5a")
+
+[node name="cancel_save" type="Button" parent="Node3D/project_save_panel/TextureRect"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 224.0
+offset_right = 311.0
+offset_bottom = 262.0
+theme = SubResource("Theme_jnb7w")
+
+[node name="project_error_save_label" type="Label" parent="Node3D/project_save_panel/TextureRect"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 109.0
+offset_right = 288.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("44_124c5")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+max_lines_visible = 10
+
+[node name="text_edit_save" type="TextEdit" parent="Node3D/project_save_panel/TextureRect"]
+offset_left = 58.0
+offset_top = 133.0
+offset_right = 310.0
+offset_bottom = 171.31
+theme = SubResource("Theme_v3qth")
+placeholder_text = "Project name"
+
+[node name="amim_ui" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_sloar")
 }
 
-[node name="Seconds" type="Timer" parent="."]
+[node name="timer_seconds" type="Timer" parent="."]
 process_callback = 0
 
-[connection signal="pressed" from="Node3D/btnBack" to="." method="_on_btn_back_pressed"]
-[connection signal="pressed" from="Node3D/btnRestart" to="." method="_on_button_pressed"]
-[connection signal="toggled" from="Node3D/Panel2/Speed" to="." method="_on_speed_toggled"]
-[connection signal="toggled" from="Node3D/Panel2/Rotation" to="." method="_on_rotation_toggled"]
-[connection signal="gui_input" from="Node3D/Panel2/time" to="." method="_on_time_gui_input"]
-[connection signal="gui_input" from="Node3D/Panel2/led" to="." method="_on_led_gui_input"]
-[connection signal="gui_input" from="Node3D/Panel2/duration" to="." method="_on_duration_gui_input"]
-[connection signal="toggled" from="Node3D/Panel2/ColorSensor" to="." method="_on_color_sensor_toggled"]
-[connection signal="pressed" from="Node3D/Panel2/Line" to="." method="_on_button_pressed"]
-[connection signal="toggled" from="Node3D/Panel2/Line" to="." method="_on_button_toggled"]
-[connection signal="toggled" from="Node3D/Panel2/UltraSonnic" to="." method="_on_ultra_sonnic_toggled"]
-[connection signal="gui_input" from="Node3D/Panel2/Panel" to="Node3D/Panel2/Panel" method="_on_gui_input"]
-[connection signal="pressed" from="Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control/plus" to="." method="_on_plus_pressed"]
-[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control2/minus" to="." method="_on_minus_pressed"]
-[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control3/up" to="." method="_on_up_pressed"]
-[connection signal="pressed" from="Node3D/Panel2/Panel/HBoxContainer/Control4/down" to="." method="_on_down_pressed"]
-[connection signal="child_entered_tree" from="Node3D/Panel2/Panel/ScrollContainer/VBoxContainer" to="." method="_on_v_box_container_child_entered_tree"]
-[connection signal="child_exiting_tree" from="Node3D/Panel2/Panel/ScrollContainer/VBoxContainer" to="." method="_on_v_box_container_child_exiting_tree"]
-[connection signal="pressed" from="Node3D/Panel/TextureRect/ok" to="." method="_on_ok_pressed"]
-[connection signal="pressed" from="Node3D/Panel/TextureRect/cancel" to="." method="_on_cancel_pressed"]
-[connection signal="pressed" from="Node3D/Panel4/okSuck" to="." method="_on_ok_suck_pressed"]
-[connection signal="timeout" from="Seconds" to="." method="_on_seconds_timeout"]
+[connection signal="pressed" from="Node3D/Header/btnBack" to="." method="_on_btn_back_pressed"]
+[connection signal="toggled" from="Node3D/robot_control_back/speed_btn" to="." method="_on_speed_toggled"]
+[connection signal="toggled" from="Node3D/robot_control_back/rotation_xyz_btn" to="." method="_on_rotation_toggled"]
+[connection signal="gui_input" from="Node3D/robot_control_back/timer_btn" to="." method="_on_time_gui_input"]
+[connection signal="gui_input" from="Node3D/robot_control_back/led_btn" to="." method="_on_led_gui_input"]
+[connection signal="gui_input" from="Node3D/robot_control_back/duration_btn" to="." method="_on_duration_gui_input"]
+[connection signal="toggled" from="Node3D/robot_control_back/color_sensor_btn" to="." method="_on_color_sensor_toggled"]
+[connection signal="pressed" from="Node3D/robot_control_back/line_btn" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="Node3D/robot_control_back/line_btn" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Node3D/robot_control_back/ultra_sonic_btn" to="." method="_on_ultra_sonnic_toggled"]
+[connection signal="gui_input" from="Node3D/robot_control_back/robot_control_front" to="Node3D/robot_control_back/robot_control_front" method="_on_gui_input"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control/play_btn" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control2/load_btn" to="." method="_on_load_btn_pressed"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control3/save_btn" to="." method="_on_save_btn_pressed"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control/plus" to="." method="_on_plus_pressed"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control2/minus" to="." method="_on_minus_pressed"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control3/up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/HBoxContainer/Control4/down" to="." method="_on_down_pressed"]
+[connection signal="child_entered_tree" from="Node3D/robot_control_back/robot_control_front/ScrollContainer/statement_list" to="." method="_on_v_box_container_child_entered_tree"]
+[connection signal="child_exiting_tree" from="Node3D/robot_control_back/robot_control_front/ScrollContainer/statement_list" to="." method="_on_v_box_container_child_exiting_tree"]
+[connection signal="draw" from="Node3D/robot_control_back/robot_control_front/debug_panel" to="Node3D/robot_control_back/robot_control_front/debug_panel" method="_on_draw"]
+[connection signal="hidden" from="Node3D/robot_control_back/robot_control_front/debug_panel" to="Node3D/robot_control_back/robot_control_front/debug_panel" method="_on_hidden"]
+[connection signal="pressed" from="Node3D/robot_control_back/robot_control_front/debug_panel/restart_btn" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Node3D/add_statment_panel/TextureRect/ok" to="." method="_on_ok_pressed"]
+[connection signal="pressed" from="Node3D/add_statment_panel/TextureRect/cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Node3D/result_panel/okSuck" to="." method="_on_ok_suck_pressed"]
+[connection signal="pressed" from="Node3D/projects_list_panel/TextureRect/ok_load" to="." method="_on_ok_load_pressed"]
+[connection signal="pressed" from="Node3D/projects_list_panel/TextureRect/cancel_load" to="." method="_on_cancel_load_pressed"]
+[connection signal="pressed" from="Node3D/project_save_panel/TextureRect/ok_save" to="." method="_on_ok_save_pressed"]
+[connection signal="pressed" from="Node3D/project_save_panel/TextureRect/cancel_save" to="." method="_on_cancel_save_pressed"]
+[connection signal="timeout" from="timer_seconds" to="." method="_on_seconds_timeout"]

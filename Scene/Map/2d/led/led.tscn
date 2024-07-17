@@ -35,17 +35,15 @@ OptionButton/styles/pressed = SubResource("StyleBoxTexture_7xder")
 OptionButton/styles/pressed_mirrored = SubResource("StyleBoxTexture_7xder")
 
 [node name="led" type="Control"]
+custom_minimum_size = Vector2(209, 40)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1920.0
-offset_bottom = -1000.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 209.0
+offset_bottom = 40.0
 script = ExtResource("1_al13u")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(209, 40)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

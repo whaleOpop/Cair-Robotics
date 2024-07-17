@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ctcp34j241wek"]
+[gd_scene load_steps=27 format=3 uid="uid://ctcp34j241wek"]
 
 [ext_resource type="Script" path="res://Scene/Car/Scripts/Car.gd" id="1_3wv73"]
 [ext_resource type="ArrayMesh" uid="uid://reebnk5mnsa4" path="res://import/corpus.res" id="1_qdl23"]
@@ -14,6 +14,8 @@
 [ext_resource type="ArrayMesh" uid="uid://bvhyeit3gi543" path="res://import/whhelright.res" id="7_mibw7"]
 [ext_resource type="Script" path="res://Scene/Car/Scripts/ColorSensor.gd" id="13_45yfb"]
 [ext_resource type="Script" path="res://Scene/Car/Scripts/Led.gd" id="14_d4taf"]
+[ext_resource type="Script" path="res://Scene/Car/Scripts/UltraSonic.gd" id="15_vwalo"]
+[ext_resource type="Script" path="res://Scene/Car/Scripts/Time.gd" id="16_j0iny"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71ju1"]
 shading_mode = 0
@@ -32,6 +34,12 @@ size = Vector3(1.36608, 0.545788, 1.21248)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_12uyp"]
 height = 1.40369
 radius = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_00hdp"]
+size = Vector3(1.29932, 0.425293, 0.515747)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ev2fy"]
+size = Vector3(1.3559, 0.483032, 0.253662)
 
 [sub_resource type="Animation" id="Animation_3epcl"]
 resource_name = "FLASH"
@@ -210,8 +218,17 @@ transform = Transform3D(1.24573, -1.84768e-09, 1.05227e-09, 4.99352e-08, 0.04443
 visible = false
 material = SubResource("StandardMaterial3D_gqlse")
 
-[node name="Time" type="Node3D" parent="tank_tracks_motion"]
+[node name="UltraSonicSensor" type="Node3D" parent="tank_tracks_motion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.714105, 0)
+script = ExtResource("15_vwalo")
+
+[node name="RayCast3D" type="RayCast3D" parent="tank_tracks_motion/UltraSonicSensor"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -10, 0)
+
+[node name="TimeSensor" type="Node3D" parent="tank_tracks_motion"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("16_j0iny")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="tank_tracks_motion"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.00969849, 0.369943, 0.0815887)
@@ -224,6 +241,14 @@ shape = SubResource("CylinderShape3D_12uyp")
 [node name="CollisionShape3" type="CollisionShape3D" parent="tank_tracks_motion"]
 transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 0.00969841, 0.200934, 0.950145)
 shape = SubResource("CylinderShape3D_12uyp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tank_tracks_motion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00756845, 0.337107, -1.26941)
+shape = SubResource("BoxShape3D_00hdp")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="tank_tracks_motion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0113829, 0.390147, 1.31172)
+shape = SubResource("BoxShape3D_ev2fy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
