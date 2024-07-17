@@ -75,7 +75,7 @@ func _on_add_button_down():
 			set_materials(instance, 0, 1)
 		4:
 			instance = CheckPoint.instantiate()
-			set_materials(instance, 1, 0, 2)
+			set_materials(instance, 0, 1, 2)
 		5:
 			instance = Square.instantiate()
 			set_single_material(instance, 0)
