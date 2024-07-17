@@ -336,12 +336,12 @@ func _on_seconds_timeout():
 	
 	# Calculate minutes and handle seconds reset
 	if secconds >= 60:
+		@warning_ignore("integer_division")
 		minutos = secconds / 60  # Use integer division
 		secconds = secconds % 60  # Remainder of seconds after minutes are accounted for
 
 	# Update the time display
 	time_race.text = str(minutos).pad_zeros(2) + " : " + str(secconds).pad_zeros(2)
-
 
 
 func _on_ok_suck_pressed():
