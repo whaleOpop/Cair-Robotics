@@ -378,6 +378,8 @@ func get_state_name():
 
 func _on_ok_load_pressed():
 	if loadname:
+		for i in statement_list.get_children():
+			i.queue_free()
 		projects_list_panel.hide()
 		_load(loadname)
 		for i in vbox_projects_list.get_children():
