@@ -222,22 +222,22 @@ corner_radius_top_right = 28
 corner_radius_bottom_right = 28
 corner_radius_bottom_left = 28
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qprw6"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d13nr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1qvpa"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bae88"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8h5qg"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rr2gw"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bj71t"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ue7eb"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xysl5"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gig23"]
 
 [sub_resource type="Theme" id="Theme_huhvt"]
-VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_qprw6")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_1qvpa")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_8h5qg")
-VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_bj71t")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_xysl5")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_d13nr")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_bae88")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_rr2gw")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_ue7eb")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_gig23")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3iam7"]
 
@@ -330,18 +330,18 @@ Button/styles/hover = SubResource("StyleBoxTexture_nlwvb")
 Button/styles/normal = SubResource("StyleBoxTexture_1sddt")
 Button/styles/pressed = SubResource("StyleBoxTexture_41g46")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pubyi"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c3eg2"]
 texture = ExtResource("40_jhurv")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jghg6"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tj7hb"]
 texture = ExtResource("41_c4jbm")
 
 [sub_resource type="Theme" id="Theme_mv51d"]
 TextEdit/constants/line_spacing = 8
 TextEdit/constants/outline_size = 0
 TextEdit/fonts/font = ExtResource("39_j58nq")
-TextEdit/styles/focus = SubResource("StyleBoxTexture_pubyi")
-TextEdit/styles/normal = SubResource("StyleBoxTexture_jghg6")
+TextEdit/styles/focus = SubResource("StyleBoxTexture_c3eg2")
+TextEdit/styles/normal = SubResource("StyleBoxTexture_tj7hb")
 
 [node name="RootLayer" type="CanvasLayer"]
 script = ExtResource("1_upuab")
@@ -618,7 +618,6 @@ uppercase = true
 max_lines_visible = 10
 
 [node name="save_panel" type="Panel" parent="Root3D/Tiles_panel"]
-visible = false
 material = SubResource("ShaderMaterial_2deyx")
 layout_mode = 0
 offset_left = -597.0

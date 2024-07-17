@@ -23,7 +23,7 @@ func _physics_process(_delta):
 		var color_state = color_sensor.get_color_state()
 		var timer_state = time_sensor.get_time_state()
 		var ultra_sonic_state = ultra_sonic_sensor.get_distances()
-		print(ultra_sonic_state)
+		#print(ultra_sonic_state)
 		# Print sensor states for debugging purposes
 
 		
@@ -33,7 +33,7 @@ func _physics_process(_delta):
 			set_wheel_engine_force([0, 0])
 			change_state = true
 			
-		print(state)
+		#print(state)
 		if state != -1 and timer.time_left == 0.0:
 			# Get the current state item from the global statement list
 			var state_item = Globals.statmentList[state]
