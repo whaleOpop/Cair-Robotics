@@ -5,136 +5,151 @@ extends CanvasLayer
 @export var btnState =preload("res://Scene/Map/2d/stButton/StatmentButton.tscn")
 @export var AreaRemove = preload("res://Scene/ConstructMap/3d/mapParts/Area3dRemove/area_3d_remove.tscn")
 
-@onready var amimUI = $AnimationPlayer
-@onready var MapLoader = $Node3D/SubViewportContainer/SubViewport/MapLoader
-@onready var btnPlay =$Node3D/Panel2/Panel/TextureRect3/HBoxContainer/Control/Play
-@onready var btnSpeed = $Node3D/Panel2/Speed
-@onready var btnRotation =$Node3D/Panel2/Rotation
-@onready var btnTime =$Node3D/Panel2/time
-@onready var btnLed =$Node3D/Panel2/led
-@onready var btnDuration  =$Node3D/Panel2/duration
-@onready var btnColor=$Node3D/Panel2/ColorSensor
-@onready var btnLin=$Node3D/Panel2/Line
-@onready var btnUltra=$Node3D/Panel2/UltraSonnic
-@onready var visualStatmentlist = $Node3D/Panel2/Panel/ScrollContainer/VBoxContainer
+@onready var amim_ui = $amim_ui
+@onready var map_loader = $Node3D/SubViewportContainer/SubViewport/map_loader
 
+@onready var play_btn = $Node3D/robot_control_back/robot_control_front/TextureRect3/HBoxContainer/Control/play_btn
 
+@onready var speed_btn = $Node3D/robot_control_back/speed_btn
+@onready var rotation_xyz_btn = $Node3D/robot_control_back/rotation_xyz_btn
+@onready var timer_btn = $Node3D/robot_control_back/timer_btn
+@onready var led_btn = $Node3D/robot_control_back/led_btn
+@onready var duration_btn = $Node3D/robot_control_back/duration_btn
+@onready var color_sensor_btn = $Node3D/robot_control_back/color_sensor_btn
+@onready var line_btn = $Node3D/robot_control_back/line_btn
+@onready var ultra_sonic_btn= $Node3D/robot_control_back/ultra_sonic_btn
+@onready var statement_list = $Node3D/robot_control_back/robot_control_front/ScrollContainer/statement_list
+@onready var current_statment = $Node3D/robot_control_back/robot_control_front/current_statment
+@onready var debug_panel = $Node3D/robot_control_back/robot_control_front/debug_panel
+@onready var time_race = $Node3D/Header/TextureRect/time_race
+@onready var timer_seconds = $timer_seconds
+@onready var count_checkpoint = $Node3D/Header/TextureRect/count_checkpoint
+@onready var count_checkpoint_result = $Node3D/result_panel/count_checkpoint_result
+@onready var result_panel = $Node3D/result_panel
+@onready var restart_btn = $Node3D/robot_control_back/robot_control_front/debug_panel/restart_btn
+@onready var add_statment_panel = $Node3D/add_statment_panel
+@onready var add_st_error_label = $Node3D/add_statment_panel/TextureRect/add_st_error_label
+@onready var name_st_edit = $Node3D/add_statment_panel/TextureRect/name_st_edit
+
+@onready var robot_control_back = $Node3D/robot_control_back
 var secconds = 0
 var minutos=0
+var dur_flag = true
+var led_flag = true
+
 func hideControl():
-	btnSpeed.hide()
-	btnRotation.hide()
-	btnTime.hide()
-	btnLed.hide()
-	btnDuration.hide()
-	btnColor.hide()
-	btnLin.hide()
-	btnUltra.hide()
+	speed_btn.hide()
+	rotation_xyz_btn.hide()
+	timer_btn.hide()
+	led_btn.hide()
+	duration_btn.hide()
+	color_sensor_btn.hide()
+	line_btn.hide()
+	ultra_sonic_btn.hide()
 	pass
 
 func showControl():
-	btnSpeed.show()
-	btnRotation.hide()
-	btnTime.show()
-	btnLed.show()
-	btnDuration.show()
-	btnColor.show()
-	btnLin.show()
-	btnUltra.show()
+	speed_btn.show()
+	rotation_xyz_btn.hide()
+	timer_btn.show()
+	led_btn.show()
+	duration_btn.show()
+	color_sensor_btn.show()
+	line_btn.show()
+	ultra_sonic_btn.show()
 	pass
 
 func _ready():
-	MapLoader.add_child(AreaRemove.instantiate())
-	btnPlay.disabled=true
+	map_loader.add_child(AreaRemove.instantiate())
+	play_btn.disabled=true
 	hideControl()
 
 	pass # Replace with function body.
 
 
 func _on_button_pressed():
-	for i in MapLoader.get_children():
+	for i in map_loader.get_children():
 		if i.get("metadata/Name") =="Car":
 			i.queue_free()
 	showControl()
-	$Node3D/Panel2/Panel/DebugPanel.hide()
-	$Seconds.stop()
+	debug_panel.hide()
+	timer_seconds.stop()
+	timer_seconds.autostart=false
 	Globals.Succesfull=false
-	$Seconds.autostart=false
 	secconds=0
 	minutos=0
 	Globals.Checkpoint=0
-	$Node3D/Panel3/TextureRect/TimeRace.text="00 : 00"
-	for i in $Node3D/SubViewportContainer/SubViewport/MapLoader.get_children():
+	time_race.text="00 : 00"
+	for i in map_loader.get_children():
 		if i.has_method("reset"):
 			i.reset()
 			
 	pass # Replace with function body.
 
 func _process(_delta):
-	$Node3D/Panel3/TextureRect/Result.text=var_to_str(Globals.Checkpoint)
+	count_checkpoint.text=var_to_str(Globals.Checkpoint)
 	if Globals.Succesfull==true:
-		$Seconds.stop()
-		$Seconds.autostart=false
-		$Node3D/Panel4/Time.text=$Node3D/Panel3/TextureRect/TimeRace.text
-		$Node3D/Panel4/Label2.text=$Node3D/Panel3/TextureRect/Result.text
-		$Node3D/Panel4.show()
+		timer_seconds.stop()
+		timer_seconds.autostart=false
+	
+		count_checkpoint_result.text=count_checkpoint.text
+		result_panel.show()
 	pass
 
 func _on_button_toggled(button_pressed):
 	if button_pressed:
-		amimUI.play("line_btn")
+		amim_ui.play("line_btn")
 	else:
-		amimUI.play_backwards("line_btn")
+		amim_ui.play_backwards("line_btn")
 	pass # Replace with function body.
 
 
 func _on_ultra_sonnic_toggled(button_pressed):
 	if button_pressed:
-		amimUI.play("ultra_btn")
+		amim_ui.play("ultra_btn")
 	else:
-		amimUI.play_backwards("ultra_btn")
+		amim_ui.play_backwards("ultra_btn")
 	pass # Replace with function body.
 
 
 func _on_color_sensor_toggled(button_pressed):
 	if button_pressed:
-		amimUI.play("color_btn")
+		amim_ui.play("color_btn")
 	else:
-		amimUI.play_backwards("color_btn")
+		amim_ui.play_backwards("color_btn")
 	pass # Replace with function body.
 
 
 func _on_duration_toggled(button_pressed):
 	
 	if button_pressed:
-		amimUI.play("dur_btn")
+		amim_ui.play("dur_btn")
 	else:
-		amimUI.play_backwards("dur_btn")
+		amim_ui.play_backwards("dur_btn")
 	pass # Replace with function body.
 
-var dur_flag = true
 func _on_duration_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed: 
 			if dur_flag:
-				amimUI.play("dur_btn")
+				amim_ui.play("dur_btn")
 				dur_flag=!dur_flag
 			else:
-				amimUI.play_backwards("dur_btn")
+				amim_ui.play_backwards("dur_btn")
 				dur_flag=!dur_flag
 	pass # Replace with function body.
 
 
 
-var led_flag = true
+
 func _on_led_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed: 
 			if led_flag:
-				amimUI.play("let_btn")
+				amim_ui.play("let_btn")
 				led_flag=!led_flag
 			else:
-				amimUI.play_backwards("let_btn")
+				amim_ui.play_backwards("let_btn")
 				led_flag=!led_flag
 	pass # Replace with function body.
 
@@ -144,80 +159,80 @@ func _on_time_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed: 
 			if time_flag:
-				amimUI.play("time_btn")
+				amim_ui.play("time_btn")
 				time_flag=!time_flag
 			else:
-				amimUI.play_backwards("time_btn")
+				amim_ui.play_backwards("time_btn")
 				time_flag=!time_flag
 	pass # Replace with function body.
 
 
 func _on_rotation_toggled(button_pressed):
 	if button_pressed:
-		amimUI.play("rotation_btn")
+		amim_ui.play("rotation_btn")
 	else:
-		amimUI.play_backwards("rotation_btn")
+		amim_ui.play_backwards("rotation_btn")
 	pass # Replace with function body.
 
 
 func _on_speed_toggled(button_pressed):
 	if button_pressed:
-		amimUI.play("speed_btn")
+		amim_ui.play("speed_btn")
 	else:
-		amimUI.play_backwards("speed_btn")
+		amim_ui.play_backwards("speed_btn")
 	pass # Replace with function body.
 
 
 func _on_plus_pressed():
-	$Node3D/Panel.show()
+	add_statment_panel.show()
 	pass # Replace with function body.
 
 
 func _on_cancel_pressed():
-	$Node3D/Panel.hide()
-	$Node3D/Panel/TextureRect/LineEdit.text=""
-	$Node3D/Panel/TextureRect/Label.text=""
+	add_statment_panel.hide()
+	name_st_edit.text=""
+	add_st_error_label.text=""
 	pass # Replace with function body.
 
 
 var button_group = ButtonGroup.new()
 
 func _on_ok_pressed():
-	var stName = $Node3D/Panel/TextureRect/LineEdit
-	if stName.text!="":
-		if Globals.isStateUseName(stName.text):
+	
+	if name_st_edit.text!="":
+		if Globals.isStateUseName(name_st_edit.text):
 			var stat = btnState.instantiate()
-			stat.setName(stName.text)
-			$Node3D/Panel2/Panel/ScrollContainer/VBoxContainer.add_child(stat)
-			stat.get_child(0).connect("pressed",getCurrentState)
+			stat.setName(name_st_edit.text)
+			statement_list.add_child(stat)
+		
 			stat.get_child(0).set("button_group",button_group)
 			
 			for i in button_group.get_buttons():
-				i.connect("pressed",getCurrentState)
-			$Node3D/Panel.hide()
-			$Node3D/Panel2/Panel/CurStatment.text=stName.text
-			Globals.CurrentStatment=Globals.getStateByName(stName.text)
-			$Node3D/Panel/TextureRect/LineEdit.text=""
-			$Node3D/Panel/TextureRect/Label.text=""
+				if !i.is_connected("pressed",getCurrentState):
+					i.connect("pressed",getCurrentState)
+			add_statment_panel.hide()
+			current_statment.text=name_st_edit.text
+			Globals.CurrentStatment=Globals.getStateByName(name_st_edit.text)
+			name_st_edit.text=""
+			add_st_error_label.text=""
 		else:
-			$Node3D/Panel/TextureRect/Label.text="Шаг с этим названием уже существует"
+			add_st_error_label.text="Шаг с этим названием уже существует"
 	else:
-		$Node3D/Panel/TextureRect/Label.text="Введите название шага"
+		add_st_error_label.text="Введите название шага"
 		
 	pass # Replace with function body.
 
-
 func getCurrentState():
-	$Node3D/Panel2/Panel/CurStatment.text=button_group.get_pressed_button().get_child(0).text
+	current_statment.text=button_group.get_pressed_button().get_child(0).text
 	Globals.CurrentStatment=Globals.getStateByName(button_group.get_pressed_button().get_child(0).text)
-	$Node3D/Panel2/Line/LineSensor.setLineByState()
-	$Node3D/Panel2/UltraSonnic/ultrasonic.setUltraSonicByState()
-	$Node3D/Panel2/ColorSensor/colorsensor.set_color_by_state()
-	$Node3D/Panel2/Speed/speed.setSpeedByState()
-	$Node3D/Panel2/Rotation/rotation.setRotationByState()
-	$Node3D/Panel2/duration.setDurationByState()
-	$Node3D/Panel2/led.setLedByState()
-	$Node3D/Panel2/time.setTimeByState()
+	line_btn.get_child(0).setLineByState()
+	ultra_sonic_btn.get_child(0).setUltraSonicByState()
+	color_sensor_btn.get_child(0).set_color_by_state()
+	speed_btn.get_child(0).setSpeedByState()
+	rotation_xyz_btn.get_child(0).setRotationByState()
+	duration_btn.setDurationByState()
+	led_btn.setLedByState()
+	timer_btn.setTimeByState()
 	pass
 
 
@@ -225,42 +240,42 @@ func getCurrentState():
 
 
 func _on_minus_pressed():
-	var list = $Node3D/Panel2/Panel/ScrollContainer/VBoxContainer.get_children()
+	var list = statement_list.get_children()
 	for i in list:
-		if i.get_child(0).get_child(0).text==$Node3D/Panel2/Panel/CurStatment.text:
+		if i.get_child(0).get_child(0).text==current_statment.text:
 			i.queue_free()
 			Globals.deleteState()
 	
 
-	$Node3D/Panel2/Panel/CurStatment.text="Deleted"
+	current_statment.text="Deleted"
 	Globals.CurrentStatment=null
-	pass # Replace with function body.
+	pass 
 
 @onready var Car = preload("res://Scene/Car/Car.tscn")
 
 func _on_play_pressed():
 
-	if isCarOnMap(MapLoader):
+	if isCarOnMap(map_loader):
 		var car = Car.instantiate() 
 		
 		car.set("position",Globals.RobotPos[0])
 		car.set("rotation_degrees",Globals.RobotRot[0])
 		
 
-		$Seconds.autostart=true
-		$Seconds.start()
-		MapLoader.add_child(car)
-		$Node3D/Panel2/Panel/DebugPanel.show()
+		timer_seconds.autostart=true
+		timer_seconds.start()
+		map_loader.add_child(car)
+		debug_panel.show()
 		hideControl()
 	else:
-		
-		$Seconds.stop()
-		$Seconds.autostart=true
-		$Node3D/Panel2.show()
-		$Node3D/btnRestart.hide()
-		$Node3D/Panel2/Panel/DebugPanel.hide()
+
+		timer_seconds.stop()
+		timer_seconds.autostart=true
+		robot_control_back.show()
+		restart_btn.hide()
+		debug_panel.hide()
 		showControl()
-	
+
 	pass # Replace with function body.
 func isCarOnMap(listpartmap):
 	for i in listpartmap.get_children():
@@ -270,28 +285,28 @@ func isCarOnMap(listpartmap):
 
 
 func _on_v_box_container_child_entered_tree(_node):
-	btnPlay.disabled=false
+	play_btn.disabled=false
 	showControl()
 		
-	pass # Replace with function body.
+	pass
 
 
 func _on_v_box_container_child_exiting_tree(_node):
 	if Globals.statmentList.size()==0:
-		btnPlay.disabled=true
+		play_btn.disabled=true
 		hideControl()
-		for i in MapLoader.get_children():
+		for i in map_loader.get_children():
 			if i.get("metadata/Name") =="Car":
 				i.queue_free()
 				
-	pass # Replace with function body.
+	pass
 
 
 func _on_up_pressed():
 	if Globals.CurrentStatment > 0:
 		var current_index = Globals.CurrentStatment
 		var previous_index = current_index - 1
-		visualStatmentlist.move_child(current_index, previous_index)
+		statement_list.move_child(current_index, previous_index)
 		Globals.statmentList.swap(current_index, previous_index)
 		Globals.CurrentStatment = previous_index
 
@@ -299,7 +314,7 @@ func _on_down_pressed():
 	if Globals.CurrentStatment < Globals.statmentList.size() - 1:
 		var current_index = Globals.CurrentStatment
 		var next_index = current_index + 1
-		visualStatmentlist.move_child(current_index, next_index)
+		statement_list.move_child(current_index, next_index)
 		Globals.statmentList.swap(current_index, next_index)
 		Globals.CurrentStatment = next_index
 
@@ -316,22 +331,20 @@ func _on_btn_back_pressed():
 
 
 func _on_seconds_timeout():
-	secconds=secconds+1
+	# Increment seconds
+	secconds += 1
 	
-	
-	if (secconds%60==0):
-		minutos=secconds/60
-	if (secconds==60):
-		secconds=0
-	
-	$Node3D/Panel3/TextureRect/TimeRace.text=var_to_str(minutos).pad_zeros(2)+" : "+var_to_str(secconds).pad_zeros(2)
-	
-	pass # Replace with function body.
+	# Calculate minutes and handle seconds reset
+	if secconds >= 60:
+		minutos = secconds / 60  # Use integer division
+		secconds = secconds % 60  # Remainder of seconds after minutes are accounted for
+
+	# Update the time display
+	time_race.text = str(minutos).pad_zeros(2) + " : " + str(secconds).pad_zeros(2)
 
 
 
 func _on_ok_suck_pressed():
 	Globals.Succesfull=false
-	$Node3D/Panel4.hide()
-
+	result_panel.hide()
 	pass # Replace with function body.
