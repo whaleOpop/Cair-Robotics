@@ -20,72 +20,67 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
-func _load(filename) -> void:
+func _load(filename: String) -> void:
 	# Check if the SaveFile exists
-	if !FileAccess.file_exists("user://"+filename):
+	if filename == "":
+		print("Error, filename is empty.")
+		return
+	
+	var file_path = "user://" + filename
+	if !FileAccess.file_exists(file_path):
 		print("Error, no Save File to load.")
 		return
 	
-	var save_file = FileAccess.open("user://"+filename, FileAccess.READ) # Open File
+	var save_file = FileAccess.open(file_path, FileAccess.READ) # Open File
+	if save_file == null:
+		print("Error, could not open Save File.")
+		return
+	
+	var root_node = get_node("Root3D/SubViewportContainer/SubViewport/ConstMap")
 	
 	while save_file.get_position() < save_file.get_length():
 		# Get the saved dictionary from the next line in the save file
 		var json = JSON.new()
-		json.parse(save_file.get_line())
+		var line = save_file.get_line()
+		var err = json.parse(line)
+		if err != OK:
+			print("Error parsing JSON: ", line)
+			continue
 		
 		# Get the Data
 		var node_data = json.get_data()
+		if not node_data.has("nodeName"):
+			print("Error: 'nodeName' not found in data.")
+			continue
 		
-		print(node_data["nodeName"])
-		if node_data["nodeName"]=="Forward":
-			var forward = Forward.instantiate()
-			forward.loadObject(node_data)
-			mapLoader.add_child(forward)
-			forward.add_to_group("save");
-			#get_node(node_data["nodeName"]).loadObject(node_data)
-		elif node_data["nodeName"]=="Rotate":
-			var rotate = Rotate.instantiate()
-			rotate.loadObject(node_data)
-			mapLoader.add_child(rotate)
-			rotate.add_to_group("save");
-			#get_node(node_data["nodeName"]).loadObject(node_data)
-		elif node_data["nodeName"]=="Color":
-			var colors = Colors.instantiate()
-			colors.loadObject(node_data)
-			mapLoader.add_child(colors)
-			colors.add_to_group("save");
-			#get_node(node_data["nodeName"]).loadObject(node_data)
-		elif node_data["nodeName"]=="Checkpoint":
-			var checkPoint = CheckPoint.instantiate()
-			checkPoint.loadObject(node_data)
-			mapLoader.add_child(checkPoint)
-			checkPoint.add_to_group("save");
-			Globals.Finish+=1
-
-			#get_node(node_data["nodeName"]).loadObject(node_data)
-			
-		elif node_data["nodeName"]=="Finish":
-			var finish = Finish.instantiate()
-			finish.loadObject(node_data)
-			Globals.RobotRot.insert(0,finish.rotation_degrees)
-			Globals.RobotPos.insert(0,finish.position)
-			mapLoader.add_child(finish)
-			#get_node(node_data["nodeName"]).loadObject(node_data)
-			finish.add_to_group("save");
-			
-		elif node_data["nodeName"]=="Square":
-			var square = Square.instantiate()
-			square.loadObject(node_data)
-			mapLoader.add_child(square)
-			square.add_to_group("save");
-		elif node_data["nodeName"]=="Box":
-			var box = Box.instantiate()
-			box.loadObject(node_data)
-			mapLoader.add_child(box)
-			box.add_to_group("save");
+		var node_instance = null
 		
+		match node_data["nodeName"]:
+			"Forward":
+				node_instance = Forward.instantiate()
+			"Rotate":
+				node_instance = Rotate.instantiate()
+			"Color":
+				node_instance = Colors.instantiate()
+			"Checkpoint":
+				node_instance = CheckPoint.instantiate()
+			"Finish":
+				node_instance = Finish.instantiate()
+			"Square":
+				node_instance = Square.instantiate()
+			"Box":
+				node_instance = Box.instantiate()
+			_:
+				print("Unknown node type: ", node_data["nodeName"])
+				continue
+		
+		if node_instance:
+			node_instance.loadObject(node_data)
+			mapLoader.add_child(node_instance)
+			node_instance.add_to_group("save")
+	
 	save_file.close() # Close File
-	pass
+
 
 
 func _on_button_pressed():
