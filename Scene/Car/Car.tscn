@@ -141,9 +141,10 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 script = ExtResource("3_4q1i6")
 
 [node name="LRay3" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
-transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, 0.592295, 0.108559, 1.20214)
+transform = Transform3D(1, 1.80591e-07, 3.18601e-07, 1.50996e-07, -1.196, -1.84463e-07, 1.50996e-07, 1.04558e-07, -2.11, 0.592295, 0.108559, 1.20214)
 target_position = Vector3(0, 0.1, 0)
 collision_mask = 14
+debug_shape_thickness = 5
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/LRay3"]
 transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
@@ -151,9 +152,10 @@ material_override = ExtResource("4_hg62g")
 size = Vector3(0.1, 0, 0.1)
 
 [node name="LRay2" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
-transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, 0.355377, 0.108559, 1.20751)
+transform = Transform3D(1, 1.80591e-07, 3.18601e-07, 1.50996e-07, -1.196, -1.84463e-07, 1.50996e-07, 1.04558e-07, -2.11, 0.355377, 0.108559, 1.20751)
 target_position = Vector3(0, 0.1, 0)
 collision_mask = 14
+debug_shape_thickness = 5
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/LRay2"]
 transform = Transform3D(1, -2.84217e-14, 0, -3.62423e-14, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
@@ -161,43 +163,47 @@ material_override = ExtResource("5_fnypm")
 size = Vector3(0.1, 0, 0.1)
 
 [node name="LRay1" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
-transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, 0.118459, 0.108559, 1.21288)
+transform = Transform3D(1, 1.80591e-07, 3.18601e-07, 1.50996e-07, -1.196, -1.84463e-07, 1.50996e-07, 1.04558e-07, -2.11, 0.118459, 0.108559, 1.21288)
 target_position = Vector3(0, 0.1, 0)
 collision_mask = 14
+debug_shape_thickness = 5
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/LRay1"]
 transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
 size = Vector3(0.1, 0, 0.1)
 
 [node name="RRay1" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
-transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, -0.118459, 0.108559, 1.21826)
+transform = Transform3D(1, 1.80591e-07, 3.18601e-07, 1.50996e-07, -1.196, -1.84463e-07, 1.50996e-07, 1.04558e-07, -2.11, -0.118459, 0.108559, 1.21826)
 target_position = Vector3(0, 0.1, 0)
 collision_mask = 14
+debug_shape_thickness = 5
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/RRay1"]
 transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
 size = Vector3(0.1, 0, 0.1)
 
 [node name="RRay2" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
-transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, -0.355377, 0.108559, 1.22363)
+transform = Transform3D(1, 1.80591e-07, 3.18601e-07, 1.50996e-07, -1.196, -1.84463e-07, 1.50996e-07, 1.04558e-07, -2.11, -0.355377, 0.108559, 1.22363)
 target_position = Vector3(0, 0.1, 0)
 collision_mask = 14
+debug_shape_thickness = 5
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/RRay2"]
 transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
 size = Vector3(0.1, 0, 0.1)
 
 [node name="RRay3" type="RayCast3D" parent="tank_tracks_motion/LineSensor"]
-transform = Transform3D(1, 1.80591e-07, 1.84462e-07, 1.50996e-07, -1.196, -1.84463e-07, 8.74228e-08, 1.04558e-07, -2.11, -0.592295, 0.108559, 1.229)
+transform = Transform3D(1, 1.80591e-07, 3.18601e-07, 1.50996e-07, -1.196, -1.84463e-07, 1.50996e-07, 1.04558e-07, -2.11, -0.592295, 0.108559, 1.229)
 target_position = Vector3(0, 0.1, 0)
 collision_mask = 14
+debug_shape_thickness = 5
 
 [node name="CSGBox3D" type="CSGBox3D" parent="tank_tracks_motion/LineSensor/RRay3"]
 transform = Transform3D(1, 0, 0, 0, 0.907777, -0.419452, 0, 0.419452, 0.907777, 5.96046e-08, -0.384179, 0)
 size = Vector3(0.1, 0, 0.1)
 
 [node name="ColorSensor" type="Node3D" parent="tank_tracks_motion"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.24786, 0.0599999, -0.945498)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.338585, 0.0599999, -0.945498)
 script = ExtResource("13_45yfb")
 
 [node name="RayCast3D" type="RayCast3D" parent="tank_tracks_motion/ColorSensor"]
