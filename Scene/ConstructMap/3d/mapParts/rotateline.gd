@@ -1,4 +1,4 @@
-extends CSGBox3D
+extends CSGCylinder3D
 
 func _get_color():
 	var mat = get("material_override")

@@ -34,6 +34,8 @@ LineEdit/fonts/font = null
 [node name="ultrasonic" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 170.0
+offset_bottom = 107.0
 script = ExtResource("1_vlfwm")
 
 [node name="TextureRect" type="TextureRect" parent="."]

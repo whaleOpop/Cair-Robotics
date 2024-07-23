@@ -24,7 +24,7 @@ func getCar():
 				Car=i
 
 func _process(_delta):
-	if Car:
+	if Car!=null:
 		set_led(Car.get_led_state())
 		set_speed(Car.get_speed_state())
 		set_line(Car.get_line_state())

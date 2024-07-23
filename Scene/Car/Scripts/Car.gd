@@ -91,9 +91,12 @@ func compare_ultra_sonic(ultra_sonic_range, ultra_sonic_state):
 	return (ultra_sonic_range[0] <= ultra_sonic_state[0]) and (ultra_sonic_range[1] >= ultra_sonic_state[0])
 
 func compare_color(color_range, color_state):
-	return (color_range[0][0] <= color_state[0].r8) and (color_range[0][1] >= color_state[0].r8) and \
-		   (color_range[1][0] <= color_state[0].g8) and (color_range[1][1] >= color_state[0].g8) and \
-		   (color_range[2][0] <= color_state[0].b8) and (color_range[2][1] >= color_state[0].b8)
+	# color_range: [[min_r, max_r], [min_g, max_g], [min_b, max_b]]
+	# color_state: [{'r8': int, 'g8': int, 'b8': int}]
+	var is_r_in_range = (color_range[0][0] <= color_state[0].r8) and (color_state[0].r8 <= color_range[0][1])
+	var is_g_in_range = (color_range[1][0] <= color_state[0].g8) and (color_state[0].g8 <= color_range[1][1])
+	var is_b_in_range = (color_range[2][0] <= color_state[0].b8) and (color_state[0].b8 <= color_range[2][1])
+	return is_r_in_range and is_g_in_range and is_b_in_range
 
 func compare_array_line(line_pattern, line_state):
 	if line_pattern.size() != line_state.size():

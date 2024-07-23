@@ -93,25 +93,25 @@ func set_materials(instance, mat_index1, mat_index2, extra_mat_index=-1):
 	var mat1 = instance.get_child(mat_index1)
 	var mat2 = instance.get_child(mat_index2)
 	if !wb:
-		mat1.set("surface_material_override/0", matWhite)
-		mat2.set("surface_material_override/0", matBlack)
+		mat1.set("material_override", matWhite)
+		mat2.set("material_override", matBlack)
 	else:
-		mat1.set("surface_material_override/0", matBlack)
-		mat2.set("surface_material_override/0", matWhite)
+		mat1.set("material_override", matBlack)
+		mat2.set("material_override", matWhite)
 	if extra_mat_index != -1:
 		set_color_material(instance, extra_mat_index)
 
 func set_single_material(instance, mat_index):
 	var mat = instance.get_child(mat_index)
 	if !wb:
-		mat.set("surface_material_override/0", matWhite)
+		mat.set("material_override", matWhite)
 	else:
-		mat.set("surface_material_override/0", matBlack)
+		mat.set("material_override", matBlack)
 
 func set_color_material(instance, mat_index=0):
 	var matMesh = instance.get_child(mat_index)
 	var matColor = StandardMaterial3D.new()
-	matMesh.set("surface_material_override/0", matColor)
+	matMesh.set("material_override", matColor)
 	matColor.albedo_color = colorPicker
 	matColor.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 

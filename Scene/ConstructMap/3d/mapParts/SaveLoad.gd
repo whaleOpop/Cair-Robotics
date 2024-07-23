@@ -13,15 +13,15 @@ func saveObject() -> Dictionary:
 
 	match node_name:
 		"Forward", "Rotate", "Finish", "Checkpoint":
-			dict["albedoColorLine"] = str(get_child(1).get("surface_material_override/0").get("albedo_color"))
-			dict["albedoColorMesh"] = str(get_child(0).get("surface_material_override/0").get("albedo_color"))
+			dict["albedoColorLine"] = str(get_child(1).get("material_override").get("albedo_color"))
+			dict["albedoColorMesh"] = str(get_child(0).get("material_override").get("albedo_color"))
 		"Color":
-			dict["albedoColor"] = str(get_child(0).get("surface_material_override/0").get("albedo_color"))
+			dict["albedoColor"] = str(get_child(0).get("material_override").get("albedo_color"))
 		"Square", "Box":
-			dict["albedoColorMesh"] = str(get_child(0).get("surface_material_override/0").get("albedo_color"))
+			dict["albedoColorMesh"] = str(get_child(0).get("material_override").get("albedo_color"))
 
 	if node_name == "Checkpoint":
-		dict["albedoColor"] = str(get_child(2).get("surface_material_override/0").get("albedo_color"))
+		dict["albedoColor"] = str(get_child(2).get("material_override").get("albedo_color"))
 
 	return dict
 
@@ -42,18 +42,18 @@ func loadObject(loadedDict: Dictionary) -> void:
 		"Forward", "Rotate", "Finish", "Checkpoint":
 			mat_black.albedo_color = parseVec4(loadedDict["albedoColorLine"])
 			mat_white.albedo_color = parseVec4(loadedDict["albedoColorMesh"])
-			get_child(1).set("surface_material_override/0", mat_black)
-			get_child(0).set("surface_material_override/0", mat_white)
+			get_child(1).set("material_override", mat_black)
+			get_child(0).set("material_override", mat_white)
 		"Color":
 			mat_color.albedo_color = parseVec4(loadedDict["albedoColor"])
-			get_child(0).set("surface_material_override/0", mat_color)
+			get_child(0).set("material_override", mat_color)
 		"Square", "Box":
 			mat_white.albedo_color = parseVec4(loadedDict["albedoColorMesh"])
-			get_child(0).set("surface_material_override/0", mat_white)
+			get_child(0).set("material_override", mat_white)
 
 	if node_name == "Checkpoint" and "albedoColor" in loadedDict:
 		mat_color.albedo_color = parseVec4(loadedDict["albedoColor"])
-		get_child(2).set("surface_material_override/0", mat_color)
+		get_child(2).set("material_override", mat_color)
 
 func parseVec4(strVec: String) -> Color:
 	var vec4 = strVec.strip_edges().replace("(", "").replace(")", "").split(",")

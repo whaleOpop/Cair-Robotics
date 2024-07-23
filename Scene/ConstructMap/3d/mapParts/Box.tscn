@@ -1,29 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bco5565ftnbxf"]
+[gd_scene load_steps=3 format=3 uid="uid://bco5565ftnbxf"]
 
 [ext_resource type="Script" path="res://Scene/ConstructMap/3d/mapParts/StaticBody3D.gd" id="1_eyalf"]
 [ext_resource type="Script" path="res://Scene/ConstructMap/3d/mapParts/SaveLoad.gd" id="1_xmigf"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_n8lkb"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_654rw"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_y4mtt"]
-
 [node name="Box" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
 script = ExtResource("1_xmigf")
 metadata/NameCell = "Box"
 metadata/isSelected = true
 
-[node name="whiteplane" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.031, 0, 0, 0, 4.031, 0, 0, 0, 4.031, 0, 0, 0)
-mesh = SubResource("BoxMesh_n8lkb")
-surface_material_override/0 = SubResource("StandardMaterial3D_654rw")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="whiteplane"]
+[node name="floor" type="CSGBox3D" parent="."]
+use_collision = true
 collision_layer = 3
 collision_mask = 3
+size = Vector3(4, 4, 4)
 script = ExtResource("1_eyalf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="whiteplane/StaticBody3D"]
-shape = SubResource("BoxShape3D_y4mtt")

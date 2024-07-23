@@ -1,15 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkhvnw4qlvbou"]
+[gd_scene load_steps=3 format=3 uid="uid://bkhvnw4qlvbou"]
 
 [ext_resource type="Script" path="res://Scene/ConstructMap/3d/mapParts/StaticBody3D.gd" id="1_8jjqt"]
 [ext_resource type="Script" path="res://Scene/ConstructMap/3d/mapParts/SaveLoad.gd" id="1_wmjk6"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_4kwjh"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwv3d"]
-shading_mode = 0
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yj27h"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="Square" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
@@ -17,15 +9,9 @@ script = ExtResource("1_wmjk6")
 metadata/NameCell = "Square"
 metadata/isSelected = true
 
-[node name="whiteplane" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.031, 0, 0, 0, 0.1, 0, 0, 0, 4.031, 0, 0, 0)
-mesh = SubResource("BoxMesh_4kwjh")
-surface_material_override/0 = SubResource("StandardMaterial3D_hwv3d")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="whiteplane"]
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
 collision_layer = 3
 collision_mask = 3
+size = Vector3(4, 0.1, 4)
 script = ExtResource("1_8jjqt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="whiteplane/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_yj27h")
