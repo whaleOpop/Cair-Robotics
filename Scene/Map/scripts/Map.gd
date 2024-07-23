@@ -165,7 +165,7 @@ func _on_button_toggled(button_pressed):
 	else:
 		amim_ui.play_backwards("line_btn")
 
-func _on_ultra_sonic_toggled(button_pressed):
+func _on_ultra_sonnic_toggled(button_pressed):
 	if button_pressed:
 		amim_ui.play("ultra_btn")
 	else:
@@ -312,19 +312,27 @@ func _on_v_box_container_child_exiting_tree(_node):
 
 func _on_up_pressed():
 	if Globals.CurrentStatment > 0:
-		var current_index = Globals.CurrentStatment
-		var previous_index = current_index - 1
-		statement_list.move_child(current_index, previous_index)
-		Globals.statmentList.swap(current_index, previous_index)
-		Globals.CurrentStatment = previous_index
+		statement_list.move_child(statement_list.get_child(Globals.CurrentStatment), Globals.CurrentStatment - 1)
+		var temp = Globals.statmentList[Globals.CurrentStatment]
+		Globals.statmentList[Globals.CurrentStatment] = Globals.statmentList[Globals.CurrentStatment - 1]
+		Globals.statmentList[Globals.CurrentStatment - 1] = temp
+		Globals.CurrentStatment -= 1
+		# Ensure Globals.CurrentStatment stays within bounds
+		if Globals.CurrentStatment < 0:
+			Globals.CurrentStatment = 0
+
 
 func _on_down_pressed():
 	if Globals.CurrentStatment < Globals.statmentList.size() - 1:
-		var current_index = Globals.CurrentStatment
-		var next_index = current_index + 1
-		statement_list.move_child(current_index, next_index)
-		Globals.statmentList.swap(current_index, next_index)
-		Globals.CurrentStatment = next_index
+		statement_list.move_child(statement_list.get_child(Globals.CurrentStatment), Globals.CurrentStatment + 1)
+		var temp = Globals.statmentList[Globals.CurrentStatment]
+		Globals.statmentList[Globals.CurrentStatment] = Globals.statmentList[Globals.CurrentStatment + 1]
+		Globals.statmentList[Globals.CurrentStatment + 1] = temp
+		Globals.CurrentStatment += 1
+		# Ensure Globals.CurrentStatment stays within bounds
+		if Globals.CurrentStatment >= Globals.statmentList.size():
+			Globals.CurrentStatment = Globals.statmentList.size() - 1
+
 
 func _on_btn_back_pressed():
 	Globals.CurrentStatment = null
