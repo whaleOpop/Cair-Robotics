@@ -66,6 +66,8 @@ func _load(filename: String) -> void:
 				node_instance = CheckPoint.instantiate()
 			"Finish":
 				node_instance = Finish.instantiate()
+				Globals.RobotPos[0]=parseVec3(node_data["position"])
+				Globals.RobotRot[0]=parseVec3(node_data["rotation_degrees"])
 			"Square":
 				node_instance = Square.instantiate()
 			"Box":
@@ -89,3 +91,7 @@ func _on_button_pressed():
 	get_tree().get_root().add_child(Map)
 	
 	pass # Replace with function body.
+	
+func parseVec3(strVec: String) -> Vector3:
+	var vec3 = strVec.strip_edges().replace("(", "").replace(")", "").split(",")
+	return Vector3(vec3[0].to_float(), vec3[1].to_float(), vec3[2].to_float())

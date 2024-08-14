@@ -618,6 +618,7 @@ uppercase = true
 max_lines_visible = 10
 
 [node name="save_panel" type="Panel" parent="Root3D/Tiles_panel"]
+visible = false
 material = SubResource("ShaderMaterial_2deyx")
 layout_mode = 0
 offset_left = -597.0
