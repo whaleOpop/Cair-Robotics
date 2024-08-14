@@ -20,8 +20,8 @@ extends Node
 
 var statmentList = []
 var CurrentStatment=null
-var RobotRot=[]
-var RobotPos=[]
+var RobotRot=[0]
+var RobotPos=[0]
 var Checkpoint=0
 var Finish=0
 var Succesfull=false
